@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Básico A1–A2 | EnglishPath</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><span>📚</span> EnglishPath</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="basic.html" class="active">Básico</a></li>
+    <li><a href="intermediate.html">Intermedio</a></li>
+    <li><a href="advanced.html">Avanzado</a></li>
+    <li><a href="vocabulary.html">Vocabulario</a></li>
+  </ul>
+</nav>
+
+<div class="lesson-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h3>🌱 Nivel Básico</h3>
+      <p>A1 – A2</p>
+      <div class="progress-bar-wrap" style="margin-top:.6rem;">
+        <div class="progress-bar basic-bg"
+             data-progress-level="basic"
+             data-lessons='["b-alphabet","b-greetings","b-numbers","b-colors","b-family","b-present","b-questions","b-daily"]'
+             style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Módulo 1 · Primeros Pasos</div>
+      <div class="lesson-link" data-target="b-alphabet" data-lesson="b-alphabet">🔤 El Alfabeto</div>
+      <div class="lesson-link" data-target="b-greetings" data-lesson="b-greetings">👋 Saludos</div>
+      <div class="lesson-link" data-target="b-numbers" data-lesson="b-numbers">🔢 Números</div>
+      <div class="lesson-link" data-target="b-colors" data-lesson="b-colors">🎨 Colores y Adjetivos</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Módulo 2 · Vocabulario Base</div>
+      <div class="lesson-link" data-target="b-family" data-lesson="b-family">👨‍👩‍👧 La Familia</div>
+      <div class="lesson-link" data-target="b-daily" data-lesson="b-daily">🏠 Vida Cotidiana</div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-section-title">Módulo 3 · Gramática</div>
+      <div class="lesson-link" data-target="b-present" data-lesson="b-present">📘 Presente Simple</div>
+      <div class="lesson-link" data-target="b-questions" data-lesson="b-questions">❓ Preguntas Básicas</div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="lesson-main">
+
+    <!-- ======== LECCIÓN: ALFABETO ======== -->
+    <div class="lesson-panel" id="b-alphabet" style="display:none">
+      <div class="lesson-content">
+        <div class="lesson-top">
+          <button class="back-btn" onclick="history.back()">← Volver</button>
+        </div>
+        <h2>El Alfabeto en Inglés</h2>
+        <div class="lesson-meta">
+          <span>🌱 A1</span><span>⏱ 10 min</span><span>🔊 Pronunciación</span>
+        </div>
+
+        <div class="lesson-body">
+          <p>El alfabeto inglés tiene <strong>26 letras</strong>, igual que el español. La mayor diferencia está en la <strong>pronunciación</strong>. Haz clic en cada letra para escucharla.</p>
+
+          <h3>Las 26 Letras</h3>
+          <div class="phon-grid" id="alphabetGrid"></div>
+
+          <div class="tip-box">
+            <strong>💡 Consejo:</strong> Las letras más difíciles para hispanohablantes son: <strong>J</strong> (pronunciada "yei"), <strong>G</strong> ("yi"), <strong>W</strong> ("dáboliu"), <strong>Y</strong> ("uai"), <strong>Z</strong> ("zi").
+          </div>
+
+          <h3>Vocales y Consonantes</h3>
+          <p>En inglés hay <strong>5 vocales</strong>: A, E, I, O, U. Las demás son consonantes. Importante: en inglés las vocales tienen múltiples sonidos dependiendo del contexto.</p>
+
+          <div class="example">
+            <div class="en" data-speak="A as in Apple, E as in Egg, I as in Ice cream, O as in Orange, U as in Umbrella">A – Apple &nbsp; E – Egg &nbsp; I – Ice &nbsp; O – Orange &nbsp; U – Umbrella 🔊</div>
+            <div class="es">A – Manzana &nbsp; E – Huevo &nbsp; I – Hielo &nbsp; O – Naranja &nbsp; U – Paraguas</div>
+          </div>
+
+          <h3>El Alfabeto de Pie a Pie</h3>
+          <div class="info-box">
+            El alfabeto también se usa para deletrear (<em>spell</em>) tu nombre. Por ejemplo: <br/>
+            <strong>"How do you spell your name?"</strong> — ¿Cómo se deletrea tu nombre?<br/>
+            <strong>"My name is Ana. A-N-A."</strong>
+          </div>
+
+          <h3>Práctica: Deletrea tu nombre</h3>
+          <p>Intenta deletrear tu nombre usando el alfabeto en inglés. Haz clic en las letras de arriba para escuchar cómo suenan.</p>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio</h3>
+
+          <div class="quiz-question" data-explanation="La J en inglés se pronuncia 'yei', no como en español.">
+            <div class="quiz-q">1. ¿Cómo se pronuncia la letra <strong>J</strong> en inglés?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">Jota (como en español)</div>
+              <div class="quiz-opt" data-correct="1">Yei</div>
+              <div class="quiz-opt" data-correct="0">Kha</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-explanation="El alfabeto inglés tiene 26 letras.">
+            <div class="quiz-q">2. ¿Cuántas letras tiene el alfabeto inglés?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">27</div>
+              <div class="quiz-opt" data-correct="0">25</div>
+              <div class="quiz-opt" data-correct="1">26</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="quiz-question" data-explanation="'How do you spell your name?' es la pregunta correcta para pedir que alguien deletree su nombre.">
+            <div class="quiz-q">3. ¿Qué pregunta usas para pedir que alguien deletree su nombre?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">What is your name?</div>
+              <div class="quiz-opt" data-correct="1">How do you spell your name?</div>
+              <div class="quiz-opt" data-correct="0">Can you write your name?</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-greetings]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">👋 Saludos y Presentaciones</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-alphabet -->
+
+    <!-- ======== LECCIÓN: SALUDOS ======== -->
+    <div class="lesson-panel" id="b-greetings" style="display:none">
+      <div class="lesson-content">
+        <h2>Saludos y Presentaciones</h2>
+        <div class="lesson-meta"><span>🌱 A1</span><span>⏱ 15 min</span><span>💬 Diálogo</span></div>
+
+        <div class="lesson-body">
+          <p>Los saludos son lo primero que necesitas aprender. Aquí tienes los más importantes con su pronunciación y contexto de uso.</p>
+
+          <h3>Saludos Formales e Informales</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Pronunciación</th><th>Español</th><th>Contexto</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="Hello">Hello 🔊</td><td class="ipa">/həˈloʊ/</td><td>Hola</td><td>Formal/Informal</td></tr>
+              <tr><td class="en" data-speak="Hi">Hi 🔊</td><td class="ipa">/haɪ/</td><td>Hola</td><td>Informal</td></tr>
+              <tr><td class="en" data-speak="Good morning">Good morning 🔊</td><td class="ipa">/ɡʊd ˈmɔːrnɪŋ/</td><td>Buenos días</td><td>Formal</td></tr>
+              <tr><td class="en" data-speak="Good afternoon">Good afternoon 🔊</td><td class="ipa">/ɡʊd ˌæftərˈnuːn/</td><td>Buenas tardes</td><td>Formal</td></tr>
+              <tr><td class="en" data-speak="Good evening">Good evening 🔊</td><td class="ipa">/ɡʊd ˈiːvnɪŋ/</td><td>Buenas noches (al llegar)</td><td>Formal</td></tr>
+              <tr><td class="en" data-speak="Good night">Good night 🔊</td><td class="ipa">/ɡʊd naɪt/</td><td>Buenas noches (al despedirse)</td><td>Formal</td></tr>
+            </tbody>
+          </table>
+
+          <h3>¿Cómo estás?</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="How are you?">How are you? 🔊</td><td>¿Cómo estás? (formal)</td></tr>
+              <tr><td class="en" data-speak="How are you doing?">How are you doing? 🔊</td><td>¿Cómo estás? / ¿Cómo te va?</td></tr>
+              <tr><td class="en" data-speak="What's up?">What's up? 🔊</td><td>¿Qué hay? / ¿Qué tal? (informal)</td></tr>
+              <tr><td class="en" data-speak="I'm fine, thank you">I'm fine, thank you 🔊</td><td>Estoy bien, gracias</td></tr>
+              <tr><td class="en" data-speak="Pretty good">Pretty good 🔊</td><td>Bastante bien</td></tr>
+              <tr><td class="en" data-speak="Not bad">Not bad 🔊</td><td>No está mal</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Presentaciones</h3>
+          <div class="grammar-box">
+            <div class="formula">My name is [nombre] &nbsp;|&nbsp; I'm [nombre]</div>
+            <p>Ambas formas significan "Me llamo..." o "Soy...".</p>
+          </div>
+
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="What is your name?">What is your name? 🔊</td><td>¿Cómo te llamas?</td></tr>
+              <tr><td class="en" data-speak="My name is Maria">My name is Maria 🔊</td><td>Me llamo María</td></tr>
+              <tr><td class="en" data-speak="Nice to meet you">Nice to meet you 🔊</td><td>Encantado/a de conocerte</td></tr>
+              <tr><td class="en" data-speak="Where are you from?">Where are you from? 🔊</td><td>¿De dónde eres?</td></tr>
+              <tr><td class="en" data-speak="I'm from Spain">I'm from Spain 🔊</td><td>Soy de España</td></tr>
+              <tr><td class="en" data-speak="How old are you?">How old are you? 🔊</td><td>¿Cuántos años tienes?</td></tr>
+              <tr><td class="en" data-speak="I am twenty-five years old">I am 25 years old 🔊</td><td>Tengo 25 años</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Diálogo: Primera Conversación</h3>
+          <div class="dialogue">
+            <div class="dialogue-line">
+              <div class="speaker speaker-a">A</div>
+              <div class="bubble"><span data-speak="Hi! My name is Tom. What's your name?">Hi! My name is Tom. What's your name? 🔊</span><div class="translation">¡Hola! Me llamo Tom. ¿Cómo te llamas?</div></div>
+            </div>
+            <div class="dialogue-line right">
+              <div class="speaker speaker-b">B</div>
+              <div class="bubble"><span data-speak="Hi Tom! I'm Maria. Nice to meet you!">Hi Tom! I'm Maria. Nice to meet you! 🔊</span><div class="translation">¡Hola Tom! Soy María. ¡Encantada de conocerte!</div></div>
+            </div>
+            <div class="dialogue-line">
+              <div class="speaker speaker-a">A</div>
+              <div class="bubble"><span data-speak="Nice to meet you too! Where are you from?">Nice to meet you too! Where are you from? 🔊</span><div class="translation">¡Igualmente! ¿De dónde eres?</div></div>
+            </div>
+            <div class="dialogue-line right">
+              <div class="speaker speaker-b">B</div>
+              <div class="bubble"><span data-speak="I'm from Mexico. And you?">I'm from Mexico. And you? 🔊</span><div class="translation">Soy de México. ¿Y tú?</div></div>
+            </div>
+            <div class="dialogue-line">
+              <div class="speaker speaker-a">A</div>
+              <div class="bubble"><span data-speak="I'm from Canada. How old are you?">I'm from Canada. How old are you? 🔊</span><div class="translation">Soy de Canadá. ¿Cuántos años tienes?</div></div>
+            </div>
+            <div class="dialogue-line right">
+              <div class="speaker speaker-b">B</div>
+              <div class="bubble"><span data-speak="I'm twenty-two years old.">I'm twenty-two years old. 🔊</span><div class="translation">Tengo 22 años.</div></div>
+            </div>
+          </div>
+
+          <h3>Despedidas</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th><th>Contexto</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="Goodbye">Goodbye 🔊</td><td>Adiós</td><td>Formal</td></tr>
+              <tr><td class="en" data-speak="Bye">Bye 🔊</td><td>Chao / Adiós</td><td>Informal</td></tr>
+              <tr><td class="en" data-speak="See you later">See you later 🔊</td><td>Hasta luego</td><td>Informal</td></tr>
+              <tr><td class="en" data-speak="See you tomorrow">See you tomorrow 🔊</td><td>Hasta mañana</td><td>Cualquier</td></tr>
+              <tr><td class="en" data-speak="Take care">Take care 🔊</td><td>Cuídate</td><td>Cualquier</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio</h3>
+          <div class="quiz-question" data-explanation="'Good evening' se usa como saludo al llegar (equivale a 'buenas noches' al llegar). 'Good night' se usa al despedirse.">
+            <div class="quiz-q">1. ¿Qué dices cuando llegas a una reunión por la noche?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">Good night</div>
+              <div class="quiz-opt" data-correct="1">Good evening</div>
+              <div class="quiz-opt" data-correct="0">Good morning</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="Para decir tu edad en inglés: 'I am [número] years old'.">
+            <div class="quiz-q">2. ¿Cómo dices "Tengo 30 años"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">I have 30 years</div>
+              <div class="quiz-opt" data-correct="0">My age is 30</div>
+              <div class="quiz-opt" data-correct="1">I am 30 years old</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="'Nice to meet you' = Encantado/a de conocerte. Se dice al conocer a alguien por primera vez.">
+            <div class="quiz-q">3. Completa: Al conocer a alguien dices: "________ to meet you!"</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">Good</div>
+              <div class="quiz-opt" data-correct="1">Nice</div>
+              <div class="quiz-opt" data-correct="0">Happy</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-numbers]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">🔢 Números en Inglés</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-greetings -->
+
+    <!-- ======== LECCIÓN: NÚMEROS ======== -->
+    <div class="lesson-panel" id="b-numbers" style="display:none">
+      <div class="lesson-content">
+        <h2>Números en Inglés</h2>
+        <div class="lesson-meta"><span>🌱 A1</span><span>⏱ 15 min</span><span>🔊 Pronunciación</span></div>
+
+        <div class="lesson-body">
+          <h3>Números del 1 al 20</h3>
+          <table class="vocab-table">
+            <thead><tr><th>#</th><th>Inglés</th><th>Pronunciación aproximada</th></tr></thead>
+            <tbody id="nums1to20"></tbody>
+          </table>
+
+          <h3>Decenas</h3>
+          <table class="vocab-table">
+            <thead><tr><th>#</th><th>Inglés</th><th>Nota</th></tr></thead>
+            <tbody>
+              <tr><td>20</td><td class="en" data-speak="twenty">Twenty 🔊</td><td>Veinte</td></tr>
+              <tr><td>30</td><td class="en" data-speak="thirty">Thirty 🔊</td><td>Treinta</td></tr>
+              <tr><td>40</td><td class="en" data-speak="forty">Forty 🔊</td><td>Cuarenta (sin 'u'!)</td></tr>
+              <tr><td>50</td><td class="en" data-speak="fifty">Fifty 🔊</td><td>Cincuenta</td></tr>
+              <tr><td>60</td><td class="en" data-speak="sixty">Sixty 🔊</td><td>Sesenta</td></tr>
+              <tr><td>70</td><td class="en" data-speak="seventy">Seventy 🔊</td><td>Setenta</td></tr>
+              <tr><td>80</td><td class="en" data-speak="eighty">Eighty 🔊</td><td>Ochenta</td></tr>
+              <tr><td>90</td><td class="en" data-speak="ninety">Ninety 🔊</td><td>Noventa</td></tr>
+              <tr><td>100</td><td class="en" data-speak="one hundred">One hundred 🔊</td><td>Cien</td></tr>
+              <tr><td>1000</td><td class="en" data-speak="one thousand">One thousand 🔊</td><td>Mil</td></tr>
+            </tbody>
+          </table>
+
+          <div class="grammar-box">
+            <div class="formula">Decena + guion + unidad</div>
+            <p>Para números compuestos (21–99) se une la decena y la unidad con un guion:</p>
+            <ul style="margin-left:1.5rem; margin-top:.5rem; font-size:.9rem;">
+              <li>21 = <strong data-speak="twenty-one">Twenty-one</strong></li>
+              <li>35 = <strong data-speak="thirty-five">Thirty-five</strong></li>
+              <li>99 = <strong data-speak="ninety-nine">Ninety-nine</strong></li>
+            </ul>
+          </div>
+
+          <h3>Números Ordinales</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Cardinal</th><th>Ordinal</th><th>Abrev.</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td data-speak="first">First 🔊</td><td>1st</td><td>Primero</td></tr>
+              <tr><td>2</td><td data-speak="second">Second 🔊</td><td>2nd</td><td>Segundo</td></tr>
+              <tr><td>3</td><td data-speak="third">Third 🔊</td><td>3rd</td><td>Tercero</td></tr>
+              <tr><td>4</td><td data-speak="fourth">Fourth 🔊</td><td>4th</td><td>Cuarto</td></tr>
+              <tr><td>5</td><td data-speak="fifth">Fifth 🔊</td><td>5th</td><td>Quinto</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box">
+            <strong>💡 Regla:</strong> Los ordinales del 4 en adelante se forman agregando <strong>-th</strong> al cardinal: six→sixth, seven→seventh. Las excepciones son: first, second, third, fifth, eighth (eight+h), ninth (nine-e+h), twelfth.
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio</h3>
+          <div class="quiz-question" data-explanation="forty se escribe sin 'u'. Es una excepción del inglés.">
+            <div class="quiz-q">1. ¿Cómo se escribe correctamente el número 40?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">fourty</div>
+              <div class="quiz-opt" data-correct="1">forty</div>
+              <div class="quiz-opt" data-correct="0">forty-one</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="56 = fifty (50) + guion + six (6) = fifty-six">
+            <div class="quiz-q">2. ¿Cómo se dice 56 en inglés?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">five-six</div>
+              <div class="quiz-opt" data-correct="1">fifty-six</div>
+              <div class="quiz-opt" data-correct="0">sixty-five</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="El ordinal de 3 es 'third', una forma irregular (no 'threeth').">
+            <div class="quiz-q">3. ¿Cuál es el ordinal de 3?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">threeth</div>
+              <div class="quiz-opt" data-correct="0">thirth</div>
+              <div class="quiz-opt" data-correct="1">third</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-colors]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">🎨 Colores y Adjetivos</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-numbers -->
+
+    <!-- ======== LECCIÓN: COLORES ======== -->
+    <div class="lesson-panel" id="b-colors" style="display:none">
+      <div class="lesson-content">
+        <h2>Colores y Adjetivos Básicos</h2>
+        <div class="lesson-meta"><span>🌱 A1</span><span>⏱ 15 min</span><span>📖 Vocabulario</span></div>
+
+        <div class="lesson-body">
+          <h3>Colores Principales</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Color</th><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td>🔴</td><td class="en" data-speak="red">Red 🔊</td><td>Rojo</td></tr>
+              <tr><td>🔵</td><td class="en" data-speak="blue">Blue 🔊</td><td>Azul</td></tr>
+              <tr><td>🟢</td><td class="en" data-speak="green">Green 🔊</td><td>Verde</td></tr>
+              <tr><td>🟡</td><td class="en" data-speak="yellow">Yellow 🔊</td><td>Amarillo</td></tr>
+              <tr><td>🟠</td><td class="en" data-speak="orange">Orange 🔊</td><td>Naranja</td></tr>
+              <tr><td>🟣</td><td class="en" data-speak="purple">Purple 🔊</td><td>Morado / Violeta</td></tr>
+              <tr><td>🩷</td><td class="en" data-speak="pink">Pink 🔊</td><td>Rosa</td></tr>
+              <tr><td>🟤</td><td class="en" data-speak="brown">Brown 🔊</td><td>Marrón / Café</td></tr>
+              <tr><td>⬛</td><td class="en" data-speak="black">Black 🔊</td><td>Negro</td></tr>
+              <tr><td>⬜</td><td class="en" data-speak="white">White 🔊</td><td>Blanco</td></tr>
+              <tr><td>🩶</td><td class="en" data-speak="gray">Gray 🔊</td><td>Gris</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Adjetivos Descriptivos Básicos</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th><th>Contrario</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="big">Big 🔊</td><td>Grande</td><td data-speak="small">Small / Little</td></tr>
+              <tr><td class="en" data-speak="tall">Tall 🔊</td><td>Alto</td><td data-speak="short">Short</td></tr>
+              <tr><td class="en" data-speak="fast">Fast 🔊</td><td>Rápido</td><td data-speak="slow">Slow</td></tr>
+              <tr><td class="en" data-speak="hot">Hot 🔊</td><td>Caliente</td><td data-speak="cold">Cold</td></tr>
+              <tr><td class="en" data-speak="old">Old 🔊</td><td>Viejo/Antiguo</td><td data-speak="new">New / Young</td></tr>
+              <tr><td class="en" data-speak="good">Good 🔊</td><td>Bueno</td><td data-speak="bad">Bad</td></tr>
+              <tr><td class="en" data-speak="happy">Happy 🔊</td><td>Feliz</td><td data-speak="sad">Sad</td></tr>
+              <tr><td class="en" data-speak="easy">Easy 🔊</td><td>Fácil</td><td data-speak="difficult">Difficult</td></tr>
+            </tbody>
+          </table>
+
+          <div class="grammar-box">
+            <div class="formula">Adjetivo + Sustantivo (en inglés)</div>
+            <p>En inglés, el adjetivo va <strong>ANTES</strong> del sustantivo (al revés que en español):</p>
+            <div class="example">
+              <div class="en" data-speak="a big house">a <strong>big</strong> house 🔊</div>
+              <div class="es">una casa <strong>grande</strong></div>
+            </div>
+            <div class="example">
+              <div class="en" data-speak="a red car">a <strong>red</strong> car 🔊</div>
+              <div class="es">un coche <strong>rojo</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio</h3>
+          <div class="quiz-question" data-explanation="En inglés el adjetivo va ANTES del sustantivo: 'a big house', no 'a house big'.">
+            <div class="quiz-q">1. ¿Cómo se dice "una casa grande" en inglés?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">a house big</div>
+              <div class="quiz-opt" data-correct="1">a big house</div>
+              <div class="quiz-opt" data-correct="0">big a house</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="'Brown' es marrón o café.">
+            <div class="quiz-q">2. ¿Qué color es "brown"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">Negro</div>
+              <div class="quiz-opt" data-correct="0">Gris</div>
+              <div class="quiz-opt" data-correct="1">Marrón</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-family]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">👨‍👩‍👧 La Familia</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-colors -->
+
+    <!-- ======== LECCIÓN: FAMILIA ======== -->
+    <div class="lesson-panel" id="b-family" style="display:none">
+      <div class="lesson-content">
+        <h2>La Familia</h2>
+        <div class="lesson-meta"><span>🌱 A1</span><span>⏱ 15 min</span><span>🃏 Flashcards</span></div>
+
+        <div class="lesson-body">
+          <h3>Miembros de la Familia</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="mother">Mother / Mom 🔊</td><td>Madre / Mamá</td></tr>
+              <tr><td class="en" data-speak="father">Father / Dad 🔊</td><td>Padre / Papá</td></tr>
+              <tr><td class="en" data-speak="parents">Parents 🔊</td><td>Padres</td></tr>
+              <tr><td class="en" data-speak="sister">Sister 🔊</td><td>Hermana</td></tr>
+              <tr><td class="en" data-speak="brother">Brother 🔊</td><td>Hermano</td></tr>
+              <tr><td class="en" data-speak="grandmother">Grandmother / Grandma 🔊</td><td>Abuela</td></tr>
+              <tr><td class="en" data-speak="grandfather">Grandfather / Grandpa 🔊</td><td>Abuelo</td></tr>
+              <tr><td class="en" data-speak="aunt">Aunt 🔊</td><td>Tía</td></tr>
+              <tr><td class="en" data-speak="uncle">Uncle 🔊</td><td>Tío</td></tr>
+              <tr><td class="en" data-speak="cousin">Cousin 🔊</td><td>Primo/a</td></tr>
+              <tr><td class="en" data-speak="son">Son 🔊</td><td>Hijo</td></tr>
+              <tr><td class="en" data-speak="daughter">Daughter 🔊</td><td>Hija</td></tr>
+              <tr><td class="en" data-speak="husband">Husband 🔊</td><td>Esposo / Marido</td></tr>
+              <tr><td class="en" data-speak="wife">Wife 🔊</td><td>Esposa / Mujer</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box">
+            <strong>💡 Nota:</strong> "Cousin" en inglés es neutro — sirve tanto para primo como prima. No hay distinción de género.
+          </div>
+
+          <h3>Práctica con Flashcards</h3>
+          <p>Haz clic en la tarjeta para ver la traducción.</p>
+        </div>
+
+        <!-- FLASHCARDS -->
+        <div class="flashcard-deck" data-cards='[
+          {"en":"Mother","ipa":"/ˈmʌðər/","es":"Madre / Mamá","example":"My mother is a doctor."},
+          {"en":"Father","ipa":"/ˈfɑːðər/","es":"Padre / Papá","example":"My father works in an office."},
+          {"en":"Sister","ipa":"/ˈsɪstər/","es":"Hermana","example":"I have two sisters."},
+          {"en":"Brother","ipa":"/ˈbrʌðər/","es":"Hermano","example":"My brother is fifteen years old."},
+          {"en":"Grandmother","ipa":"/ˈɡrænmʌðər/","es":"Abuela","example":"My grandmother cooks delicious food."},
+          {"en":"Grandfather","ipa":"/ˈɡrænfɑːðər/","es":"Abuelo","example":"My grandfather tells great stories."},
+          {"en":"Cousin","ipa":"/ˈkʌzɪn/","es":"Primo / Prima","example":"I have five cousins."},
+          {"en":"Aunt","ipa":"/ænt/","es":"Tía","example":"My aunt lives in Canada."},
+          {"en":"Uncle","ipa":"/ˈʌŋkəl/","es":"Tío","example":"Uncle John is very funny."}
+        ]'>
+          <p class="card-hint">Haz clic en la tarjeta para voltearla · 🔄</p>
+          <div class="flashcard-wrapper">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="card-word"></div>
+                <div class="card-ipa"></div>
+              </div>
+              <div class="flashcard-back">
+                <div class="card-trans"></div>
+                <div class="card-ex"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flashcard-controls">
+            <button class="fc-btn prev">← Anterior</button>
+            <span class="fc-progress"></span>
+            <button class="fc-btn next">Siguiente →</button>
+          </div>
+        </div>
+
+        <div class="quiz-section" style="margin-top:2rem;">
+          <h3>✏️ Ejercicio</h3>
+          <div class="quiz-question" data-explanation="'Daughter' = hija (femenino). 'Son' = hijo (masculino).">
+            <div class="quiz-q">1. ¿Qué significa "daughter"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">Hijo</div>
+              <div class="quiz-opt" data-correct="1">Hija</div>
+              <div class="quiz-opt" data-correct="0">Madre</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="'Cousin' en inglés es neutro, no hay primo/prima por separado.">
+            <div class="quiz-q">2. ¿Cuál es la palabra en inglés para "primo" y "prima"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">primo / prima</div>
+              <div class="quiz-opt" data-correct="1">cousin (para ambos)</div>
+              <div class="quiz-opt" data-correct="0">sibling</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-daily]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">🏠 Vida Cotidiana</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-family -->
+
+    <!-- ======== LECCIÓN: VIDA COTIDIANA ======== -->
+    <div class="lesson-panel" id="b-daily" style="display:none">
+      <div class="lesson-content">
+        <h2>Vocabulario de la Vida Cotidiana</h2>
+        <div class="lesson-meta"><span>🌱 A2</span><span>⏱ 20 min</span><span>📖 Vocabulario</span></div>
+
+        <div class="lesson-body">
+          <h3>La Casa</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="kitchen">Kitchen 🔊</td><td>Cocina</td></tr>
+              <tr><td class="en" data-speak="bedroom">Bedroom 🔊</td><td>Habitación / Dormitorio</td></tr>
+              <tr><td class="en" data-speak="bathroom">Bathroom 🔊</td><td>Baño</td></tr>
+              <tr><td class="en" data-speak="living room">Living room 🔊</td><td>Sala de estar</td></tr>
+              <tr><td class="en" data-speak="dining room">Dining room 🔊</td><td>Comedor</td></tr>
+              <tr><td class="en" data-speak="window">Window 🔊</td><td>Ventana</td></tr>
+              <tr><td class="en" data-speak="door">Door 🔊</td><td>Puerta</td></tr>
+            </tbody>
+          </table>
+
+          <h3>La Comida</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="breakfast">Breakfast 🔊</td><td>Desayuno</td></tr>
+              <tr><td class="en" data-speak="lunch">Lunch 🔊</td><td>Almuerzo / Comida</td></tr>
+              <tr><td class="en" data-speak="dinner">Dinner 🔊</td><td>Cena</td></tr>
+              <tr><td class="en" data-speak="water">Water 🔊</td><td>Agua</td></tr>
+              <tr><td class="en" data-speak="bread">Bread 🔊</td><td>Pan</td></tr>
+              <tr><td class="en" data-speak="milk">Milk 🔊</td><td>Leche</td></tr>
+              <tr><td class="en" data-speak="egg">Egg 🔊</td><td>Huevo</td></tr>
+              <tr><td class="en" data-speak="chicken">Chicken 🔊</td><td>Pollo</td></tr>
+              <tr><td class="en" data-speak="apple">Apple 🔊</td><td>Manzana</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Los Días de la Semana</h3>
+          <div class="info-box">En inglés, los días de la semana siempre se escriben con <strong>mayúscula</strong>.</div>
+          <table class="vocab-table">
+            <thead><tr><th>Inglés</th><th>Español</th><th>Abrev.</th></tr></thead>
+            <tbody>
+              <tr><td data-speak="Monday">Monday 🔊</td><td>Lunes</td><td>Mon</td></tr>
+              <tr><td data-speak="Tuesday">Tuesday 🔊</td><td>Martes</td><td>Tue</td></tr>
+              <tr><td data-speak="Wednesday">Wednesday 🔊</td><td>Miércoles</td><td>Wed</td></tr>
+              <tr><td data-speak="Thursday">Thursday 🔊</td><td>Jueves</td><td>Thu</td></tr>
+              <tr><td data-speak="Friday">Friday 🔊</td><td>Viernes</td><td>Fri</td></tr>
+              <tr><td data-speak="Saturday">Saturday 🔊</td><td>Sábado</td><td>Sat</td></tr>
+              <tr><td data-speak="Sunday">Sunday 🔊</td><td>Domingo</td><td>Sun</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Los Meses</h3>
+          <table class="vocab-table">
+            <thead><tr><th>#</th><th>Inglés</th><th>Español</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td data-speak="January">January</td><td>Enero</td></tr>
+              <tr><td>2</td><td data-speak="February">February</td><td>Febrero</td></tr>
+              <tr><td>3</td><td data-speak="March">March</td><td>Marzo</td></tr>
+              <tr><td>4</td><td data-speak="April">April</td><td>Abril</td></tr>
+              <tr><td>5</td><td data-speak="May">May</td><td>Mayo</td></tr>
+              <tr><td>6</td><td data-speak="June">June</td><td>Junio</td></tr>
+              <tr><td>7</td><td data-speak="July">July</td><td>Julio</td></tr>
+              <tr><td>8</td><td data-speak="August">August</td><td>Agosto</td></tr>
+              <tr><td>9</td><td data-speak="September">September</td><td>Septiembre</td></tr>
+              <tr><td>10</td><td data-speak="October">October</td><td>Octubre</td></tr>
+              <tr><td>11</td><td data-speak="November">November</td><td>Noviembre</td></tr>
+              <tr><td>12</td><td data-speak="December">December</td><td>Diciembre</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-present]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">📘 Presente Simple</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-daily -->
+
+    <!-- ======== LECCIÓN: PRESENTE SIMPLE ======== -->
+    <div class="lesson-panel" id="b-present" style="display:none">
+      <div class="lesson-content">
+        <h2>Presente Simple</h2>
+        <div class="lesson-meta"><span>🌱 A2</span><span>⏱ 25 min</span><span>📘 Gramática</span></div>
+
+        <div class="lesson-body">
+          <p>El <strong>presente simple</strong> se usa para hablar de hechos, hábitos, rutinas y verdades generales.</p>
+
+          <h3>Estructura</h3>
+          <div class="grammar-box">
+            <div class="formula">Sujeto + Verbo (base) + Complemento</div>
+            <p>Con <strong>he / she / it</strong>, se agrega <strong>-s</strong> al verbo.</p>
+          </div>
+
+          <table class="vocab-table">
+            <thead><tr><th>Pronombre</th><th>Verbo "work"</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+              <tr><td>I</td><td>work</td><td data-speak="I work every day">I work every day</td></tr>
+              <tr><td>You</td><td>work</td><td data-speak="You work at home">You work at home</td></tr>
+              <tr><td>He / She / It</td><td>works</td><td data-speak="She works in a hospital">She works in a hospital</td></tr>
+              <tr><td>We</td><td>work</td><td data-speak="We work together">We work together</td></tr>
+              <tr><td>They</td><td>work</td><td data-speak="They work a lot">They work a lot</td></tr>
+            </tbody>
+          </table>
+
+          <div class="tip-box">
+            <strong>💡 Reglas de la -s:</strong><br/>
+            • Verbos terminados en -o, -s, -x, -z, -ch, -sh → agregar <strong>-es</strong>: go→goes, watch→watches<br/>
+            • Verbos terminados en consonante + y → cambiar y por <strong>-ies</strong>: study→studies<br/>
+            • Los demás → agregar <strong>-s</strong>: eat→eats, run→runs
+          </div>
+
+          <h3>Forma Negativa</h3>
+          <div class="grammar-box">
+            <div class="formula">Sujeto + do not (don't) / does not (doesn't) + Verbo base</div>
+          </div>
+          <div class="example">
+            <div class="en" data-speak="I don't eat meat">I don't eat meat. 🔊</div>
+            <div class="es">Yo no como carne.</div>
+          </div>
+          <div class="example">
+            <div class="en" data-speak="She doesn't like coffee">She doesn't like coffee. 🔊</div>
+            <div class="es">A ella no le gusta el café.</div>
+          </div>
+
+          <h3>Forma Interrogativa</h3>
+          <div class="grammar-box">
+            <div class="formula">Do / Does + Sujeto + Verbo base?</div>
+          </div>
+          <div class="example">
+            <div class="en" data-speak="Do you speak English?">Do you speak English? 🔊</div>
+            <div class="es">¿Hablas inglés?</div>
+          </div>
+          <div class="example">
+            <div class="en" data-speak="Does he live here?">Does he live here? 🔊</div>
+            <div class="es">¿Vive él aquí?</div>
+          </div>
+
+          <h3>Adverbios de Frecuencia</h3>
+          <table class="vocab-table">
+            <thead><tr><th>Adverbio</th><th>Significado</th><th>Frecuencia</th></tr></thead>
+            <tbody>
+              <tr><td data-speak="always">Always 🔊</td><td>Siempre</td><td>100%</td></tr>
+              <tr><td data-speak="usually">Usually 🔊</td><td>Normalmente</td><td>~80%</td></tr>
+              <tr><td data-speak="often">Often 🔊</td><td>A menudo</td><td>~60%</td></tr>
+              <tr><td data-speak="sometimes">Sometimes 🔊</td><td>A veces</td><td>~40%</td></tr>
+              <tr><td data-speak="rarely">Rarely 🔊</td><td>Raramente</td><td>~20%</td></tr>
+              <tr><td data-speak="never">Never 🔊</td><td>Nunca</td><td>0%</td></tr>
+            </tbody>
+          </table>
+          <div class="info-box">Los adverbios de frecuencia van <strong>antes del verbo principal</strong> y <strong>después del verbo "to be"</strong>:<br/>
+            <em>She always drinks coffee.</em> / <em>He is never late.</em></div>
+        </div>
+
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio</h3>
+          <div class="quiz-question" data-explanation="He/She/It requieren -s en el verbo. 'She works' es correcto.">
+            <div class="quiz-q">1. ¿Cuál es la forma correcta? "She ___ in a bank."</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">work</div>
+              <div class="quiz-opt" data-correct="1">works</div>
+              <div class="quiz-opt" data-correct="0">is work</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="Con 'he', la negación es 'doesn't' (does not) + verbo en base.">
+            <div class="quiz-q">2. ¿Cómo se dice "Él no come carne"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">He don't eat meat.</div>
+              <div class="quiz-opt" data-correct="1">He doesn't eat meat.</div>
+              <div class="quiz-opt" data-correct="0">He doesn't eats meat.</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="'Always' va ANTES del verbo principal: 'I always drink coffee.'">
+            <div class="quiz-q">3. ¿Dónde va "always" en la oración? "I ___ drink coffee in the morning."</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="1">I always drink coffee...</div>
+              <div class="quiz-opt" data-correct="0">I drink always coffee...</div>
+              <div class="quiz-opt" data-correct="0">I drink coffee always...</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="document.querySelector('[data-target=b-questions]').click()">
+          <div><div class="label">Siguiente lección</div><div class="title">❓ Preguntas Básicas</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-present -->
+
+    <!-- ======== LECCIÓN: PREGUNTAS ======== -->
+    <div class="lesson-panel" id="b-questions" style="display:none">
+      <div class="lesson-content">
+        <h2>Preguntas Básicas con WH-</h2>
+        <div class="lesson-meta"><span>🌱 A2</span><span>⏱ 20 min</span><span>📘 Gramática</span></div>
+
+        <div class="lesson-body">
+          <p>Las <strong>WH-questions</strong> son preguntas que empiezan con palabras interrogativas. Son fundamentales para comunicarte en inglés.</p>
+
+          <table class="vocab-table">
+            <thead><tr><th>Pregunta</th><th>Significado</th><th>Ejemplo</th></tr></thead>
+            <tbody>
+              <tr><td class="en" data-speak="What">What? 🔊</td><td>¿Qué? / ¿Cuál?</td><td data-speak="What is your name?">What is your name?</td></tr>
+              <tr><td class="en" data-speak="Where">Where? 🔊</td><td>¿Dónde?</td><td data-speak="Where do you live?">Where do you live?</td></tr>
+              <tr><td class="en" data-speak="When">When? 🔊</td><td>¿Cuándo?</td><td data-speak="When is your birthday?">When is your birthday?</td></tr>
+              <tr><td class="en" data-speak="Who">Who? 🔊</td><td>¿Quién?</td><td data-speak="Who is that person?">Who is that person?</td></tr>
+              <tr><td class="en" data-speak="Why">Why? 🔊</td><td>¿Por qué?</td><td data-speak="Why are you sad?">Why are you sad?</td></tr>
+              <tr><td class="en" data-speak="How">How? 🔊</td><td>¿Cómo?</td><td data-speak="How are you?">How are you?</td></tr>
+              <tr><td class="en" data-speak="How much">How much? 🔊</td><td>¿Cuánto? (incontable)</td><td data-speak="How much is it?">How much is it?</td></tr>
+              <tr><td class="en" data-speak="How many">How many? 🔊</td><td>¿Cuántos? (contable)</td><td data-speak="How many people are there?">How many people are there?</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Diálogo: En la Tienda</h3>
+          <div class="dialogue">
+            <div class="dialogue-line">
+              <div class="speaker speaker-a">A</div>
+              <div class="bubble"><span data-speak="Excuse me, how much is this bag?">Excuse me, how much is this bag? 🔊</span><div class="translation">Disculpe, ¿cuánto cuesta esta bolsa?</div></div>
+            </div>
+            <div class="dialogue-line right">
+              <div class="speaker speaker-b">B</div>
+              <div class="bubble"><span data-speak="It's twenty-five dollars.">It's twenty-five dollars. 🔊</span><div class="translation">Son veinticinco dólares.</div></div>
+            </div>
+            <div class="dialogue-line">
+              <div class="speaker speaker-a">A</div>
+              <div class="bubble"><span data-speak="Where is the fitting room?">Where is the fitting room? 🔊</span><div class="translation">¿Dónde está el probador?</div></div>
+            </div>
+            <div class="dialogue-line right">
+              <div class="speaker speaker-b">B</div>
+              <div class="bubble"><span data-speak="It's over there, on the right.">It's over there, on the right. 🔊</span><div class="translation">Está allá, a la derecha.</div></div>
+            </div>
+          </div>
+
+          <h3>Ejercicio: Rellena el hueco</h3>
+          <p>Completa la pregunta con la palabra correcta:</p>
+
+          <div class="fill-blank" style="margin:.75rem 0; display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;">
+            <span>___ do you live?</span>
+            <input type="text" data-answer="Where" placeholder="tu respuesta" style="border:2px solid var(--border); border-radius:6px; padding:.4rem .75rem; font-size:.9rem; width:120px;"/>
+            <button class="check-btn" style="padding:.4rem .85rem; background:var(--inter); color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:.85rem;">Verificar</button>
+            <span class="blank-feedback" style="display:none; font-size:.85rem;"></span>
+          </div>
+
+          <div class="fill-blank" style="margin:.75rem 0; display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;">
+            <span>___ is your birthday?</span>
+            <input type="text" data-answer="When" placeholder="tu respuesta" style="border:2px solid var(--border); border-radius:6px; padding:.4rem .75rem; font-size:.9rem; width:120px;"/>
+            <button class="check-btn" style="padding:.4rem .85rem; background:var(--inter); color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:.85rem;">Verificar</button>
+            <span class="blank-feedback" style="display:none; font-size:.85rem;"></span>
+          </div>
+
+          <div class="fill-blank" style="margin:.75rem 0; display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;">
+            <span>___ many students are in the class?</span>
+            <input type="text" data-answer="How" placeholder="tu respuesta" style="border:2px solid var(--border); border-radius:6px; padding:.4rem .75rem; font-size:.9rem; width:120px;"/>
+            <button class="check-btn" style="padding:.4rem .85rem; background:var(--inter); color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:.85rem;">Verificar</button>
+            <span class="blank-feedback" style="display:none; font-size:.85rem;"></span>
+          </div>
+        </div>
+
+        <div class="quiz-section">
+          <h3>✏️ Ejercicio Final</h3>
+          <div class="quiz-question" data-explanation="'How many' se usa con sustantivos contables: 'how many books', 'how many people'.">
+            <div class="quiz-q">1. ¿Qué pregunta usas para cosas que puedes contar?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">How much</div>
+              <div class="quiz-opt" data-correct="1">How many</div>
+              <div class="quiz-opt" data-correct="0">How</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-explanation="'Why' = ¿por qué? Se responde con 'Because...' (porque...)">
+            <div class="quiz-q">2. ¿Qué significa "Why"?</div>
+            <div class="quiz-options">
+              <div class="quiz-opt" data-correct="0">¿Cuándo?</div>
+              <div class="quiz-opt" data-correct="0">¿Dónde?</div>
+              <div class="quiz-opt" data-correct="1">¿Por qué?</div>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button class="quiz-submit">Ver resultado</button>
+          <div class="quiz-score"><div class="score-num"></div><p></p></div>
+        </div>
+
+        <div class="next-lesson" onclick="window.location.href='intermediate.html'">
+          <div><div class="label">¡Completaste el nivel básico!</div><div class="title">🚀 Ir al Nivel Intermedio</div></div>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div><!-- /b-questions -->
+
+  </main>
+</div><!-- /lesson-layout -->
+
+<footer>
+  <p><strong>EnglishPath</strong> — Nivel Básico (A1–A2)</p>
+</footer>
+
+<script src="../js/app.js"></script>
+<script>
+  // Alphabet grid
+  const letters = [
+    ['A','ei'],['B','bi'],['C','si'],['D','di'],['E','i'],
+    ['F','ef'],['G','yi'],['H','eich'],['I','ai'],['J','yei'],
+    ['K','kei'],['L','el'],['M','em'],['N','en'],['O','ou'],
+    ['P','pi'],['Q','kiu'],['R','ar'],['S','es'],['T','ti'],
+    ['U','iu'],['V','vi'],['W','dáb.liu'],['X','eks'],['Y','uai'],['Z','zi']
+  ];
+  const grid = document.getElementById('alphabetGrid');
+  if (grid) {
+    letters.forEach(([l, pron]) => {
+      const card = document.createElement('div');
+      card.className = 'phon-card';
+      card.dataset.speak = l;
+      card.innerHTML = `<div class="symbol">${l}</div><div class="example-word">${pron}</div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  // Numbers 1-20
+  const nums = [
+    [1,'One','uan'],[2,'Two','tu'],[3,'Three','zri'],[4,'Four','for'],
+    [5,'Five','faiv'],[6,'Six','siks'],[7,'Seven','seven'],[8,'Eight','eit'],
+    [9,'Nine','nain'],[10,'Ten','ten'],[11,'Eleven','ileven'],[12,'Twelve','twelv'],
+    [13,'Thirteen','zertin'],[14,'Fourteen','fortin'],[15,'Fifteen','fiftin'],
+    [16,'Sixteen','sikstin'],[17,'Seventeen','seventin'],[18,'Eighteen','eitin'],
+    [19,'Nineteen','naintin'],[20,'Twenty','tuenti']
+  ];
+  const tbody = document.getElementById('nums1to20');
+  if (tbody) {
+    nums.forEach(([n, en, pron]) => {
+      tbody.innerHTML += `<tr><td>${n}</td><td class="en" data-speak="${en}">${en} 🔊</td><td class="ipa">${pron}</td></tr>`;
+    });
+  }
+</script>
+</body>
+</html>

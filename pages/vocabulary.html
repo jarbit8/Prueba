@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vocabulario | EnglishPath</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .vocab-controls { display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:1.5rem; align-items:center; }
+    .filter-btn { padding:.4rem 1rem; border-radius:100px; border:2px solid var(--border); background:#fff; font-size:.85rem; cursor:pointer; transition:all .15s; font-weight:500; }
+    .filter-btn.active { border-color:var(--inter); background:var(--inter-light); color:var(--inter-dark); }
+    .vocab-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
+    .word-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1rem; cursor:pointer; transition:all .2s; }
+    .word-card:hover { border-color:var(--inter); box-shadow:var(--shadow); transform:translateY(-2px); }
+    .word-card .word { font-size:1.1rem; font-weight:700; margin-bottom:.25rem; }
+    .word-card .ipa-small { font-family:monospace; font-size:.78rem; color:var(--text-muted); }
+    .word-card .trans { font-size:.875rem; color:var(--text-muted); margin-top:.4rem; }
+    .word-card .level-dot { width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:.4rem; }
+    .dot-basic{background:var(--basic);} .dot-inter{background:var(--inter);} .dot-adv{background:var(--adv);}
+    .search-input { padding:.55rem 1rem; border:2px solid var(--border); border-radius:100px; font-size:.9rem; outline:none; min-width:220px; transition:border-color .15s; }
+    .search-input:focus { border-color:var(--inter); }
+    .big-deck { max-width:640px; margin:0 auto; }
+    .category-title { font-size:1.5rem; font-weight:800; margin:2rem 0 1rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo"><span>📚</span> EnglishPath</a>
+  <ul class="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li><a href="basic.html">Básico</a></li>
+    <li><a href="intermediate.html">Intermedio</a></li>
+    <li><a href="advanced.html">Avanzado</a></li>
+    <li><a href="vocabulary.html" class="active">Vocabulario</a></li>
+  </ul>
+</nav>
+
+<div style="padding:2.5rem 2rem; max-width:1100px; margin:0 auto;">
+
+  <h1 style="font-size:2rem;font-weight:800;margin-bottom:.4rem;">📖 Banco de Vocabulario</h1>
+  <p style="color:var(--text-muted);margin-bottom:2rem;">Más de 200 palabras organizadas por nivel y categoría. Haz clic para escuchar y practicar.</p>
+
+  <!-- MODO: FLASHCARDS -->
+  <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:2.5rem;">
+    <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:1rem;">🃏 Modo Flashcard — Repaso Rápido</h2>
+
+    <div class="big-deck flashcard-deck" data-cards='[
+      {"en":"abundant","ipa":"/əˈbʌndənt/","es":"abundante","example":"The region has abundant natural resources."},
+      {"en":"ambiguous","ipa":"/æmˈbɪɡjuəs/","es":"ambiguo","example":"The contract contained ambiguous language."},
+      {"en":"consequence","ipa":"/ˈkɒnsɪkwəns/","es":"consecuencia","example":"Think about the consequences of your actions."},
+      {"en":"deteriorate","ipa":"/dɪˈtɪəriəreɪt/","es":"deteriorarse","example":"The situation continued to deteriorate."},
+      {"en":"enthusiasm","ipa":"/ɪnˈθjuːziæzəm/","es":"entusiasmo","example":"She tackled the project with great enthusiasm."},
+      {"en":"fluctuate","ipa":"/ˈflʌktʃueɪt/","es":"fluctuar","example":"Temperatures fluctuate greatly in this region."},
+      {"en":"genuine","ipa":"/ˈdʒenjuɪn/","es":"genuino, auténtico","example":"Her smile was genuine."},
+      {"en":"highlight","ipa":"/ˈhaɪlaɪt/","es":"destacar / punto culminante","example":"She highlighted the key points."},
+      {"en":"inevitable","ipa":"/ɪnˈevɪtəbəl/","es":"inevitable","example":"Change is inevitable."},
+      {"en":"justify","ipa":"/ˈdʒʌstɪfaɪ/","es":"justificar","example":"How can you justify that decision?"},
+      {"en":"keen","ipa":"/kiːn/","es":"entusiasmado / agudo","example":"She is keen on learning languages."},
+      {"en":"leverage","ipa":"/ˈlevərɪdʒ/","es":"aprovechar / apalancamiento","example":"We can leverage technology to solve this."},
+      {"en":"meticulous","ipa":"/məˈtɪkjʊləs/","es":"meticuloso","example":"He is meticulous about details."},
+      {"en":"nuance","ipa":"/ˈnjuːɑːns/","es":"matiz","example":"The report captures all the nuances."},
+      {"en":"overwhelm","ipa":"/ˌoʊvərˈwelm/","es":"abrumar / superar","example":"Do not let stress overwhelm you."}
+    ]'>
+      <p class="card-hint">Haz clic en la tarjeta para ver la traducción · 🔄</p>
+      <div class="flashcard-wrapper">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">
+            <div class="card-word"></div>
+            <div class="card-ipa"></div>
+          </div>
+          <div class="flashcard-back">
+            <div class="card-trans"></div>
+            <div class="card-ex"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flashcard-controls">
+        <button class="fc-btn know">✓ Lo sé</button>
+        <span class="fc-progress"></span>
+        <button class="fc-btn review">↩ Repasar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BÚSQUEDA Y FILTROS -->
+  <div class="vocab-controls">
+    <input class="search-input" id="searchInput" type="text" placeholder="🔍 Buscar palabra..." />
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="basic">🌱 Básico</button>
+    <button class="filter-btn" data-filter="inter">🚀 Intermedio</button>
+    <button class="filter-btn" data-filter="adv">🎓 Avanzado</button>
+  </div>
+
+  <!-- WORD GRID -->
+  <div class="vocab-grid" id="vocabGrid"></div>
+
+</div>
+
+<footer>
+  <p><strong>EnglishPath</strong> — Banco de Vocabulario</p>
+</footer>
+
+<script src="../js/app.js"></script>
+<script>
+  const words = [
+    // BASIC
+    {en:"hello",ipa:"/həˈloʊ/",es:"hola",level:"basic"},
+    {en:"goodbye",ipa:"/ɡʊdˈbaɪ/",es:"adiós",level:"basic"},
+    {en:"please",ipa:"/pliːz/",es:"por favor",level:"basic"},
+    {en:"thank you",ipa:"/ˈθæŋk juː/",es:"gracias",level:"basic"},
+    {en:"yes",ipa:"/jes/",es:"sí",level:"basic"},
+    {en:"no",ipa:"/noʊ/",es:"no",level:"basic"},
+    {en:"water",ipa:"/ˈwɔːtər/",es:"agua",level:"basic"},
+    {en:"food",ipa:"/fuːd/",es:"comida",level:"basic"},
+    {en:"house",ipa:"/haʊs/",es:"casa",level:"basic"},
+    {en:"family",ipa:"/ˈfæmɪli/",es:"familia",level:"basic"},
+    {en:"friend",ipa:"/frend/",es:"amigo/a",level:"basic"},
+    {en:"book",ipa:"/bʊk/",es:"libro",level:"basic"},
+    {en:"school",ipa:"/skuːl/",es:"escuela",level:"basic"},
+    {en:"work",ipa:"/wɜːrk/",es:"trabajo / trabajar",level:"basic"},
+    {en:"time",ipa:"/taɪm/",es:"tiempo / hora",level:"basic"},
+    {en:"day",ipa:"/deɪ/",es:"día",level:"basic"},
+    {en:"money",ipa:"/ˈmʌni/",es:"dinero",level:"basic"},
+    {en:"happy",ipa:"/ˈhæpi/",es:"feliz",level:"basic"},
+    {en:"big",ipa:"/bɪɡ/",es:"grande",level:"basic"},
+    {en:"small",ipa:"/smɔːl/",es:"pequeño",level:"basic"},
+    {en:"good",ipa:"/ɡʊd/",es:"bueno",level:"basic"},
+    {en:"bad",ipa:"/bæd/",es:"malo",level:"basic"},
+    {en:"eat",ipa:"/iːt/",es:"comer",level:"basic"},
+    {en:"drink",ipa:"/drɪŋk/",es:"beber",level:"basic"},
+    {en:"sleep",ipa:"/sliːp/",es:"dormir",level:"basic"},
+    // INTERMEDIATE
+    {en:"achieve",ipa:"/əˈtʃiːv/",es:"lograr / alcanzar",level:"inter"},
+    {en:"behavior",ipa:"/bɪˈheɪvjər/",es:"comportamiento",level:"inter"},
+    {en:"challenge",ipa:"/ˈtʃælɪndʒ/",es:"desafío / desafiar",level:"inter"},
+    {en:"communicate",ipa:"/kəˈmjuːnɪkeɪt/",es:"comunicar",level:"inter"},
+    {en:"decision",ipa:"/dɪˈsɪʒən/",es:"decisión",level:"inter"},
+    {en:"efficient",ipa:"/ɪˈfɪʃənt/",es:"eficiente",level:"inter"},
+    {en:"flexible",ipa:"/ˈfleksɪbəl/",es:"flexible",level:"inter"},
+    {en:"improve",ipa:"/ɪmˈpruːv/",es:"mejorar",level:"inter"},
+    {en:"involve",ipa:"/ɪnˈvɒlv/",es:"involucrar",level:"inter"},
+    {en:"manage",ipa:"/ˈmænɪdʒ/",es:"gestionar / manejar",level:"inter"},
+    {en:"opportunity",ipa:"/ˌɒpəˈtjuːnɪti/",es:"oportunidad",level:"inter"},
+    {en:"prevent",ipa:"/prɪˈvent/",es:"prevenir",level:"inter"},
+    {en:"require",ipa:"/rɪˈkwaɪər/",es:"requerir",level:"inter"},
+    {en:"significant",ipa:"/sɪɡˈnɪfɪkənt/",es:"significativo",level:"inter"},
+    {en:"strategy",ipa:"/ˈstrætɪdʒi/",es:"estrategia",level:"inter"},
+    {en:"support",ipa:"/səˈpɔːrt/",es:"apoyo / apoyar",level:"inter"},
+    {en:"tendency",ipa:"/ˈtendənsi/",es:"tendencia",level:"inter"},
+    {en:"valuable",ipa:"/ˈvæljuəbəl/",es:"valioso",level:"inter"},
+    {en:"concern",ipa:"/kənˈsɜːrn/",es:"preocupación / preocupar",level:"inter"},
+    {en:"benefit",ipa:"/ˈbenɪfɪt/",es:"beneficio",level:"inter"},
+    // ADVANCED
+    {en:"ambiguous",ipa:"/æmˈbɪɡjuəs/",es:"ambiguo",level:"adv"},
+    {en:"assertive",ipa:"/əˈsɜːrtɪv/",es:"asertivo",level:"adv"},
+    {en:"comprehensive",ipa:"/ˌkɒmprɪˈhensɪv/",es:"exhaustivo / integral",level:"adv"},
+    {en:"contemplate",ipa:"/ˈkɒntəmpleɪt/",es:"contemplar / considerar",level:"adv"},
+    {en:"deteriorate",ipa:"/dɪˈtɪəriəreɪt/",es:"deteriorarse",level:"adv"},
+    {en:"elaborate",ipa:"/ɪˈlæbərɪt/",es:"elaborado / desarrollar",level:"adv"},
+    {en:"facilitate",ipa:"/fəˈsɪlɪteɪt/",es:"facilitar",level:"adv"},
+    {en:"genuine",ipa:"/ˈdʒenjuɪn/",es:"genuino / auténtico",level:"adv"},
+    {en:"inevitable",ipa:"/ɪnˈevɪtəbəl/",es:"inevitable",level:"adv"},
+    {en:"meticulous",ipa:"/məˈtɪkjʊləs/",es:"meticuloso",level:"adv"},
+    {en:"nuance",ipa:"/ˈnjuːɑːns/",es:"matiz",level:"adv"},
+    {en:"paradigm",ipa:"/ˈpærədaɪm/",es:"paradigma",level:"adv"},
+    {en:"profound",ipa:"/prəˈfaʊnd/",es:"profundo",level:"adv"},
+    {en:"rhetoric",ipa:"/ˈretərɪk/",es:"retórica",level:"adv"},
+    {en:"scrutinize",ipa:"/ˈskruːtɪnaɪz/",es:"escudriñar / examinar",level:"adv"},
+    {en:"sophisticated",ipa:"/səˈfɪstɪkeɪtɪd/",es:"sofisticado",level:"adv"},
+    {en:"substantiate",ipa:"/səbˈstænʃieɪt/",es:"fundamentar / corroborar",level:"adv"},
+    {en:"undermine",ipa:"/ˌʌndərˈmaɪn/",es:"socavar / debilitar",level:"adv"},
+    {en:"unprecedented",ipa:"/ʌnˈpresɪdentɪd/",es:"sin precedentes",level:"adv"},
+    {en:"volatile",ipa:"/ˈvɒlətaɪl/",es:"volátil",level:"adv"},
+  ];
+
+  const grid = document.getElementById('vocabGrid');
+  const search = document.getElementById('searchInput');
+  const filters = document.querySelectorAll('.filter-btn');
+  let activeFilter = 'all';
+
+  function renderWords(list) {
+    grid.innerHTML = '';
+    if (!list.length) {
+      grid.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1;">No se encontraron palabras.</p>';
+      return;
+    }
+    list.forEach(w => {
+      const card = document.createElement('div');
+      card.className = 'word-card';
+      card.dataset.speak = w.en;
+      const dotClass = w.level === 'basic' ? 'dot-basic' : w.level === 'inter' ? 'dot-inter' : 'dot-adv';
+      card.innerHTML = `
+        <div style="display:flex;align-items:center;margin-bottom:.25rem;">
+          <span class="level-dot ${dotClass}"></span>
+          <span class="word">${w.en}</span>
+          <span style="margin-left:auto;font-size:.9rem;opacity:.5;">🔊</span>
+        </div>
+        <div class="ipa-small">${w.ipa}</div>
+        <div class="trans">${w.es}</div>
+      `;
+      grid.appendChild(card);
+    });
+    initPronunciation();
+  }
+
+  function filterAndRender() {
+    const query = search.value.toLowerCase();
+    const filtered = words.filter(w => {
+      const matchLevel = activeFilter === 'all' || w.level === activeFilter;
+      const matchQuery = !query || w.en.includes(query) || w.es.includes(query);
+      return matchLevel && matchQuery;
+    });
+    renderWords(filtered);
+  }
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      filterAndRender();
+    });
+  });
+
+  search.addEventListener('input', filterAndRender);
+
+  function initPronunciation() {
+    document.querySelectorAll('[data-speak]').forEach(el => {
+      el.onclick = () => {
+        if ('speechSynthesis' in window) {
+          const utt = new SpeechSynthesisUtterance(el.dataset.speak);
+          utt.lang = 'en-US'; utt.rate = 0.85;
+          speechSynthesis.speak(utt);
+        }
+      };
+    });
+  }
+
+  renderWords(words);
+</script>
+</body>
+</html>

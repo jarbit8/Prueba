@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EnglishPath – Aprende Inglés de Cero a Avanzado</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero-progress {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 700px;
+      margin: 2.5rem auto 0;
+    }
+    .hp-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 10px;
+      padding: 1rem;
+      backdrop-filter: blur(8px);
+      text-align: left;
+    }
+    .hp-card .hp-label { font-size: .8rem; opacity: .7; margin-bottom: .4rem; }
+    .hp-card .hp-bar   { height: 5px; background: rgba(255,255,255,.2); border-radius: 100px; overflow: hidden; }
+    .hp-card .hp-fill  { height: 5px; background: #fbbf24; border-radius: 100px; width: 0%; transition: width .5s; }
+    .hp-card .hp-pct   { font-size: .75rem; opacity: .7; margin-top: .3rem; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span>📚</span> EnglishPath
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="pages/basic.html">Básico</a></li>
+    <li><a href="pages/intermediate.html">Intermedio</a></li>
+    <li><a href="pages/advanced.html">Avanzado</a></li>
+    <li><a href="pages/vocabulary.html">Vocabulario</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Aprende <em>Inglés</em><br/>de Cero a Avanzado</h1>
+    <p>Lecciones interactivas, ejercicios prácticos y tarjetas de vocabulario.<br/>Todo lo que necesitas en un solo lugar.</p>
+    <div class="hero-badges">
+      <span class="badge">🆓 100% Gratis</span>
+      <span class="badge">🎯 A1 → C2</span>
+      <span class="badge">🗣️ Pronunciación</span>
+      <span class="badge">📝 Ejercicios</span>
+      <span class="badge">🃏 Flashcards</span>
+    </div>
+    <a href="pages/basic.html" class="cta-btn">▶ Comenzar Ahora</a>
+
+    <div class="hero-progress" id="heroProgress">
+      <div class="hp-card">
+        <div class="hp-label">Básico (A1–A2)</div>
+        <div class="hp-bar"><div class="hp-fill" id="pb-basic"></div></div>
+        <div class="hp-pct" id="pct-basic">0% completado</div>
+      </div>
+      <div class="hp-card">
+        <div class="hp-label">Intermedio (B1–B2)</div>
+        <div class="hp-bar"><div class="hp-fill" id="pb-inter"></div></div>
+        <div class="hp-pct" id="pct-inter">0% completado</div>
+      </div>
+      <div class="hp-card">
+        <div class="hp-label">Avanzado (C1–C2)</div>
+        <div class="hp-bar"><div class="hp-fill" id="pb-adv"></div></div>
+        <div class="hp-pct" id="pct-adv">0% completado</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Niveles (A1–C2)</div></div>
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Lecciones</div></div>
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Palabras con flashcards</div></div>
+  <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Ejercicios interactivos</div></div>
+</div>
+
+<!-- LEVELS -->
+<section class="section" style="background:#fff;">
+  <div class="section-title">
+    <h2>Elige tu Nivel</h2>
+    <p>Desde el alfabeto hasta textos académicos complejos</p>
+  </div>
+  <div class="levels-grid container">
+
+    <!-- BASIC -->
+    <div class="level-card basic">
+      <div class="level-header">
+        <div class="level-icon">🌱</div>
+        <span class="level-tag">A1 – A2</span>
+        <h3>Básico</h3>
+        <p>Para personas que empiezan desde cero o tienen muy poco conocimiento del inglés.</p>
+      </div>
+      <div class="level-body">
+        <ul class="level-topics">
+          <li>Alfabeto y pronunciación</li>
+          <li>Saludos y presentaciones</li>
+          <li>Números, colores y días</li>
+          <li>Presente simple</li>
+          <li>Vocabulario esencial (100+ palabras)</li>
+          <li>Preguntas básicas</li>
+        </ul>
+        <a href="pages/basic.html" class="level-btn">Empezar nivel básico →</a>
+      </div>
+    </div>
+
+    <!-- INTERMEDIATE -->
+    <div class="level-card inter">
+      <div class="level-header">
+        <div class="level-icon">🚀</div>
+        <span class="level-tag">B1 – B2</span>
+        <h3>Intermedio</h3>
+        <p>Para quienes ya conocen lo básico y quieren expresarse con mayor fluidez y precisión.</p>
+      </div>
+      <div class="level-body">
+        <ul class="level-topics">
+          <li>Tiempos verbales (pasado, futuro)</li>
+          <li>Verbos modales</li>
+          <li>Oraciones condicionales</li>
+          <li>Lectura y comprensión</li>
+          <li>Phrasal verbs comunes</li>
+          <li>Vocabulario temático (300+ palabras)</li>
+        </ul>
+        <a href="pages/intermediate.html" class="level-btn">Empezar nivel intermedio →</a>
+      </div>
+    </div>
+
+    <!-- ADVANCED -->
+    <div class="level-card adv">
+      <div class="level-header">
+        <div class="level-icon">🎓</div>
+        <span class="level-tag">C1 – C2</span>
+        <h3>Avanzado</h3>
+        <p>Para quienes buscan dominar el inglés a nivel profesional y académico.</p>
+      </div>
+      <div class="level-body">
+        <ul class="level-topics">
+          <li>Gramática avanzada (subjuntivo, inversión)</li>
+          <li>Vocabulario académico</li>
+          <li>Escritura formal y ensayos</li>
+          <li>Idioms y expresiones</li>
+          <li>Comprensión lectora avanzada</li>
+          <li>Registro formal e informal</li>
+        </ul>
+        <a href="pages/advanced.html" class="level-btn">Empezar nivel avanzado →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-title">
+    <h2>¿Cómo aprendemos?</h2>
+    <p>Metodología probada con actividades variadas y progresivas</p>
+  </div>
+  <div class="features-grid container">
+    <div class="feature">
+      <div class="feature-icon">📖</div>
+      <h4>Lecciones Claras</h4>
+      <p>Explicaciones en español con ejemplos en inglés. Sin tecnicismos innecesarios.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🃏</div>
+      <h4>Flashcards</h4>
+      <p>Memoriza vocabulario con el sistema de repetición espaciada.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">✍️</div>
+      <h4>Ejercicios</h4>
+      <p>Practica con quizzes, rellena huecos y más. Retroalimentación inmediata.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔊</div>
+      <h4>Pronunciación</h4>
+      <p>Escucha cómo se pronuncian las palabras y frases directamente en el navegador.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">💬</div>
+      <h4>Diálogos Reales</h4>
+      <p>Aprende con conversaciones auténticas de la vida cotidiana y profesional.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h4>Tu Progreso</h4>
+      <p>El sitio recuerda qué lecciones completaste para que siempre sepas dónde continuar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>EnglishPath</strong> — Aprende inglés gratis, a tu ritmo, desde cualquier dispositivo.</p>
+  <p style="margin-top:.5rem;">De A1 a C2 · Lecciones · Flashcards · Ejercicios · Pronunciación</p>
+</footer>
+
+<script>
+  // Render hero progress from localStorage
+  const basicLessons = ['b-alphabet','b-greetings','b-numbers','b-colors','b-family','b-present','b-questions','b-daily'];
+  const interLessons = ['i-past','i-future','i-modals','i-conditionals','i-phrasal','i-reading','i-vocabulary'];
+  const advLessons   = ['a-subjunctive','a-inversion','a-idioms','a-academic','a-writing','a-listening'];
+
+  function calcProgress(lessons) {
+    const p = JSON.parse(localStorage.getItem('eng_progress') || '{}');
+    return lessons.filter(id => p[id]).length / lessons.length;
+  }
+
+  function renderHero() {
+    const sets = [
+      { lessons: basicLessons, fillId: 'pb-basic', pctId: 'pct-basic' },
+      { lessons: interLessons, fillId: 'pb-inter',  pctId: 'pct-inter' },
+      { lessons: advLessons,   fillId: 'pb-adv',    pctId: 'pct-adv' },
+    ];
+    sets.forEach(({ lessons, fillId, pctId }) => {
+      const pct = Math.round(calcProgress(lessons) * 100);
+      document.getElementById(fillId).style.width = pct + '%';
+      document.getElementById(pctId).textContent  = pct + '% completado';
+    });
+  }
+
+  renderHero();
+</script>
+</body>
+</html>
