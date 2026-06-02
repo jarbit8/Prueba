@@ -2,123 +2,382 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <title>Kapac Beer — Encuentra tu cerveza ideal 🍺</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KapacFans — Cerveza Artesanal Exclusiva</title>
   <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
-    .topbar { flex-shrink: 0; }
-    .filters { flex-shrink: 0; }
-    .deck-area {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: .75rem 1rem .25rem; position: relative; overflow: hidden;
-    }
-    .actions { flex-shrink: 0; }
-  </style>
 </head>
 <body>
 
-<!-- MATCH SCREEN -->
-<div class="match-screen" id="matchScreen">
-  <div class="match-title">¡Es un Match! 🍺</div>
-  <p class="match-sub">A ti y a esta cerveza les gustaron mutuamente</p>
-  <div class="match-avatars">
-    <div class="match-avatar" style="font-size:2.5rem;">😋</div>
-    <div class="match-heart">❤️</div>
-    <div class="match-avatar beer" style="background:linear-gradient(135deg,#2e1c08,#8a5c14);">🍺</div>
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- MODAL SUSCRIPCIÓN -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('show')">✕</button>
+    <div style="font-size:2.5rem;margin-bottom:.75rem;">🍺</div>
+    <h3>Plan <span id="modalPlan">Cervecero</span></h3>
+    <p>Acceso inmediato a todo el contenido exclusivo, recetas secretas y tu caja mensual de Kapac.</p>
+    <form id="subForm">
+      <input type="text"  placeholder="Tu nombre" required/>
+      <input type="email" placeholder="tu@email.com" required/>
+      <input type="tel"   placeholder="WhatsApp (opcional)"/>
+      <button class="modal-btn" type="submit">🔓 Activar Suscripción</button>
+    </form>
   </div>
-  <button class="match-btn-msg" id="matchMsg">🛒 Hacer Pedido Ahora</button>
-  <button class="match-btn-skip" id="matchClose">Seguir buscando</button>
 </div>
 
-<!-- INFO PANEL -->
-<div class="info-panel" id="infoPanel">
-  <div class="panel-header">
-    <button class="panel-close" id="panelClose">✕</button>
-    <span class="panel-title">Perfil de Cerveza</span>
-    <div style="width:32px"></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KapacFans</div>
+  <input class="nav-search" type="text" placeholder="Buscar cervezas, recetas..."/>
+  <div class="nav-right">
+    <div class="nav-icon">🔔<span class="nav-badge">3</span></div>
+    <div class="nav-icon">💬<span class="nav-badge">7</span></div>
+    <div class="nav-icon">🍺</div>
+    <button class="nav-sub-btn" data-sub="Cervecero">Suscribirme</button>
   </div>
+</nav>
 
-  <div class="panel-hero" style="background:linear-gradient(135deg,#2e1c08,#8a5c14);">
-    <span class="panel-emoji" style="font-size:8rem;">🍺</span>
-  </div>
+<!-- LAYOUT -->
+<div class="layout">
 
-  <div class="panel-body">
-    <div class="panel-name-row">
-      <span class="panel-name">Kapac Dorada</span>
-      <span class="panel-pct">4.8%</span>
+  <!-- LEFT SIDEBAR -->
+  <aside class="left-sidebar">
+    <ul class="sidebar-menu">
+      <li><a href="#" class="active"><span class="s-icon">🏠</span> Inicio</a></li>
+      <li><a href="#"><span class="s-icon">🔍</span> Explorar</a></li>
+      <li><a href="#"><span class="s-icon">🔔</span> Notificaciones</a></li>
+      <li><a href="#"><span class="s-icon">💬</span> Mensajes</a></li>
+      <li><a href="#"><span class="s-icon">📦</span> Mis Pedidos</a></li>
+      <li><a href="#"><span class="s-icon">❤️</span> Favoritas</a></li>
+      <li><a href="#"><span class="s-icon">⭐</span> Lista de deseos</a></li>
+    </ul>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-suggested">
+      <div class="sug-title">Nuevos Lotes</div>
+
+      <div class="sug-item">
+        <div class="sug-avatar" style="background:linear-gradient(135deg,#2e1c08,#8a5c14)">🌾</div>
+        <div>
+          <div class="sug-name">Dorada Verano</div>
+          <div class="sug-handle">Edición limitada</div>
+        </div>
+        <button class="sug-follow">+ Seguir</button>
+      </div>
+
+      <div class="sug-item">
+        <div class="sug-avatar" style="background:linear-gradient(135deg,#0d0500,#3d1500)">☕</div>
+        <div>
+          <div class="sug-name">Negra Imperial</div>
+          <div class="sug-handle">Solo 200 botellas</div>
+        </div>
+        <button class="sug-follow">+ Seguir</button>
+      </div>
+
+      <div class="sug-item">
+        <div class="sug-avatar" style="background:linear-gradient(135deg,#1a2e08,#4a8c14)">🍋</div>
+        <div>
+          <div class="sug-name">Trigo Citrus</div>
+          <div class="sug-handle">Nueva receta 2024</div>
+        </div>
+        <button class="sug-follow">+ Seguir</button>
+      </div>
     </div>
-    <div class="panel-loc">📍 Cervecería Kapac · Lima, 2km</div>
+  </aside>
 
-    <div class="panel-stat-grid">
-      <div class="panel-stat"><div class="panel-stat-num ps-abv">4.8%</div><div class="panel-stat-label">Alcohol</div></div>
-      <div class="panel-stat"><div class="panel-stat-num ps-ibu">18</div><div class="panel-stat-label">Amargor (IBU)</div></div>
-      <div class="panel-stat"><div class="panel-stat-num ps-ml">330ml</div><div class="panel-stat-label">Formato</div></div>
+  <!-- MAIN FEED -->
+  <main class="main-feed">
+
+    <!-- CREATOR HEADER -->
+    <div class="creator-cover">
+      <div class="creator-cover-text">🍺🌾☕🔥🍋👑🍺🌾</div>
     </div>
 
-    <div class="panel-divider"></div>
-    <div class="panel-section-title">Estilo & Personalidad</div>
-    <div class="panel-tags"></div>
-
-    <div class="panel-divider"></div>
-    <div class="panel-section-title">Sobre mí</div>
-    <div class="panel-bio panel-bio-text"></div>
-
-    <div class="panel-divider"></div>
-    <div class="panel-section-title">Maridaje ideal 🍽</div>
-    <div class="panel-bio panel-maridaje" style="color:rgba(255,255,255,.8);font-size:.9rem;line-height:1.6;"></div>
-  </div>
-
-  <div class="panel-actions">
-    <button class="pa-btn pa-nope" id="panelNope">✕ No me convence</button>
-    <button class="pa-btn pa-like" id="panelLike">❤️ Me la llevo</button>
-  </div>
-</div>
-
-<!-- TOP BAR -->
-<div class="topbar">
-  <div class="tb-logo">Kapac</div>
-  <div class="tb-icon" title="Filtros">⚙️</div>
-  <div style="display:flex;gap:.6rem;align-items:center;">
-    <div class="tb-icon" title="Likes" style="position:relative;">
-      ❤️ <span class="tb-notif" id="likesBadge">0</span>
+    <div class="creator-profile-row">
+      <div class="creator-avatar">🍺</div>
+      <div class="creator-meta">
+        <div class="creator-name">Kapac Beer <span class="verified">✓</span></div>
+        <div class="creator-handle">@kapacbeer · Maestro Cervecero</div>
+      </div>
+      <div class="creator-actions">
+        <button class="btn-tip" data-sub="Propina">💰 Tip</button>
+        <button class="btn-msg">💬 Mensaje</button>
+        <button class="btn-sub-main" data-sub="Cervecero">Suscribirse</button>
+      </div>
     </div>
-    <div class="tb-icon" title="Perfil">🍺</div>
-  </div>
-</div>
 
-<!-- FILTERS -->
-<div class="filters">
-  <div class="filter-chip active">Todas 🍺</div>
-  <div class="filter-chip">Lager 🌾</div>
-  <div class="filter-chip">Stout ☕</div>
-  <div class="filter-chip">IPA 🌿</div>
-  <div class="filter-chip">Wheat 🍋</div>
-  <div class="filter-chip">Premium 👑</div>
-  <div class="filter-chip">+4% 💪</div>
-  <div class="filter-chip">Refrescante ❄️</div>
-</div>
+    <div class="creator-stats">
+      <div class="cs"><div class="cs-num">247</div><div class="cs-label">Posts</div></div>
+      <div class="cs"><div class="cs-num">3.2K</div><div class="cs-label">Fans</div></div>
+      <div class="cs"><div class="cs-num">48K</div><div class="cs-label">Likes</div></div>
+      <div class="cs"><div class="cs-num">12</div><div class="cs-label">Recetas</div></div>
+    </div>
 
-<!-- DECK -->
-<div class="deck-area">
-  <div class="card-stack" id="cardStack"></div>
-  <div class="empty-state" id="emptyState">
-    <div style="font-size:3rem;">🍺</div>
-    <h3>No quedan más cervezas</h3>
-    <p>Has visto todo el catálogo.<br/>¿Quieres volver a intentarlo?</p>
-    <button class="reload-btn" id="reloadBtn">Volver a explorar 🔄</button>
-  </div>
-</div>
+    <div class="creator-bio">
+      Maestro cervecero con 12 años de experiencia 🌾 Aquí comparto lo que NUNCA verás en una cervecería normal: recetas secretas, el proceso real, lanzamientos exclusivos y cosas que harían llorar a las cervezas industriales 😂🍺
+    </div>
+    <div class="creator-links">
+      <span class="creator-link">📍 Lima, Perú</span>
+      <span class="creator-link">🌐 kapacbeer.com</span>
+      <span class="creator-link">📦 Envíos a todo el país</span>
+    </div>
 
-<!-- ACTIONS -->
-<div class="actions">
-  <button class="action-btn btn-rewind" id="btnRewind" title="Volver atrás">↩</button>
-  <button class="action-btn btn-nope"   id="btnNope"   title="No me gusta">✕</button>
-  <button class="action-btn btn-super"  id="btnSuper"  title="Super Like" style="color:#3b82f6;">★</button>
-  <button class="action-btn btn-like"   id="btnLike"   title="Me gusta">❤️</button>
-  <button class="action-btn btn-boost"  id="btnBoost"  title="Boost">🚀</button>
-</div>
+    <!-- TABS -->
+    <div class="feed-tabs">
+      <div class="feed-tab active">Todo</div>
+      <div class="feed-tab">📸 Fotos</div>
+      <div class="feed-tab">🎥 Videos</div>
+      <div class="feed-tab">🔒 Exclusivo</div>
+      <div class="feed-tab">🌾 Recetas</div>
+    </div>
+
+    <!-- POST 1 — FREE -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">🍺</div>
+        <div>
+          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-time">hace 2 horas</div>
+        </div>
+        <div class="post-more">···</div>
+      </div>
+      <div class="post-text">
+        Acaba de terminar el lote #47 de nuestra <strong>Dorada Verano</strong> ☀️ Esta vez agregamos un toque de lima y el resultado es… perturbadoramente bueno. Los fans del plan Cervecero la reciben la próxima semana 📦🍺
+      </div>
+      <div class="post-media" style="background:linear-gradient(135deg,#2e1c08,#8a5c14,#c8930a);">
+        <div class="post-media-inner">🌾🍺☀️</div>
+      </div>
+      <div class="post-footer">
+        <button class="post-action like-btn">
+          <span class="icon">🤍</span>
+          <span class="like-count" data-n="1847">1847</span>
+        </button>
+        <button class="post-action comment-btn">
+          <span class="icon">💬</span> 203
+        </button>
+        <button class="post-action">
+          <span class="icon">↗️</span> Compartir
+        </button>
+        <button class="post-tip-btn">💰 Tip</button>
+      </div>
+    </div>
+
+    <!-- POST 2 — FREE VIDEO -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">🍺</div>
+        <div>
+          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-time">hace 1 día</div>
+        </div>
+        <div class="post-more">···</div>
+      </div>
+      <div class="post-text">
+        🎥 El momento más satisfactorio de toda la semana: abrir el fermentador y ver la espuma perfecta. 18 días fermentando la <strong>Negra Imperial</strong> y está LISTA. Olor a café, chocolate y pura gloria artesanal ☕🍫
+      </div>
+      <div class="post-media" style="background:linear-gradient(135deg,#0d0500,#3d1500,#1a0808);">
+        <div class="post-media-inner">☕🍫🍺</div>
+      </div>
+      <div class="post-footer">
+        <button class="post-action like-btn">
+          <span class="icon">🤍</span>
+          <span class="like-count" data-n="2341">2341</span>
+        </button>
+        <button class="post-action comment-btn">
+          <span class="icon">💬</span> 418
+        </button>
+        <button class="post-action">
+          <span class="icon">↗️</span> Compartir
+        </button>
+        <button class="post-tip-btn">💰 Tip</button>
+      </div>
+    </div>
+
+    <!-- POST 3 — LOCKED -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">🍺</div>
+        <div>
+          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-time">hace 2 días</div>
+        </div>
+        <div class="post-more">···</div>
+      </div>
+      <div class="post-text">
+        🔒 La receta <strong>COMPLETA</strong> de la Kapac Negra Imperial que ganó el premio nacional 2023. Con cantidades exactas, tiempos, temperaturas y el ingrediente secreto que nadie sabe... 🤫
+      </div>
+      <div class="post-media locked" style="background:linear-gradient(135deg,#0d0500,#3d1500);">
+        <div class="post-media-inner">📋🌾⚗️</div>
+        <div class="lock-overlay">
+          <div class="lock-overlay-box">
+            <h4>🔒 Contenido Exclusivo</h4>
+            <p>Suscríbete para ver la receta completa y todos los secretos de la Kapac Negra Imperial</p>
+            <button class="unlock-btn" data-sub="Cervecero">Desbloquear — $9.99/mes</button>
+          </div>
+        </div>
+      </div>
+      <div class="post-footer">
+        <button class="post-action like-btn">
+          <span class="icon">🤍</span>
+          <span class="like-count" data-n="3102">3102</span>
+        </button>
+        <button class="post-action comment-btn">
+          <span class="icon">💬</span> 567
+        </button>
+        <button class="post-action">
+          <span class="icon">↗️</span> Compartir
+        </button>
+        <button class="post-tip-btn">💰 Tip</button>
+      </div>
+    </div>
+
+    <!-- POST 4 — LOCKED VIDEO -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">🍺</div>
+        <div>
+          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-time">hace 3 días</div>
+        </div>
+        <div class="post-more">···</div>
+      </div>
+      <div class="post-text">
+        🎥 47 minutos del proceso COMPLETO de elaboración del lote #46. Sin cortes, sin edición, todo el proceso real de la cervecería. Incluye el momento en que casi se nos arruina el lote por un error de temperatura 😬🌡️
+      </div>
+      <div class="post-media locked" style="background:linear-gradient(135deg,#1a0808,#8a1414);">
+        <div class="post-media-inner">🎥🌡️🍺</div>
+        <div class="lock-overlay">
+          <div class="lock-overlay-box">
+            <h4>🎥 Video Exclusivo — 47 min</h4>
+            <p>Solo disponible para suscriptores del plan Maestro o superior</p>
+            <button class="unlock-btn" data-sub="Maestro">Ver ahora — Plan Maestro</button>
+          </div>
+        </div>
+      </div>
+      <div class="post-footer">
+        <button class="post-action like-btn">
+          <span class="icon">🤍</span>
+          <span class="like-count" data-n="4789">4789</span>
+        </button>
+        <button class="post-action comment-btn">
+          <span class="icon">💬</span> 892
+        </button>
+        <button class="post-action">
+          <span class="icon">↗️</span> Compartir
+        </button>
+        <button class="post-tip-btn">💰 Tip</button>
+      </div>
+    </div>
+
+    <!-- POST 5 — FREE -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar">🍺</div>
+        <div>
+          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-time">hace 5 días</div>
+        </div>
+        <div class="post-more">···</div>
+      </div>
+      <div class="post-text">
+        Pregunta del día: ¿con qué comida maridarías una IPA bien lupulada? 🌺 Yo digo burger con queso azul. El amargor corta perfecto la grasa. Pero quiero saber qué dicen ustedes 👇🔥
+      </div>
+      <div class="post-media" style="background:linear-gradient(135deg,#1a0808,#8a1414,#d42020);">
+        <div class="post-media-inner">🔥🌺🍔</div>
+      </div>
+      <div class="post-footer">
+        <button class="post-action like-btn">
+          <span class="icon">🤍</span>
+          <span class="like-count" data-n="1203">1203</span>
+        </button>
+        <button class="post-action comment-btn">
+          <span class="icon">💬</span> 341
+        </button>
+        <button class="post-action">
+          <span class="icon">↗️</span> Compartir
+        </button>
+        <button class="post-tip-btn">💰 Tip</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="right-sidebar">
+
+    <!-- PLANES -->
+    <div class="sub-card">
+      <div class="sub-card-title">🔓 Planes de Suscripción</div>
+
+      <div class="sub-tier" onclick="document.getElementById('modalPlan').textContent='Curioso';document.getElementById('modalOverlay').classList.add('show')">
+        <div class="tier-top">
+          <span class="tier-name">🌱 Curioso</span>
+          <span class="tier-price">$4.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+        </div>
+        <div class="tier-desc">Recetas básicas, newsletter, 5% descuento en tienda</div>
+      </div>
+
+      <div class="sub-tier popular" onclick="document.getElementById('modalPlan').textContent='Cervecero';document.getElementById('modalOverlay').classList.add('show')">
+        <div class="tier-top">
+          <span class="tier-name">🍺 Cervecero <span class="tier-badge">Popular</span></span>
+          <span class="tier-price">$9.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+        </div>
+        <div class="tier-desc">Todo desbloqueado + caja de 4 botellas exclusivas al mes</div>
+      </div>
+
+      <div class="sub-tier" onclick="document.getElementById('modalPlan').textContent='Maestro';document.getElementById('modalOverlay').classList.add('show')">
+        <div class="tier-top">
+          <span class="tier-name">👑 Maestro</span>
+          <span class="tier-price">$24.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+        </div>
+        <div class="tier-desc">8 botellas + visita anual + tu nombre en latas edición limitada</div>
+      </div>
+
+      <button class="sub-btn-full" data-sub="Cervecero">Suscribirme ahora</button>
+    </div>
+
+    <!-- TIP -->
+    <div class="tip-card">
+      <div class="tip-title">💰 Enviar Propina</div>
+      <div class="tip-amounts">
+        <div class="tip-amt">$1</div>
+        <div class="tip-amt">$3</div>
+        <div class="tip-amt">$5</div>
+        <div class="tip-amt">$10</div>
+        <div class="tip-amt">$20</div>
+        <div class="tip-amt">🍺 Otra</div>
+      </div>
+      <button class="tip-send">Enviar propina</button>
+    </div>
+
+    <!-- MEDIA GRID PREVIEW -->
+    <div class="sub-card">
+      <div class="sub-card-title">📸 Últimas Fotos</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;">
+        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#2e1c08,#8a5c14);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;">🌾</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#0d0500,#3d1500);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;">☕</div>
+        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#1a2e08,#4a8c14);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+          🍋
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+        </div>
+        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#1a0808,#8a1414);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+          🔥
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+        </div>
+        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#0d0d1a,#3a20a0);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+          👑
+          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+        </div>
+        <div style="aspect-ratio:1;border-radius:8px;background:var(--dark4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted);cursor:pointer;">+242</div>
+      </div>
+    </div>
+
+  </aside>
+
+</div><!-- /layout -->
 
 <script src="js/app.js"></script>
 </body>
