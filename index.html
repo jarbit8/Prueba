@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KapacFans — Cerveza Artesanal Exclusiva</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArtHub — Valeria Morales</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<!-- MODAL SUSCRIPCIÓN -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal" style="position:relative;">
-    <button class="modal-close" onclick="document.getElementById('modalOverlay').classList.remove('show')">✕</button>
-    <div style="font-size:2.5rem;margin-bottom:.75rem;">🍺</div>
-    <h3>Plan <span id="modalPlan">Cervecero</span></h3>
-    <p>Acceso inmediato a todo el contenido exclusivo, recetas secretas y tu caja mensual de Kapac.</p>
-    <form id="subForm">
-      <input type="text"  placeholder="Tu nombre" required/>
-      <input type="email" placeholder="tu@email.com" required/>
-      <input type="tel"   placeholder="WhatsApp (opcional)"/>
-      <button class="modal-btn" type="submit">🔓 Activar Suscripción</button>
-    </form>
-  </div>
-</div>
-
-<!-- NAV -->
+<!-- ===== NAV ===== -->
 <nav>
-  <div class="nav-logo">KapacFans</div>
-  <input class="nav-search" type="text" placeholder="Buscar cervezas, recetas..."/>
+  <span class="nav-logo">ArtHub</span>
+  <input class="nav-search" type="search" placeholder="Buscar creadores..." />
   <div class="nav-right">
     <div class="nav-icon">🔔<span class="nav-badge">3</span></div>
-    <div class="nav-icon">💬<span class="nav-badge">7</span></div>
-    <div class="nav-icon">🍺</div>
-    <button class="nav-sub-btn" data-sub="Cervecero">Suscribirme</button>
+    <div class="nav-icon">💬<span class="nav-badge">1</span></div>
+    <div class="nav-icon">🎨</div>
+    <button class="nav-sub-btn" data-sub="Coleccionista">Suscribirse</button>
   </div>
 </nav>
 
-<!-- LAYOUT -->
+<!-- ===== LAYOUT ===== -->
 <div class="layout">
 
   <!-- LEFT SIDEBAR -->
@@ -49,39 +30,46 @@
       <li><a href="#"><span class="s-icon">🔍</span> Explorar</a></li>
       <li><a href="#"><span class="s-icon">🔔</span> Notificaciones</a></li>
       <li><a href="#"><span class="s-icon">💬</span> Mensajes</a></li>
-      <li><a href="#"><span class="s-icon">📦</span> Mis Pedidos</a></li>
-      <li><a href="#"><span class="s-icon">❤️</span> Favoritas</a></li>
-      <li><a href="#"><span class="s-icon">⭐</span> Lista de deseos</a></li>
+      <li><a href="#"><span class="s-icon">🔖</span> Guardados</a></li>
+      <li><a href="#"><span class="s-icon">📂</span> Colecciones</a></li>
+      <li><a href="#"><span class="s-icon">👤</span> Perfil</a></li>
     </ul>
-
     <div class="sidebar-divider"></div>
-
     <div class="sidebar-suggested">
-      <div class="sug-title">Nuevos Lotes</div>
+      <div class="sug-title">Sugeridos</div>
 
       <div class="sug-item">
-        <div class="sug-avatar" style="background:linear-gradient(135deg,#2e1c08,#8a5c14)">🌾</div>
+        <div class="sug-ava" style="background:linear-gradient(135deg,#1a0030,#a040f0)">🌃</div>
         <div>
-          <div class="sug-name">Dorada Verano</div>
-          <div class="sug-handle">Edición limitada</div>
+          <div class="sug-name">Noir Studio</div>
+          <div class="sug-handle">@noir.studio</div>
         </div>
         <button class="sug-follow">+ Seguir</button>
       </div>
 
       <div class="sug-item">
-        <div class="sug-avatar" style="background:linear-gradient(135deg,#0d0500,#3d1500)">☕</div>
+        <div class="sug-ava" style="background:linear-gradient(135deg,#001a30,#0080c0)">🌊</div>
         <div>
-          <div class="sug-name">Negra Imperial</div>
-          <div class="sug-handle">Solo 200 botellas</div>
+          <div class="sug-name">Marina Luz</div>
+          <div class="sug-handle">@marina.luz</div>
         </div>
         <button class="sug-follow">+ Seguir</button>
       </div>
 
       <div class="sug-item">
-        <div class="sug-avatar" style="background:linear-gradient(135deg,#1a2e08,#4a8c14)">🍋</div>
+        <div class="sug-ava" style="background:linear-gradient(135deg,#1a1000,#c08000)">🏜</div>
         <div>
-          <div class="sug-name">Trigo Citrus</div>
-          <div class="sug-handle">Nueva receta 2024</div>
+          <div class="sug-name">Desierto Film</div>
+          <div class="sug-handle">@desierto.film</div>
+        </div>
+        <button class="sug-follow">+ Seguir</button>
+      </div>
+
+      <div class="sug-item">
+        <div class="sug-ava" style="background:linear-gradient(135deg,#0a1a0a,#208040)">🌿</div>
+        <div>
+          <div class="sug-name">Botanika</div>
+          <div class="sug-handle">@botanika.art</div>
         </div>
         <button class="sug-follow">+ Seguir</button>
       </div>
@@ -91,293 +79,355 @@
   <!-- MAIN FEED -->
   <main class="main-feed">
 
-    <!-- CREATOR HEADER -->
+    <!-- COVER -->
     <div class="creator-cover">
-      <div class="creator-cover-text">🍺🌾☕🔥🍋👑🍺🌾</div>
+      <div class="cover-photo">
+        <div class="cover-shapes">
+          <div class="cover-shape"></div><div class="cover-shape"></div>
+          <div class="cover-shape"></div><div class="cover-shape"></div>
+          <div class="cover-shape"></div><div class="cover-shape"></div>
+          <div class="cover-shape"></div><div class="cover-shape"></div>
+          <div class="cover-shape"></div><div class="cover-shape"></div>
+        </div>
+        <div class="cover-overlay"></div>
+      </div>
     </div>
 
-    <div class="creator-profile-row">
-      <div class="creator-avatar">🍺</div>
-      <div class="creator-meta">
-        <div class="creator-name">Kapac Beer <span class="verified">✓</span></div>
-        <div class="creator-handle">@kapacbeer · Maestro Cervecero</div>
+    <!-- PROFILE ROW -->
+    <div class="profile-row">
+      <div class="profile-ava">📷</div>
+      <div class="profile-meta">
+        <div class="profile-name">Valeria Morales <span class="verified">✦</span></div>
+        <div class="profile-handle">@valeria.art · Buenos Aires</div>
       </div>
-      <div class="creator-actions">
-        <button class="btn-tip" data-sub="Propina">💰 Tip</button>
+      <div class="profile-actions">
+        <button class="btn-sub-main" data-sub="Coleccionista">Suscribirse</button>
         <button class="btn-msg">💬 Mensaje</button>
-        <button class="btn-sub-main" data-sub="Cervecero">Suscribirse</button>
+        <button class="btn-tip">🎁 Propina</button>
       </div>
     </div>
 
-    <div class="creator-stats">
-      <div class="cs"><div class="cs-num">247</div><div class="cs-label">Posts</div></div>
-      <div class="cs"><div class="cs-num">3.2K</div><div class="cs-label">Fans</div></div>
-      <div class="cs"><div class="cs-num">48K</div><div class="cs-label">Likes</div></div>
-      <div class="cs"><div class="cs-num">12</div><div class="cs-label">Recetas</div></div>
+    <!-- STATS -->
+    <div class="profile-stats">
+      <div class="ps"><div class="ps-num">1.4K</div><div class="ps-label">Seguidores</div></div>
+      <div class="ps"><div class="ps-num">286</div><div class="ps-label">Siguiendo</div></div>
+      <div class="ps"><div class="ps-num">94</div><div class="ps-label">Posts</div></div>
+      <div class="ps"><div class="ps-num">★ 4.9</div><div class="ps-label">Valoración</div></div>
     </div>
 
-    <div class="creator-bio">
-      Maestro cervecero con 12 años de experiencia 🌾 Aquí comparto lo que NUNCA verás en una cervecería normal: recetas secretas, el proceso real, lanzamientos exclusivos y cosas que harían llorar a las cervezas industriales 😂🍺
-    </div>
-    <div class="creator-links">
-      <span class="creator-link">📍 Lima, Perú</span>
-      <span class="creator-link">🌐 kapacbeer.com</span>
-      <span class="creator-link">📦 Envíos a todo el país</span>
+    <p class="profile-bio">
+      Fotografía de arte, callejera y experimental desde Buenos Aires. 🇦🇷<br>
+      Analógica · Exposiciones largas · Luz natural · Colecciones exclusivas para suscriptores.
+    </p>
+    <div class="profile-tags">
+      <span class="ptag">📸 Fine Art</span>
+      <span class="ptag">🌆 Urbano</span>
+      <span class="ptag">🎞 Analógico</span>
+      <span class="ptag">🌙 Nocturnos</span>
+      <span class="ptag">🖼 Galería</span>
     </div>
 
     <!-- TABS -->
     <div class="feed-tabs">
-      <div class="feed-tab active">Todo</div>
-      <div class="feed-tab">📸 Fotos</div>
-      <div class="feed-tab">🎥 Videos</div>
-      <div class="feed-tab">🔒 Exclusivo</div>
-      <div class="feed-tab">🌾 Recetas</div>
+      <div class="feed-tab active">Todos</div>
+      <div class="feed-tab">Fotos</div>
+      <div class="feed-tab">Series</div>
+      <div class="feed-tab">Exclusivos 🔒</div>
+      <div class="feed-tab">Analógico</div>
     </div>
 
-    <!-- POST 1 — FREE -->
-    <div class="post">
+    <!-- POST 1 — public -->
+    <article class="post">
       <div class="post-header">
-        <div class="post-avatar">🍺</div>
+        <div class="post-ava">📷</div>
         <div>
-          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 2 horas</div>
         </div>
-        <div class="post-more">···</div>
+        <span class="post-more">···</span>
       </div>
-      <div class="post-text">
-        Acaba de terminar el lote #47 de nuestra <strong>Dorada Verano</strong> ☀️ Esta vez agregamos un toque de lima y el resultado es… perturbadoramente bueno. Los fans del plan Cervecero la reciben la próxima semana 📦🍺
-      </div>
-      <div class="post-media" style="background:linear-gradient(135deg,#2e1c08,#8a5c14,#c8930a);">
-        <div class="post-media-inner">🌾🍺☀️</div>
+      <p class="post-text">
+        Amanecer en la Costanera. Esperé 3 horas por esta luz. La ciudad se despierta diferente cuando nadie te está mirando. 🌅
+      </p>
+      <div class="post-media">
+        <div class="post-media-inner">
+          <div class="photo-art pa-2" style="width:100%;min-height:320px">
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(255,180,60,.25),transparent 70%);top:-40px;right:60px;width:250px;height:250px"></div>
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,120,200,.2),transparent 70%);bottom:-30px;left:20px;width:180px;height:180px"></div>
+            <div class="pa-line" style="width:100%;height:1px;top:55%;transform:rotate(-2deg)"></div>
+            <div class="pa-line" style="width:100%;height:1px;top:60%"></div>
+            <div class="pa-text-art">Costanera · Amanecer · 5:47am</div>
+          </div>
+        </div>
       </div>
       <div class="post-footer">
         <button class="post-action like-btn">
           <span class="icon">🤍</span>
-          <span class="like-count" data-n="1847">1847</span>
+          <span class="like-count" data-n="312">312</span>
         </button>
-        <button class="post-action comment-btn">
-          <span class="icon">💬</span> 203
-        </button>
-        <button class="post-action">
-          <span class="icon">↗️</span> Compartir
-        </button>
-        <button class="post-tip-btn">💰 Tip</button>
+        <button class="post-action comment-btn">💬 <span>48</span></button>
+        <button class="post-action">↗ Compartir</button>
+        <button class="post-tip-btn">🎁 Propina</button>
       </div>
-    </div>
+    </article>
 
-    <!-- POST 2 — FREE VIDEO -->
-    <div class="post">
+    <!-- POST 2 — public -->
+    <article class="post">
       <div class="post-header">
-        <div class="post-avatar">🍺</div>
+        <div class="post-ava">📷</div>
         <div>
-          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 1 día</div>
         </div>
-        <div class="post-more">···</div>
+        <span class="post-more">···</span>
       </div>
-      <div class="post-text">
-        🎥 El momento más satisfactorio de toda la semana: abrir el fermentador y ver la espuma perfecta. 18 días fermentando la <strong>Negra Imperial</strong> y está LISTA. Olor a café, chocolate y pura gloria artesanal ☕🍫
-      </div>
-      <div class="post-media" style="background:linear-gradient(135deg,#0d0500,#3d1500,#1a0808);">
-        <div class="post-media-inner">☕🍫🍺</div>
+      <p class="post-text">
+        Serie urbana nocturna — San Telmo. Película Kodak Tri-X 400. Revelado artesanal en casa. 🎞🌙
+      </p>
+      <div class="post-media">
+        <div class="post-media-inner">
+          <div class="photo-art pa-1" style="width:100%;min-height:320px">
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,175,240,.18),transparent 70%);top:20px;left:30px;width:220px;height:220px"></div>
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(200,100,255,.12),transparent 70%);bottom:10px;right:40px;width:160px;height:160px"></div>
+            <div class="pa-line" style="width:2px;height:100%;left:30%;top:0"></div>
+            <div class="pa-line" style="width:2px;height:80%;left:65%;top:10%"></div>
+            <div class="pa-text-art">San Telmo · Noche · Analógico</div>
+          </div>
+        </div>
       </div>
       <div class="post-footer">
         <button class="post-action like-btn">
           <span class="icon">🤍</span>
-          <span class="like-count" data-n="2341">2341</span>
+          <span class="like-count" data-n="587">587</span>
         </button>
-        <button class="post-action comment-btn">
-          <span class="icon">💬</span> 418
-        </button>
-        <button class="post-action">
-          <span class="icon">↗️</span> Compartir
-        </button>
-        <button class="post-tip-btn">💰 Tip</button>
+        <button class="post-action comment-btn">💬 <span>73</span></button>
+        <button class="post-action">↗ Compartir</button>
+        <button class="post-tip-btn">🎁 Propina</button>
       </div>
-    </div>
+    </article>
 
     <!-- POST 3 — LOCKED -->
-    <div class="post">
+    <article class="post">
       <div class="post-header">
-        <div class="post-avatar">🍺</div>
+        <div class="post-ava">📷</div>
         <div>
-          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
-          <div class="post-time">hace 2 días</div>
+          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
+          <div class="post-time">hace 2 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
         </div>
-        <div class="post-more">···</div>
+        <span class="post-more">···</span>
       </div>
-      <div class="post-text">
-        🔒 La receta <strong>COMPLETA</strong> de la Kapac Negra Imperial que ganó el premio nacional 2023. Con cantidades exactas, tiempos, temperaturas y el ingrediente secreto que nadie sabe... 🤫
-      </div>
-      <div class="post-media locked" style="background:linear-gradient(135deg,#0d0500,#3d1500);">
-        <div class="post-media-inner">📋🌾⚗️</div>
+      <p class="post-text">
+        Colección completa: "Geometría del Olvido" — 24 fotografías de larga exposición. Mi trabajo más personal hasta ahora. 🖤
+      </p>
+      <div class="post-media locked">
+        <div class="post-media-inner">
+          <div class="photo-art pa-5" style="width:100%;min-height:320px">
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(150,100,255,.3),transparent 70%);top:-20px;left:50%;transform:translateX(-50%);width:300px;height:300px"></div>
+            <div class="pa-line" style="width:100%;height:1px;top:40%"></div>
+            <div class="pa-line" style="width:100%;height:1px;top:60%"></div>
+            <div class="pa-text-art">Geometría del Olvido · Serie Exclusiva · 24 fotos</div>
+          </div>
+        </div>
         <div class="lock-overlay">
-          <div class="lock-overlay-box">
+          <div class="lock-box">
             <h4>🔒 Contenido Exclusivo</h4>
-            <p>Suscríbete para ver la receta completa y todos los secretos de la Kapac Negra Imperial</p>
-            <button class="unlock-btn" data-sub="Cervecero">Desbloquear — $9.99/mes</button>
+            <p>Suscríbete al plan <strong>Coleccionista</strong> o superior para ver esta serie completa.</p>
+            <button class="unlock-btn">Desbloquear — $9.99/mes</button>
           </div>
         </div>
       </div>
       <div class="post-footer">
         <button class="post-action like-btn">
           <span class="icon">🤍</span>
-          <span class="like-count" data-n="3102">3102</span>
+          <span class="like-count" data-n="241">241</span>
         </button>
-        <button class="post-action comment-btn">
-          <span class="icon">💬</span> 567
-        </button>
-        <button class="post-action">
-          <span class="icon">↗️</span> Compartir
-        </button>
-        <button class="post-tip-btn">💰 Tip</button>
+        <button class="post-action comment-btn">💬 <span>31</span></button>
+        <button class="post-action">↗ Compartir</button>
+        <button class="post-tip-btn">🎁 Propina</button>
       </div>
-    </div>
+    </article>
 
-    <!-- POST 4 — LOCKED VIDEO -->
-    <div class="post">
+    <!-- POST 4 — public, behind the scenes -->
+    <article class="post">
       <div class="post-header">
-        <div class="post-avatar">🍺</div>
+        <div class="post-ava">📷</div>
         <div>
-          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
+          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 3 días</div>
         </div>
-        <div class="post-more">···</div>
+        <span class="post-more">···</span>
       </div>
-      <div class="post-text">
-        🎥 47 minutos del proceso COMPLETO de elaboración del lote #46. Sin cortes, sin edición, todo el proceso real de la cervecería. Incluye el momento en que casi se nos arruina el lote por un error de temperatura 😬🌡️
-      </div>
-      <div class="post-media locked" style="background:linear-gradient(135deg,#1a0808,#8a1414);">
-        <div class="post-media-inner">🎥🌡️🍺</div>
-        <div class="lock-overlay">
-          <div class="lock-overlay-box">
-            <h4>🎥 Video Exclusivo — 47 min</h4>
-            <p>Solo disponible para suscriptores del plan Maestro o superior</p>
-            <button class="unlock-btn" data-sub="Maestro">Ver ahora — Plan Maestro</button>
+      <p class="post-text">
+        Detrás de escena: configurando el trípode en el techo de un edificio de Palermo a las 2am 😅 El proceso importa tanto como el resultado. 🔧
+      </p>
+      <div class="post-media">
+        <div class="post-media-inner">
+          <div class="photo-art pa-3" style="width:100%;min-height:280px">
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(255,80,80,.2),transparent 70%);top:30px;right:30px;width:180px;height:180px"></div>
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,100,200,.15),transparent 70%);bottom:10px;left:20px;width:150px;height:150px"></div>
+            <div class="pa-text-art">BTS · Palermo · 2:13am</div>
           </div>
         </div>
       </div>
       <div class="post-footer">
         <button class="post-action like-btn">
           <span class="icon">🤍</span>
-          <span class="like-count" data-n="4789">4789</span>
+          <span class="like-count" data-n="198">198</span>
         </button>
-        <button class="post-action comment-btn">
-          <span class="icon">💬</span> 892
-        </button>
-        <button class="post-action">
-          <span class="icon">↗️</span> Compartir
-        </button>
-        <button class="post-tip-btn">💰 Tip</button>
+        <button class="post-action comment-btn">💬 <span>55</span></button>
+        <button class="post-action">↗ Compartir</button>
+        <button class="post-tip-btn">🎁 Propina</button>
       </div>
-    </div>
+    </article>
 
-    <!-- POST 5 — FREE -->
-    <div class="post">
+    <!-- POST 5 — LOCKED -->
+    <article class="post">
       <div class="post-header">
-        <div class="post-avatar">🍺</div>
+        <div class="post-ava">📷</div>
         <div>
-          <div class="post-author">Kapac Beer <span class="verified" style="color:var(--blue)">✓</span></div>
-          <div class="post-time">hace 5 días</div>
+          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
+          <div class="post-time">hace 5 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
         </div>
-        <div class="post-more">···</div>
+        <span class="post-more">···</span>
       </div>
-      <div class="post-text">
-        Pregunta del día: ¿con qué comida maridarías una IPA bien lupulada? 🌺 Yo digo burger con queso azul. El amargor corta perfecto la grasa. Pero quiero saber qué dicen ustedes 👇🔥
-      </div>
-      <div class="post-media" style="background:linear-gradient(135deg,#1a0808,#8a1414,#d42020);">
-        <div class="post-media-inner">🔥🌺🍔</div>
+      <p class="post-text">
+        "Retratos de ciudad" — serie de 40 fotografías urbanas en blanco y negro. Solo para el plan Galería. 🖤🌆
+      </p>
+      <div class="post-media locked">
+        <div class="post-media-inner">
+          <div class="photo-art pa-4" style="width:100%;min-height:320px">
+            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,200,120,.2),transparent 70%);top:20px;left:60px;width:200px;height:200px"></div>
+            <div class="pa-line" style="width:70%;height:2px;bottom:35%;left:15%"></div>
+            <div class="pa-text-art">Retratos de Ciudad · Serie B/N · 40 fotos</div>
+          </div>
+        </div>
+        <div class="lock-overlay">
+          <div class="lock-box">
+            <h4>🔒 Solo suscriptores</h4>
+            <p>Plan <strong>Galería</strong> — acceso completo a todas las series y colecciones privadas.</p>
+            <button class="unlock-btn">Ver con plan Galería</button>
+          </div>
+        </div>
       </div>
       <div class="post-footer">
         <button class="post-action like-btn">
           <span class="icon">🤍</span>
-          <span class="like-count" data-n="1203">1203</span>
+          <span class="like-count" data-n="163">163</span>
         </button>
-        <button class="post-action comment-btn">
-          <span class="icon">💬</span> 341
-        </button>
-        <button class="post-action">
-          <span class="icon">↗️</span> Compartir
-        </button>
-        <button class="post-tip-btn">💰 Tip</button>
+        <button class="post-action comment-btn">💬 <span>27</span></button>
+        <button class="post-action">↗ Compartir</button>
+        <button class="post-tip-btn">🎁 Propina</button>
       </div>
-    </div>
+    </article>
 
   </main>
 
   <!-- RIGHT SIDEBAR -->
   <aside class="right-sidebar">
 
-    <!-- PLANES -->
-    <div class="sub-card">
-      <div class="sub-card-title">🔓 Planes de Suscripción</div>
+    <!-- SUBSCRIPTION TIERS -->
+    <div class="side-card">
+      <div class="side-card-title">Planes de suscripción</div>
 
-      <div class="sub-tier" onclick="document.getElementById('modalPlan').textContent='Curioso';document.getElementById('modalOverlay').classList.add('show')">
-        <div class="tier-top">
-          <span class="tier-name">🌱 Curioso</span>
-          <span class="tier-price">$4.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+      <div class="sub-tier">
+        <div class="tier-row">
+          <span class="tier-name">Visitante</span>
+          <span class="tier-price">$4.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
         </div>
-        <div class="tier-desc">Recetas básicas, newsletter, 5% descuento en tienda</div>
+        <div class="tier-desc">Feed público + acceso al chat · Ideal para empezar</div>
       </div>
 
-      <div class="sub-tier popular" onclick="document.getElementById('modalPlan').textContent='Cervecero';document.getElementById('modalOverlay').classList.add('show')">
-        <div class="tier-top">
-          <span class="tier-name">🍺 Cervecero <span class="tier-badge">Popular</span></span>
-          <span class="tier-price">$9.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+      <div class="sub-tier pop">
+        <div class="tier-row">
+          <span class="tier-name">Coleccionista</span>
+          <span class="tier-price">$9.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
+          <span class="tier-badge">Popular</span>
         </div>
-        <div class="tier-desc">Todo desbloqueado + caja de 4 botellas exclusivas al mes</div>
+        <div class="tier-desc">Todo lo anterior + series exclusivas + proceso creativo + DMs directos</div>
       </div>
 
-      <div class="sub-tier" onclick="document.getElementById('modalPlan').textContent='Maestro';document.getElementById('modalOverlay').classList.add('show')">
-        <div class="tier-top">
-          <span class="tier-name">👑 Maestro</span>
-          <span class="tier-price">$24.99<span style="font-size:.7rem;color:var(--muted)">/mes</span></span>
+      <div class="sub-tier">
+        <div class="tier-row">
+          <span class="tier-name">Galería</span>
+          <span class="tier-price">$19.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
         </div>
-        <div class="tier-desc">8 botellas + visita anual + tu nombre en latas edición limitada</div>
+        <div class="tier-desc">Acceso total · Impresiones con descuento · Videoconferencia mensual · Crédito en obras</div>
       </div>
 
-      <button class="sub-btn-full" data-sub="Cervecero">Suscribirme ahora</button>
+      <button class="sub-btn-full" data-sub="Coleccionista">Suscribirse ahora</button>
     </div>
 
-    <!-- TIP -->
-    <div class="tip-card">
-      <div class="tip-title">💰 Enviar Propina</div>
+    <!-- TIP CARD -->
+    <div class="side-card tip-card">
+      <div class="side-card-title">💛 Apoyar a Valeria</div>
       <div class="tip-amounts">
-        <div class="tip-amt">$1</div>
-        <div class="tip-amt">$3</div>
-        <div class="tip-amt">$5</div>
-        <div class="tip-amt">$10</div>
-        <div class="tip-amt">$20</div>
-        <div class="tip-amt">🍺 Otra</div>
+        <button class="tip-amt">$1</button>
+        <button class="tip-amt">$3</button>
+        <button class="tip-amt">$5</button>
+        <button class="tip-amt">$10</button>
+        <button class="tip-amt">$20</button>
+        <button class="tip-amt">$50</button>
       </div>
       <button class="tip-send">Enviar propina</button>
     </div>
 
     <!-- MEDIA GRID PREVIEW -->
-    <div class="sub-card">
-      <div class="sub-card-title">📸 Últimas Fotos</div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;">
-        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#2e1c08,#8a5c14);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;">🌾</div>
-        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#0d0500,#3d1500);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;">☕</div>
-        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#1a2e08,#4a8c14);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-          🍋
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+    <div class="side-card">
+      <div class="side-card-title">Galería reciente</div>
+      <div class="media-grid">
+        <div class="mg-item" style="background:linear-gradient(135deg,#0d1520,#1a2040)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌅</div>
         </div>
-        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#1a0808,#8a1414);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-          🔥
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+        <div class="mg-item" style="background:linear-gradient(135deg,#0a0a0f,#1a0830)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌃</div>
         </div>
-        <div style="aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#0d0d1a,#3a20a0);display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-          👑
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;font-size:.8rem;">🔒</div>
+        <div class="mg-item" style="background:linear-gradient(135deg,#1a1000,#2a1800)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🎞</div>
         </div>
-        <div style="aspect-ratio:1;border-radius:8px;background:var(--dark4);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--muted);cursor:pointer;">+242</div>
+        <div class="mg-item" style="background:linear-gradient(135deg,#0a1a0a,#102010)">
+          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌿</div>
+        </div>
+        <div class="mg-item" style="background:linear-gradient(135deg,#1a0a0a,#200a10)">
+          <div class="mg-lock">🔒</div>
+        </div>
+        <div class="mg-item" style="background:linear-gradient(135deg,#0a0f1a,#0d1030)">
+          <div class="mg-lock">🔒</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="side-card">
+      <div class="side-card-title">Sobre la artista</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.8">
+        📍 Buenos Aires, Argentina<br>
+        🎓 FADU — UBA · Bellas Artes<br>
+        📷 Canon EOS 5D · Pentax K1000<br>
+        🏆 Premio BAphoto 2023<br>
+        🖼 Exposiciones en 6 países
       </div>
     </div>
 
   </aside>
+</div>
 
-</div><!-- /layout -->
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close-btn" id="modalClose">✕</button>
+    <h3>🎨 Plan <span id="modalPlan">Coleccionista</span></h3>
+    <p>Accede a contenido exclusivo de Valeria Morales y apoya su trabajo artístico directamente.</p>
+    <form id="subForm">
+      <input type="email" placeholder="tu@email.com" required />
+      <input type="text"  placeholder="Nombre en la tarjeta" required />
+      <input type="text"  placeholder="Número de tarjeta" required maxlength="19" />
+      <button type="submit" class="modal-btn">Activar suscripción 🔓</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
 
 <script src="js/app.js"></script>
 </body>

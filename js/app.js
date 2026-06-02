@@ -11,6 +11,22 @@ document.querySelectorAll('.like-btn').forEach(btn => {
   });
 });
 
+/* ===== POST TIP BUTTON (opens sidebar tip card) ===== */
+document.querySelectorAll('.post-tip-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tipCard = document.querySelector('.tip-card');
+    if (tipCard) tipCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    showToast('🎁 Selecciona un monto para enviar una propina');
+  });
+});
+
+/* ===== PROFILE TIP BUTTON ===== */
+document.querySelector('.btn-tip')?.addEventListener('click', () => {
+  const tipCard = document.querySelector('.tip-card');
+  if (tipCard) tipCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  showToast('🎁 Selecciona un monto en el panel derecho');
+});
+
 /* ===== TIPS ===== */
 document.querySelectorAll('.tip-amt').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -18,14 +34,14 @@ document.querySelectorAll('.tip-amt').forEach(btn => {
     btn.classList.add('sel');
     const sendBtn = btn.closest('.tip-card').querySelector('.tip-send');
     sendBtn.classList.add('active');
-    sendBtn.textContent = 'Enviar ' + btn.textContent + ' 🍺';
+    sendBtn.textContent = 'Enviar ' + btn.textContent + ' 🎨';
   });
 });
 
 document.querySelectorAll('.tip-send').forEach(btn => {
   btn.addEventListener('click', () => {
     if (!btn.classList.contains('active')) return;
-    showToast('🍺 ¡Propina enviada! Gracias por apoyar a Kapac');
+    showToast('🎨 ¡Propina enviada! Gracias por apoyar a Valeria');
     btn.classList.remove('active');
     btn.textContent = 'Enviar propina';
     btn.closest('.tip-card').querySelectorAll('.tip-amt').forEach(b => b.classList.remove('sel'));
@@ -35,7 +51,7 @@ document.querySelectorAll('.tip-send').forEach(btn => {
 /* ===== SUBSCRIBE ===== */
 document.querySelectorAll('[data-sub]').forEach(btn => {
   btn.addEventListener('click', () => {
-    const plan = btn.dataset.sub || 'Cervecero';
+    const plan = btn.dataset.sub || 'Coleccionista';
     document.getElementById('modalPlan').textContent = plan;
     document.getElementById('modalOverlay').classList.add('show');
   });
@@ -46,11 +62,24 @@ document.getElementById('modalOverlay')?.addEventListener('click', e => {
     document.getElementById('modalOverlay').classList.remove('show');
 });
 
+document.getElementById('modalClose')?.addEventListener('click', () => {
+  document.getElementById('modalOverlay').classList.remove('show');
+});
+
 document.getElementById('subForm')?.addEventListener('submit', e => {
   e.preventDefault();
   document.getElementById('modalOverlay').classList.remove('show');
-  showToast('🎉 ¡Suscripción activada! Bienvenido al club');
+  showToast('🎉 ¡Suscripción activada! Bienvenido/a a la galería de Valeria');
   e.target.reset();
+});
+
+/* ===== SUBSCRIPTION TIERS ===== */
+document.querySelectorAll('.sub-tier').forEach(tier => {
+  tier.addEventListener('click', () => {
+    const name = tier.querySelector('.tier-name')?.textContent || 'Coleccionista';
+    document.getElementById('modalPlan').textContent = name;
+    document.getElementById('modalOverlay').classList.add('show');
+  });
 });
 
 /* ===== UNLOCK POST ===== */
@@ -60,13 +89,13 @@ document.querySelectorAll('.unlock-btn').forEach(btn => {
     const media = btn.closest('.post-media');
     media.classList.remove('locked');
     btn.closest('.lock-overlay')?.remove();
-    showToast('🔓 ¡Contenido desbloqueado!');
+    showToast('🔓 ¡Contenido desbloqueado! Disfruta la colección');
   });
 });
 
 /* ===== MSG BUTTON ===== */
 document.querySelectorAll('.btn-msg').forEach(btn => {
-  btn.addEventListener('click', () => showToast('💬 Abriendo chat con Kapac Beer...'));
+  btn.addEventListener('click', () => showToast('💬 Abriendo chat con Valeria Morales...'));
 });
 
 /* ===== TABS ===== */
@@ -85,9 +114,10 @@ document.querySelectorAll('.comment-btn').forEach(btn => {
 /* ===== FOLLOW SUGGESTED ===== */
 document.querySelectorAll('.sug-follow').forEach(btn => {
   btn.addEventListener('click', () => {
+    const name = btn.closest('.sug-item')?.querySelector('.sug-name')?.textContent || 'artista';
     btn.textContent = '✓';
-    btn.style.background = 'rgba(0,175,240,.15)';
-    showToast('✓ Siguiendo nuevo lote');
+    btn.classList.add('done');
+    showToast('✓ Siguiendo a ' + name);
   });
 });
 
