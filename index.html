@@ -1,494 +1,366 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapac Beer — Cerveza Artesanal Premium</title>
-  <meta name="description" content="Kapac Beer — Cervezas artesanales elaboradas con ingredientes seleccionados. Sabor, tradición y carácter en cada sorbo." />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kapac Fans — El Club Exclusivo de Cerveza Artesanal</title>
+  <meta name="description" content="Suscríbete a Kapac Fans y recibe recetas secretas, lanzamientos exclusivos y cervezas que nunca verás en ningún otro lugar."/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- AGE GATE -->
-<div class="age-gate" id="ageGate" style="display:none;">
-  <div class="ag-logo">🍺 KAPAC BEER</div>
-  <h2>¿Eres mayor de edad?</h2>
-  <p>Este sitio contiene contenido sobre bebidas alcohólicas. Debes tener 18 años o más para ingresar.</p>
-  <div class="age-btns">
-    <button class="age-yes" id="ageYes">Sí, tengo 18+</button>
-    <button class="age-no"  id="ageNo">No, salir</button>
+<!-- MODAL SUSCRIPCIÓN -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div style="font-size:2.5rem;margin-bottom:.75rem;">🍺</div>
+    <h3>Únete al Plan <span id="modalPlanName">Cervecero</span></h3>
+    <p>Ingresa tus datos y en menos de 24h recibirás tu primer acceso exclusivo y los detalles de tu primera entrega.</p>
+    <form id="subForm">
+      <input class="modal-input" type="text"  placeholder="Tu nombre" required/>
+      <input class="modal-input" type="email" placeholder="tu@email.com" required/>
+      <input class="modal-input" type="tel"   placeholder="WhatsApp / Teléfono"/>
+      <button class="modal-submit" type="submit">🍺 Quiero suscribirme</button>
+    </form>
+    <p class="modal-disclaimer">Al suscribirte confirmas ser mayor de edad. Sin compromiso de permanencia. Cancela cuando quieras.</p>
   </div>
-  <p class="age-disclaimer">Al ingresar confirmas que eres mayor de edad según la legislación de tu país. Beber con responsabilidad.</p>
 </div>
 
-<!-- CART TOAST -->
-<div class="cart-toast" id="cartToast">
-  <span class="toast-icon">🍺</span>
-  <div class="toast-text">
-    <div class="toast-title"></div>
-    <div class="toast-sub"></div>
-  </div>
-  <span style="color:var(--gold);font-size:.8rem;font-weight:700;">Ver pedido →</span>
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="t-icon">🍺</span>
+  <div><div class="t-title"></div><div class="t-sub"></div></div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="#inicio" class="nav-logo">
-    <span class="logo-icon">🍺</span> KAPAC BEER
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#productos">Cervezas</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#contacto" class="nav-cta">Hacer Pedido</a></li>
-  </ul>
-  <div class="nav-burger" id="navBurger">
-    <span></span><span></span><span></span>
+  <div class="nav-logo">🍺 KAPAC FANS</div>
+  <div class="nav-right">
+    <button class="nav-btn btn-login">Iniciar sesión</button>
+    <button class="nav-btn btn-sub" data-open-modal="Cervecero">Suscribirme</button>
   </div>
 </nav>
 
 <!-- ======== HERO ======== -->
-<section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-particles"></div>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">✦ Plataforma exclusiva de cerveza artesanal</div>
+    <h1>
+      El contenido que<br/>
+      ninguna cervecería<br/>
+      <span class="grad">se atreve a mostrar</span>
+    </h1>
+    <p>Recetas secretas, lanzamientos solo para suscriptores, detrás de cámaras del proceso artesanal y cajas exclusivas que nunca verás en una tienda. Esto es <strong>Kapac Fans</strong>.</p>
 
-  <div class="hero-content">
-    <div class="hero-badge">✦ Artesanal desde 2018</div>
-    <h1>El sabor<br/>que despierta<br/><em>tu espíritu</em></h1>
-    <p class="hero-desc">
-      Cervezas artesanales elaboradas con los mejores ingredientes, fermentadas lentamente para un sabor auténtico que ninguna cerveza industrial puede igualar.
-    </p>
     <div class="hero-actions">
-      <a href="#productos" class="btn-primary">🍺 Ver Cervezas</a>
-      <a href="#nosotros" class="btn-outline">Nuestra Historia</a>
-    </div>
-  </div>
-
-  <div class="hero-image">
-    <div class="beer-visual">
-      <div class="foam"></div>
-      <div class="beer-can">
-        <div class="can-shine"></div>
-        <div class="can-label">
-          <div class="brand">KAPAC</div>
-          <div class="sub">Craft Beer</div>
-        </div>
-      </div>
-      <div class="bubbles"></div>
-    </div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="dot">●</span> Cerveza Artesanal</span>
-    <span class="marquee-item"><span class="dot">●</span> Ingredientes Naturales</span>
-    <span class="marquee-item"><span class="dot">●</span> Sin Conservantes</span>
-    <span class="marquee-item"><span class="dot">●</span> Fermentación Lenta</span>
-    <span class="marquee-item"><span class="dot">●</span> Receta Secreta</span>
-    <span class="marquee-item"><span class="dot">●</span> Premio Craft 2023</span>
-    <span class="marquee-item"><span class="dot">●</span> Cerveza Artesanal</span>
-    <span class="marquee-item"><span class="dot">●</span> Ingredientes Naturales</span>
-    <span class="marquee-item"><span class="dot">●</span> Sin Conservantes</span>
-    <span class="marquee-item"><span class="dot">●</span> Fermentación Lenta</span>
-    <span class="marquee-item"><span class="dot">●</span> Receta Secreta</span>
-    <span class="marquee-item"><span class="dot">●</span> Premio Craft 2023</span>
-  </div>
-</div>
-
-<!-- ======== NOSOTROS ======== -->
-<section class="about" id="nosotros">
-  <div class="about-grid container">
-
-    <div>
-      <span class="section-label">Nuestra Historia</span>
-      <h2 class="section-title">Nació de la pasión,<br/>vive en cada sorbo</h2>
-      <p class="section-subtitle">
-        Kapac Beer nació en 2018 como un proyecto familiar con una obsesión simple: crear la cerveza artesanal más sabrosa de la región. Inspirados en la tradición cervecera europea y la riqueza de ingredientes locales, desarrollamos recetas únicas que hoy conquistan paladares en todo el país.
-      </p>
-      <p style="color:var(--muted);font-size:.95rem;line-height:1.75;margin-top:1rem;">
-        Cada lote es elaborado en pequeñas cantidades, con control artesanal en cada etapa del proceso. Nada de atajos, nada de conservantes artificiales — solo cebada, lúpulo, agua pura y tiempo.
-      </p>
-
-      <div class="about-stats reveal">
-        <div class="stat-item">
-          <div class="stat-num" data-count="12" data-suffix="+">&nbsp;</div>
-          <div class="stat-label">Variedades disponibles</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="6" data-suffix="">&nbsp;</div>
-          <div class="stat-label">Años de experiencia</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="25000" data-suffix="+">&nbsp;</div>
-          <div class="stat-label">Clientes satisfechos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-count="4" data-suffix="">&nbsp;</div>
-          <div class="stat-label">Premios nacionales</div>
-        </div>
-      </div>
+      <button class="cta-main" data-open-modal="Cervecero">🍺 Suscribirme ahora</button>
+      <button class="cta-sec" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Ver planes</button>
     </div>
 
-    <div class="about-visual reveal">
-      <div class="about-img-box box-1">🌾</div>
-      <div class="about-img-box box-2">🍺</div>
-      <div class="about-img-box box-3">🍋</div>
-      <div class="about-img-box box-4">🏆</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======== PRODUCTOS ======== -->
-<section class="products" id="productos">
-  <div class="products-header container">
-    <span class="section-label">Nuestras Cervezas</span>
-    <h2 class="section-title">Escoge tu favorita</h2>
-    <p class="section-subtitle">Cuatro estilos únicos para cuatro momentos distintos. Cada una tiene su carácter, su aroma y su historia.</p>
-  </div>
-
-  <div class="products-grid container">
-
-    <!-- CARD 1 -->
-    <div class="product-card featured reveal">
-      <span class="featured-badge">Más vendida</span>
-      <div class="product-visual pv-amber">
-        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(212,160,23,.4));">🍺</div>
-      </div>
-      <div class="product-body">
-        <div class="product-type">Golden Lager</div>
-        <div class="product-name">Kapac Dorada</div>
-        <div class="product-desc">Ligera, refrescante y con un suave amargor. La cerveza perfecta para el calor y los encuentros con amigos. Notas de miel y lúpulo fresco.</div>
-        <div class="product-meta">
-          <span class="meta-tag">🌡 4.8% Alc.</span>
-          <span class="meta-tag">🌾 Malta Pilsen</span>
-          <span class="meta-tag">IBU 18</span>
-        </div>
-        <div class="product-footer">
-          <div class="price">$4.50 <span>/ bot. 330ml</span></div>
-          <button class="add-btn">＋ Agregar</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="product-card reveal">
-      <div class="product-visual pv-dark">
-        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5));">🍻</div>
-      </div>
-      <div class="product-body">
-        <div class="product-type">Dark Stout</div>
-        <div class="product-name">Kapac Negra</div>
-        <div class="product-desc">Oscura, densa y con un característico sabor a café y chocolate amargo. Para los que buscan intensidad en cada vaso.</div>
-        <div class="product-meta">
-          <span class="meta-tag">🌡 6.2% Alc.</span>
-          <span class="meta-tag">☕ Malta tostada</span>
-          <span class="meta-tag">IBU 32</span>
-        </div>
-        <div class="product-footer">
-          <div class="price">$5.00 <span>/ bot. 330ml</span></div>
-          <button class="add-btn">＋ Agregar</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="product-card reveal">
-      <div class="product-visual pv-golden">
-        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(212,160,23,.5));">🍋</div>
-      </div>
-      <div class="product-body">
-        <div class="product-type">Wheat Ale</div>
-        <div class="product-name">Kapac Trigo</div>
-        <div class="product-desc">Suave y afrutada, elaborada con trigo de primera calidad. Cítrica, con notas de naranja y coriandro. Ideal para quien prefiere algo diferente.</div>
-        <div class="product-meta">
-          <span class="meta-tag">🌡 5.0% Alc.</span>
-          <span class="meta-tag">🌿 Trigo & Coriandro</span>
-          <span class="meta-tag">IBU 14</span>
-        </div>
-        <div class="product-footer">
-          <div class="price">$4.80 <span>/ bot. 330ml</span></div>
-          <button class="add-btn">＋ Agregar</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="product-card reveal">
-      <div class="product-visual pv-red">
-        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(180,30,0,.4));">🔥</div>
-      </div>
-      <div class="product-body">
-        <div class="product-type">Red IPA</div>
-        <div class="product-name">Kapac Roja</div>
-        <div class="product-desc">Intensa, lupulada y con un bello color caramelo. Para los amantes del amargor pronunciado y los aromas a resina y frutos tropicales.</div>
-        <div class="product-meta">
-          <span class="meta-tag">🌡 6.8% Alc.</span>
-          <span class="meta-tag">🌺 Doble lúpulo</span>
-          <span class="meta-tag">IBU 55</span>
-        </div>
-        <div class="product-footer">
-          <div class="price">$5.50 <span>/ bot. 330ml</span></div>
-          <button class="add-btn">＋ Agregar</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- PACK PROMO -->
-  <div class="reveal" style="max-width:700px;margin:3rem auto 0;background:linear-gradient(135deg,#241c0e,#3d2d0d);border:1px solid rgba(212,160,23,.3);border-radius:18px;padding:2.5rem;text-align:center;">
-    <div style="font-size:2.5rem;margin-bottom:1rem;">📦</div>
-    <h3 style="font-family:Georgia,serif;font-size:1.6rem;margin-bottom:.5rem;">Pack Degustación Kapac</h3>
-    <p style="color:var(--muted);margin-bottom:1.5rem;">Las 4 variedades × 3 botellas = 12 cervezas. Descubre tu favorita y ahorra.</p>
-    <div style="font-family:Georgia,serif;font-size:2rem;color:var(--gold-lt);margin-bottom:.5rem;">
-      $48.00 <span style="font-size:1rem;color:var(--muted);text-decoration:line-through;">$59.40</span>
-    </div>
-    <div style="font-size:.8rem;color:var(--gold);margin-bottom:1.5rem;letter-spacing:.08em;">AHORRAS $11.40 · ENVÍO GRATIS</div>
-    <button class="btn-primary add-btn" style="margin:0 auto;" data-name="Pack Degustación">
-      🎁 Quiero este pack
-    </button>
-  </div>
-</section>
-
-<!-- ======== FEATURES ======== -->
-<section class="features">
-  <div class="container">
-    <span class="section-label">¿Por qué Kapac?</span>
-    <h2 class="section-title">Artesanal en todo<br/>lo que hacemos</h2>
-
-    <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">🌾</div>
-        <h4>Ingredientes de Origen</h4>
-        <p>Seleccionamos la cebada, el lúpulo y el agua directamente de productores locales de confianza, garantizando frescura y calidad en cada lote.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">⏳</div>
-        <h4>Fermentación Lenta</h4>
-        <p>Nuestras cervezas fermentan entre 21 y 45 días. Sin atajos. La paciencia es el ingrediente secreto que les da ese sabor profundo y equilibrado.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🚫</div>
-        <h4>Sin Conservantes</h4>
-        <p>Cero aditivos artificiales. Kapac Beer es cerveza viva — debe mantenerse fría y consumirse fresca para disfrutar su sabor en todo su esplendor.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🏆</div>
-        <h4>Reconocida por Expertos</h4>
-        <p>Cuatro premios en concursos nacionales de cerveza artesanal y una puntuación media de 92/100 en las principales plataformas especializadas.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🚚</div>
-        <h4>Entrega a Domicilio</h4>
-        <p>Pedidos mínimos de 6 botellas con entrega en 24–48 horas. Envío gratis en pedidos superiores a $40. Bien refrigeradas hasta tu puerta.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">♻️</div>
-        <h4>Producción Sostenible</h4>
-        <p>Botellas retornables, residuos de malta composteados y uso de energías renovables en nuestra planta. Cerveza que cuida el planeta.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======== TESTIMONIALS ======== -->
-<section class="testimonials">
-  <div class="testimonials-header container">
-    <span class="section-label">Lo que dicen</span>
-    <h2 class="section-title">Amada por quienes<br/>la prueban</h2>
-  </div>
-
-  <div class="testimonials-grid container">
-    <div class="testi-card reveal">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"La Kapac Negra es simplemente la mejor stout artesanal que he probado en mi vida. Ese sabor a café tostado al final es adictivo. Ya es mi cerveza de viernes."</p>
-      <div class="testi-author">
-        <div class="author-avatar">CR</div>
-        <div>
-          <div class="author-name">Carlos Ríos</div>
-          <div class="author-loc">📍 Lima, Perú</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card reveal">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Pedí el pack degustación para una reunión y fue un éxito absoluto. Todos preguntaron dónde conseguirla. La Trigo se convirtió en la favorita del grupo."</p>
-      <div class="testi-author">
-        <div class="author-avatar">MA</div>
-        <div>
-          <div class="author-name">María Andrade</div>
-          <div class="author-loc">📍 Bogotá, Colombia</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="testi-card reveal">
-      <div class="stars">★★★★☆</div>
-      <p class="testi-text">"Vengo del mundo de las cervezas belgas y la Kapac Roja me sorprendió. Lupulada, equilibrada, con un amargor que no cansa. Llevo 3 pedidos este mes."</p>
-      <div class="testi-author">
-        <div class="author-avatar">JP</div>
-        <div>
-          <div class="author-name">Javier Pacheco</div>
-          <div class="author-loc">📍 Buenos Aires, Argentina</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======== ORDER CTA ======== -->
-<section class="order-section">
-  <div class="order-inner">
-    <span class="section-label">Pedidos Online</span>
-    <h2>Tu próxima cerveza<br/>favorita está aquí</h2>
-    <p>Deja tu correo y te enviamos el menú completo con precios, packs y disponibilidad de entrega en tu zona.</p>
-
-    <form class="order-form" id="orderForm">
-      <input class="order-input" type="email" placeholder="tucorreo@email.com" required />
-      <button class="btn-primary" type="submit" style="white-space:nowrap;">Quiero mi caja</button>
-    </form>
-
-    <div class="trust-line">
-      <span>✓ Sin spam</span>
-      <span>🚚 Envío en 24–48h</span>
+    <div class="hero-trust">
       <span>🔒 Pago seguro</span>
-      <span>📦 Mínimo 6 botellas</span>
+      <span>📦 Entrega a domicilio</span>
+      <span>❌ Sin permanencia</span>
+      <span>🏆 +3,200 suscriptores</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="profile-card">
+      <div class="profile-cover">🍺</div>
+      <div class="profile-avatar">🍺</div>
+
+      <div class="profile-info">
+        <div class="profile-name">Kapac Beer Oficial</div>
+        <div class="profile-handle">@kapacbeer · Cervecería Artesanal Premium</div>
+
+        <div class="profile-stats">
+          <div class="ps"><div class="ps-num" data-count="247" data-suffix="">—</div><div class="ps-label">Posts</div></div>
+          <div class="ps"><div class="ps-num" data-count="3200" data-suffix="+">—</div><div class="ps-label">Fans</div></div>
+          <div class="ps"><div class="ps-num" data-count="12" data-suffix="">—</div><div class="ps-label">Recetas</div></div>
+        </div>
+
+        <div style="font-size:.82rem;color:var(--muted);margin-bottom:.85rem;line-height:1.6;">
+          Maestro cervecero 🌾 · Recetas que no encontrarás en ningún lado · Lanzamientos exclusivos para fans 🚀
+        </div>
+
+        <!-- LOCKED GRID -->
+        <div class="locked-preview">
+          <div class="locked-item li-1">🌾<div class="lock-icon">🔒</div></div>
+          <div class="locked-item li-2">🍺<div class="lock-icon">🔒</div></div>
+          <div class="locked-item li-3">🔥<div class="lock-icon">🔒</div></div>
+          <div class="locked-item li-4">🌿<div class="lock-icon">🔒</div></div>
+          <div class="locked-item li-5">☕<div class="lock-icon">🔒</div></div>
+          <div class="locked-item li-6">🏆<div class="lock-icon">🔒</div></div>
+        </div>
+
+        <button class="sub-btn-card" data-open-modal="Cervecero">
+          🔓 Suscribirme — Desde $9.99/mes
+        </button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ======== CONTACTO ======== -->
-<section class="contact" id="contacto">
-  <div class="contact-grid container">
+<!-- ======== FEED PREVIEW ======== -->
+<section class="feed-section">
+  <div class="section-hdr reveal">
+    <span class="section-label">Contenido Exclusivo</span>
+    <h2 class="section-title">¿Qué recibes siendo fan?</h2>
+    <p class="section-sub">Publicaciones semanales con contenido que no existe en ningún otro lugar. Los primeros 3 son gratis.</p>
+  </div>
 
-    <div>
-      <span class="section-label">Contáctanos</span>
-      <h3>Hablemos de cerveza</h3>
-      <p>¿Tienes una pregunta, quieres hacer un pedido grande o simplemente quieres saber más? Escríbenos y te respondemos en menos de 24 horas.</p>
-
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="c-icon">📱</div>
-          <div>
-            <div class="c-label">WhatsApp</div>
-            <div class="c-value">+51 987 654 321</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="c-icon">📧</div>
-          <div>
-            <div class="c-label">Email</div>
-            <div class="c-value">hola@kapacbeer.com</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="c-icon">📍</div>
-          <div>
-            <div class="c-label">Cervecería</div>
-            <div class="c-value">Av. La Tradición 420, Lima</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="c-icon">🕐</div>
-          <div>
-            <div class="c-label">Horario de atención</div>
-            <div class="c-value">Lun–Vie 9am–6pm · Sáb 10am–3pm</div>
-          </div>
+  <div class="feed-grid">
+    <!-- FREE -->
+    <div class="feed-card reveal">
+      <div class="feed-thumb ft-1">🌾</div>
+      <div class="feed-body">
+        <div class="feed-tag">🆓 Gratis</div>
+        <div class="feed-title">Cómo elegir la malta perfecta</div>
+        <div class="feed-desc">El ingrediente que nadie menciona y que hace la diferencia entre una cerveza mediocre y una espectacular.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 284</span><span>💬 47</span></div>
+          <span class="unlock-tag" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#22c55e;">Libre</span>
         </div>
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Nombre</label>
-          <input class="form-input" type="text" placeholder="Tu nombre" required />
+    <div class="feed-card reveal">
+      <div class="feed-thumb ft-3" style="font-size:4.5rem;">🍋🌿</div>
+      <div class="feed-body">
+        <div class="feed-tag">🆓 Gratis</div>
+        <div class="feed-title">El secreto cítrico de la Kapac Trigo</div>
+        <div class="feed-desc">Por qué le ponemos coriandro y piel de naranja — y cómo replicarlo en casa con ingredientes de supermercado.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 421</span><span>💬 93</span></div>
+          <span class="unlock-tag" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#22c55e;">Libre</span>
         </div>
-        <div class="form-group">
-          <label class="form-label">Teléfono</label>
-          <input class="form-input" type="tel" placeholder="+51 000 000 000" />
-        </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input class="form-input" type="email" placeholder="tu@email.com" required />
-      </div>
-      <div class="form-group">
-        <label class="form-label">¿Qué buscas?</label>
-        <select class="form-select" required>
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option>Quiero hacer un pedido</option>
-          <option>Pack para evento / empresa</option>
-          <option>Distribución mayorista</option>
-          <option>Visita a la cervecería</option>
-          <option>Otra consulta</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Mensaje</label>
-        <textarea class="form-textarea" placeholder="Cuéntanos qué necesitas..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
-        Enviar Pedido 🍺
-      </button>
-    </form>
+    </div>
 
+    <div class="feed-card reveal">
+      <div class="feed-thumb ft-5">🌡️</div>
+      <div class="feed-body">
+        <div class="feed-tag">🆓 Gratis</div>
+        <div class="feed-title">Temperatura de fermentación: el dato que cambia todo</div>
+        <div class="feed-desc">1°C de diferencia puede arruinar o elevar tu cerveza. Aquí el rango exacto que usamos en Kapac.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 198</span><span>💬 31</span></div>
+          <span class="unlock-tag" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#22c55e;">Libre</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOCKED -->
+    <div class="feed-card locked reveal">
+      <div class="feed-thumb ft-2">☕🍫</div>
+      <div class="feed-body">
+        <div class="feed-tag">🔒 Solo fans</div>
+        <div class="feed-title">Receta completa: Kapac Negra Imperial</div>
+        <div class="feed-desc">La receta exacta que ganó el premio nacional 2023. Cantidades, tiempos y el truco del lúpulo tardío.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 1.2k</span><span>💬 204</span></div>
+          <span class="unlock-tag">Solo fans</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feed-card locked reveal">
+      <div class="feed-thumb ft-6">🚀✨</div>
+      <div class="feed-body">
+        <div class="feed-tag">🔒 Solo fans</div>
+        <div class="feed-title">Lanzamiento anticipado: Kapac Barleywine 2024</div>
+        <div class="feed-desc">La cerveza más fuerte que hemos hecho jamás. 11% de alcohol, 18 meses de maduración. Disponible solo para fans antes que nadie.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 876</span><span>💬 142</span></div>
+          <span class="unlock-tag">Exclusivo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feed-card locked reveal">
+      <div class="feed-thumb ft-4">🎥🌾</div>
+      <div class="feed-body">
+        <div class="feed-tag">🔒 Solo fans</div>
+        <div class="feed-title">Video: Un día completo en la cervecería</div>
+        <div class="feed-desc">Desde la llegada de los ingredientes hasta el embotellado. 47 minutos del proceso real de elaboración artesanal.</div>
+        <div class="feed-meta">
+          <div class="feed-stat"><span>❤️ 2.1k</span><span>💬 318</span></div>
+          <span class="unlock-tag">Video Premium</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PLANES ======== -->
+<section class="plans-section" id="planes">
+  <div class="section-hdr reveal">
+    <span class="section-label">Elige tu Plan</span>
+    <h2 class="section-title">Hazte fan hoy</h2>
+    <p class="section-sub">Sin permanencia. Cancela cuando quieras. Cada plan incluye acceso inmediato al contenido exclusivo.</p>
+  </div>
+
+  <div class="plans-grid">
+
+    <div class="plan-card reveal">
+      <div class="plan-icon">🌱</div>
+      <div class="plan-name">Curioso</div>
+      <div class="plan-tagline">Para probar sin comprometer</div>
+      <div class="plan-price">$4.99 <span>/mes</span></div>
+      <div class="plan-period">Cancela cuando quieras</div>
+      <ul class="plan-features">
+        <li>Acceso a 10 recetas básicas</li>
+        <li>Newsletter mensual exclusivo</li>
+        <li>5% descuento en tienda online</li>
+        <li>Comunidad de fans (Discord)</li>
+        <li class="no">Cajas físicas mensuales</li>
+        <li class="no">Lanzamientos anticipados</li>
+        <li class="no">Video-tours en la cervecería</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" data-open-modal="Curioso">Empezar →</button>
+    </div>
+
+    <div class="plan-card popular reveal">
+      <span class="plan-badge">⭐ Más popular</span>
+      <div class="plan-icon">🍺</div>
+      <div class="plan-name">Cervecero</div>
+      <div class="plan-tagline">El plan favorito de los fans</div>
+      <div class="plan-price">$9.99 <span>/mes</span></div>
+      <div class="plan-period">Cancela cuando quieras</div>
+      <ul class="plan-features">
+        <li>Todo del plan Curioso</li>
+        <li>Acceso a <strong>todas</strong> las recetas</li>
+        <li>Caja con 4 botellas exclusivas/mes</li>
+        <li>Lanzamientos 2 semanas antes</li>
+        <li>15% descuento en tienda</li>
+        <li>Video-tours mensuales</li>
+        <li class="no">Visita presencial a la cervecería</li>
+      </ul>
+      <button class="plan-btn plan-btn-solid" data-open-modal="Cervecero">Suscribirme →</button>
+    </div>
+
+    <div class="plan-card reveal">
+      <div class="plan-icon">🏆</div>
+      <div class="plan-name">Maestro</div>
+      <div class="plan-tagline">Para los fanáticos de verdad</div>
+      <div class="plan-price">$24.99 <span>/mes</span></div>
+      <div class="plan-period">Cancela cuando quieras</div>
+      <ul class="plan-features">
+        <li>Todo del plan Cervecero</li>
+        <li>Caja con <strong>8 botellas</strong> exclusivas/mes</li>
+        <li>1 visita anual a la cervecería</li>
+        <li>Tu nombre en latas edición limitada</li>
+        <li>30% descuento permanente</li>
+        <li>Chat directo con el maestro cervecero</li>
+        <li>Voto en nuevas recetas</li>
+      </ul>
+      <button class="plan-btn plan-btn-outline" data-open-modal="Maestro">Suscribirme →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======== CREATOR ======== -->
+<section class="creator-section">
+  <div class="creator-inner container">
+
+    <div class="creator-avatar-wrap reveal">
+      <div class="creator-avatar-big">🧑‍🍳</div>
+      <div class="creator-badge-float">
+        <span class="cbf-icon">🏆</span>
+        <div class="cbf-text"><strong>Maestro Certificado</strong>Guild of Craft Brewers 2022</div>
+      </div>
+    </div>
+
+    <div class="creator-text reveal">
+      <span class="section-label">El Creador</span>
+      <h3>Hola, soy Rodrigo.<br/>Llevo 12 años obsesionado<br/>con la cerveza perfecta.</h3>
+      <p>Empecé elaborando en una olla de 20 litros en mi cocina. Hoy producimos 8,000 litros mensuales — y cada receta sigue naciendo de la misma obsesión: superar el lote anterior.</p>
+      <p>Kapac Fans es el lugar donde comparto lo que ningún libro de cerveza artesanal te enseña: los errores, los secretos y las recetas que no salen a la venta general.</p>
+
+      <div class="creator-highlights">
+        <div class="ch-item">
+          <div class="ch-icon">📹</div>
+          <span>Videos del proceso real, sin editar, sin filtros</span>
+        </div>
+        <div class="ch-item">
+          <div class="ch-icon">📋</div>
+          <span>Recetas completas con gramos, tiempos y temperaturas exactas</span>
+        </div>
+        <div class="ch-item">
+          <div class="ch-icon">📦</div>
+          <span>Cervezas que <em>solo existen</em> para suscriptores de Kapac Fans</span>
+        </div>
+        <div class="ch-item">
+          <div class="ch-icon">💬</div>
+          <span>Respondo personalmente a los fans del plan Maestro</span>
+        </div>
+      </div>
+
+      <button class="cta-main" data-open-modal="Cervecero">🍺 Unirme al club</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section class="faq-section">
+  <div class="section-hdr reveal">
+    <span class="section-label">Preguntas Frecuentes</span>
+    <h2 class="section-title">Todo lo que quieres saber</h2>
+  </div>
+
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-q">¿Cómo funciona la suscripción? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Te suscribes a un plan, confirmas tu dirección de entrega y listo. Cada mes recibirás una caja con cervezas exclusivas según tu plan, además de acceso inmediato a todo el contenido digital en la plataforma.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Puedo cancelar cuando quiera? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Sí, absolutamente. No hay contratos ni permanencia mínima. Puedes cancelar desde tu cuenta en cualquier momento antes de la fecha de facturación del próximo mes. Sin letras pequeñas.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿A qué zonas hacen envíos? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Actualmente realizamos envíos a Lima Metropolitana (24h), provincias principales del Perú (3-5 días) y estamos trabajando en expandirnos a Colombia, Ecuador y Chile. Consulta disponibilidad al suscribirte.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Las cervezas del plan se venden en tiendas? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">No. Las cervezas de suscripción son lotes exclusivos que producimos solo para fans de Kapac. Tienen recetas distintas a nuestra línea comercial y nunca se venderán en tiendas ni supermercados.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Qué pasa si no me gusta alguna cerveza? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Puedes reportarlo y te enviamos un reemplazo en el siguiente lote. Además, en el plan Maestro puedes votar qué estilos quieres recibir el próximo mes. Tu opinión forma parte del proceso.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Puedo regalar una suscripción? <span class="faq-arrow">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">¡Claro! Contáctanos por WhatsApp o email y armamos una suscripción regalo con tarjeta personalizada, duración que elijas (1, 3 o 6 meses) y presentación especial para regalo.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CTA FINAL ======== -->
+<section class="cta-section">
+  <div class="reveal">
+    <div style="font-size:3.5rem;margin-bottom:1rem;">🍺</div>
+    <h2>¿Todavía lo estás pensando?</h2>
+    <p>Más de 3,200 fans ya reciben su caja mensual de Kapac. El próximo lote exclusivo sale en 6 días.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button class="cta-main" data-open-modal="Cervecero">🔓 Suscribirme ahora</button>
+      <button class="cta-sec" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Ver todos los planes</button>
+    </div>
+    <p style="color:var(--muted);font-size:.8rem;margin-top:1.5rem;">Sin permanencia · Cancela cuando quieras · Solo para mayores de edad</p>
   </div>
 </section>
 
 <!-- ======== FOOTER ======== -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">🍺 KAPAC BEER</div>
-      <p>Cerveza artesanal elaborada con pasión, ingredientes naturales y el secreto de una fermentación lenta. Sin conservantes, solo sabor.</p>
-      <div class="social-links" style="margin-top:1.25rem;">
-        <a href="#" class="social-link" title="Instagram">📸</a>
-        <a href="#" class="social-link" title="Facebook">👤</a>
-        <a href="#" class="social-link" title="TikTok">🎵</a>
-        <a href="#" class="social-link" title="WhatsApp">💬</a>
-      </div>
-    </div>
-
-    <div class="footer-col">
-      <h5>Cervezas</h5>
-      <ul>
-        <li><a href="#productos">Kapac Dorada</a></li>
-        <li><a href="#productos">Kapac Negra</a></li>
-        <li><a href="#productos">Kapac Trigo</a></li>
-        <li><a href="#productos">Kapac Roja</a></li>
-        <li><a href="#productos">Pack Degustación</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h5>Empresa</h5>
-      <ul>
-        <li><a href="#nosotros">Nuestra Historia</a></li>
-        <li><a href="#nosotros">El Proceso</a></li>
-        <li><a href="#contacto">Visita la Cervecería</a></li>
-        <li><a href="#contacto">Mayoristas</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h5>Ayuda</h5>
-      <ul>
-        <li><a href="#contacto">Cómo Pedir</a></li>
-        <li><a href="#contacto">Envíos</a></li>
-        <li><a href="#contacto">Devoluciones</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2024 Kapac Beer. Todos los derechos reservados. · <span style="color:var(--gold-dk);">Bebe con responsabilidad. Prohibida la venta a menores de edad.</span></p>
-    <p>Hecho con 🍺 y mucha pasión.</p>
+  <div class="footer-logo">🍺 KAPAC FANS</div>
+  <p>© 2024 Kapac Beer. Todos los derechos reservados. · Bebe con responsabilidad.</p>
+  <div class="soc">
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="TikTok">🎵</a>
+    <a href="#" title="WhatsApp">💬</a>
   </div>
 </footer>
 
