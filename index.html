@@ -3,233 +3,495 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnglishPath – Aprende Inglés de Cero a Avanzado</title>
+  <title>Kapac Beer — Cerveza Artesanal Premium</title>
+  <meta name="description" content="Kapac Beer — Cervezas artesanales elaboradas con ingredientes seleccionados. Sabor, tradición y carácter en cada sorbo." />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .hero-progress {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      max-width: 700px;
-      margin: 2.5rem auto 0;
-    }
-    .hp-card {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 10px;
-      padding: 1rem;
-      backdrop-filter: blur(8px);
-      text-align: left;
-    }
-    .hp-card .hp-label { font-size: .8rem; opacity: .7; margin-bottom: .4rem; }
-    .hp-card .hp-bar   { height: 5px; background: rgba(255,255,255,.2); border-radius: 100px; overflow: hidden; }
-    .hp-card .hp-fill  { height: 5px; background: #fbbf24; border-radius: 100px; width: 0%; transition: width .5s; }
-    .hp-card .hp-pct   { font-size: .75rem; opacity: .7; margin-top: .3rem; }
-  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" class="nav-logo">
-    <span>📚</span> EnglishPath
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Inicio</a></li>
-    <li><a href="pages/basic.html">Básico</a></li>
-    <li><a href="pages/intermediate.html">Intermedio</a></li>
-    <li><a href="pages/advanced.html">Avanzado</a></li>
-    <li><a href="pages/vocabulary.html">Vocabulario</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-content">
-    <h1>Aprende <em>Inglés</em><br/>de Cero a Avanzado</h1>
-    <p>Lecciones interactivas, ejercicios prácticos y tarjetas de vocabulario.<br/>Todo lo que necesitas en un solo lugar.</p>
-    <div class="hero-badges">
-      <span class="badge">🆓 100% Gratis</span>
-      <span class="badge">🎯 A1 → C2</span>
-      <span class="badge">🗣️ Pronunciación</span>
-      <span class="badge">📝 Ejercicios</span>
-      <span class="badge">🃏 Flashcards</span>
-    </div>
-    <a href="pages/basic.html" class="cta-btn">▶ Comenzar Ahora</a>
-
-    <div class="hero-progress" id="heroProgress">
-      <div class="hp-card">
-        <div class="hp-label">Básico (A1–A2)</div>
-        <div class="hp-bar"><div class="hp-fill" id="pb-basic"></div></div>
-        <div class="hp-pct" id="pct-basic">0% completado</div>
-      </div>
-      <div class="hp-card">
-        <div class="hp-label">Intermedio (B1–B2)</div>
-        <div class="hp-bar"><div class="hp-fill" id="pb-inter"></div></div>
-        <div class="hp-pct" id="pct-inter">0% completado</div>
-      </div>
-      <div class="hp-card">
-        <div class="hp-label">Avanzado (C1–C2)</div>
-        <div class="hp-bar"><div class="hp-fill" id="pb-adv"></div></div>
-        <div class="hp-pct" id="pct-adv">0% completado</div>
-      </div>
-    </div>
+<!-- AGE GATE -->
+<div class="age-gate" id="ageGate" style="display:none;">
+  <div class="ag-logo">🍺 KAPAC BEER</div>
+  <h2>¿Eres mayor de edad?</h2>
+  <p>Este sitio contiene contenido sobre bebidas alcohólicas. Debes tener 18 años o más para ingresar.</p>
+  <div class="age-btns">
+    <button class="age-yes" id="ageYes">Sí, tengo 18+</button>
+    <button class="age-no"  id="ageNo">No, salir</button>
   </div>
-</header>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Niveles (A1–C2)</div></div>
-  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Lecciones</div></div>
-  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Palabras con flashcards</div></div>
-  <div class="stat"><div class="stat-num">150+</div><div class="stat-label">Ejercicios interactivos</div></div>
+  <p class="age-disclaimer">Al ingresar confirmas que eres mayor de edad según la legislación de tu país. Beber con responsabilidad.</p>
 </div>
 
-<!-- LEVELS -->
-<section class="section" style="background:#fff;">
-  <div class="section-title">
-    <h2>Elige tu Nivel</h2>
-    <p>Desde el alfabeto hasta textos académicos complejos</p>
+<!-- CART TOAST -->
+<div class="cart-toast" id="cartToast">
+  <span class="toast-icon">🍺</span>
+  <div class="toast-text">
+    <div class="toast-title"></div>
+    <div class="toast-sub"></div>
   </div>
-  <div class="levels-grid container">
+  <span style="color:var(--gold);font-size:.8rem;font-weight:700;">Ver pedido →</span>
+</div>
 
-    <!-- BASIC -->
-    <div class="level-card basic">
-      <div class="level-header">
-        <div class="level-icon">🌱</div>
-        <span class="level-tag">A1 – A2</span>
-        <h3>Básico</h3>
-        <p>Para personas que empiezan desde cero o tienen muy poco conocimiento del inglés.</p>
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">
+    <span class="logo-icon">🍺</span> KAPAC BEER
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#productos">Cervezas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#contacto" class="nav-cta">Hacer Pedido</a></li>
+  </ul>
+  <div class="nav-burger" id="navBurger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">✦ Artesanal desde 2018</div>
+    <h1>El sabor<br/>que despierta<br/><em>tu espíritu</em></h1>
+    <p class="hero-desc">
+      Cervezas artesanales elaboradas con los mejores ingredientes, fermentadas lentamente para un sabor auténtico que ninguna cerveza industrial puede igualar.
+    </p>
+    <div class="hero-actions">
+      <a href="#productos" class="btn-primary">🍺 Ver Cervezas</a>
+      <a href="#nosotros" class="btn-outline">Nuestra Historia</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="beer-visual">
+      <div class="foam"></div>
+      <div class="beer-can">
+        <div class="can-shine"></div>
+        <div class="can-label">
+          <div class="brand">KAPAC</div>
+          <div class="sub">Craft Beer</div>
+        </div>
       </div>
-      <div class="level-body">
-        <ul class="level-topics">
-          <li>Alfabeto y pronunciación</li>
-          <li>Saludos y presentaciones</li>
-          <li>Números, colores y días</li>
-          <li>Presente simple</li>
-          <li>Vocabulario esencial (100+ palabras)</li>
-          <li>Preguntas básicas</li>
-        </ul>
-        <a href="pages/basic.html" class="level-btn">Empezar nivel básico →</a>
+      <div class="bubbles"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="dot">●</span> Cerveza Artesanal</span>
+    <span class="marquee-item"><span class="dot">●</span> Ingredientes Naturales</span>
+    <span class="marquee-item"><span class="dot">●</span> Sin Conservantes</span>
+    <span class="marquee-item"><span class="dot">●</span> Fermentación Lenta</span>
+    <span class="marquee-item"><span class="dot">●</span> Receta Secreta</span>
+    <span class="marquee-item"><span class="dot">●</span> Premio Craft 2023</span>
+    <span class="marquee-item"><span class="dot">●</span> Cerveza Artesanal</span>
+    <span class="marquee-item"><span class="dot">●</span> Ingredientes Naturales</span>
+    <span class="marquee-item"><span class="dot">●</span> Sin Conservantes</span>
+    <span class="marquee-item"><span class="dot">●</span> Fermentación Lenta</span>
+    <span class="marquee-item"><span class="dot">●</span> Receta Secreta</span>
+    <span class="marquee-item"><span class="dot">●</span> Premio Craft 2023</span>
+  </div>
+</div>
+
+<!-- ======== NOSOTROS ======== -->
+<section class="about" id="nosotros">
+  <div class="about-grid container">
+
+    <div>
+      <span class="section-label">Nuestra Historia</span>
+      <h2 class="section-title">Nació de la pasión,<br/>vive en cada sorbo</h2>
+      <p class="section-subtitle">
+        Kapac Beer nació en 2018 como un proyecto familiar con una obsesión simple: crear la cerveza artesanal más sabrosa de la región. Inspirados en la tradición cervecera europea y la riqueza de ingredientes locales, desarrollamos recetas únicas que hoy conquistan paladares en todo el país.
+      </p>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.75;margin-top:1rem;">
+        Cada lote es elaborado en pequeñas cantidades, con control artesanal en cada etapa del proceso. Nada de atajos, nada de conservantes artificiales — solo cebada, lúpulo, agua pura y tiempo.
+      </p>
+
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <div class="stat-num" data-count="12" data-suffix="+">&nbsp;</div>
+          <div class="stat-label">Variedades disponibles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="6" data-suffix="">&nbsp;</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="25000" data-suffix="+">&nbsp;</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num" data-count="4" data-suffix="">&nbsp;</div>
+          <div class="stat-label">Premios nacionales</div>
+        </div>
       </div>
     </div>
 
-    <!-- INTERMEDIATE -->
-    <div class="level-card inter">
-      <div class="level-header">
-        <div class="level-icon">🚀</div>
-        <span class="level-tag">B1 – B2</span>
-        <h3>Intermedio</h3>
-        <p>Para quienes ya conocen lo básico y quieren expresarse con mayor fluidez y precisión.</p>
-      </div>
-      <div class="level-body">
-        <ul class="level-topics">
-          <li>Tiempos verbales (pasado, futuro)</li>
-          <li>Verbos modales</li>
-          <li>Oraciones condicionales</li>
-          <li>Lectura y comprensión</li>
-          <li>Phrasal verbs comunes</li>
-          <li>Vocabulario temático (300+ palabras)</li>
-        </ul>
-        <a href="pages/intermediate.html" class="level-btn">Empezar nivel intermedio →</a>
-      </div>
-    </div>
-
-    <!-- ADVANCED -->
-    <div class="level-card adv">
-      <div class="level-header">
-        <div class="level-icon">🎓</div>
-        <span class="level-tag">C1 – C2</span>
-        <h3>Avanzado</h3>
-        <p>Para quienes buscan dominar el inglés a nivel profesional y académico.</p>
-      </div>
-      <div class="level-body">
-        <ul class="level-topics">
-          <li>Gramática avanzada (subjuntivo, inversión)</li>
-          <li>Vocabulario académico</li>
-          <li>Escritura formal y ensayos</li>
-          <li>Idioms y expresiones</li>
-          <li>Comprensión lectora avanzada</li>
-          <li>Registro formal e informal</li>
-        </ul>
-        <a href="pages/advanced.html" class="level-btn">Empezar nivel avanzado →</a>
-      </div>
+    <div class="about-visual reveal">
+      <div class="about-img-box box-1">🌾</div>
+      <div class="about-img-box box-2">🍺</div>
+      <div class="about-img-box box-3">🍋</div>
+      <div class="about-img-box box-4">🏆</div>
     </div>
 
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="section">
-  <div class="section-title">
-    <h2>¿Cómo aprendemos?</h2>
-    <p>Metodología probada con actividades variadas y progresivas</p>
+<!-- ======== PRODUCTOS ======== -->
+<section class="products" id="productos">
+  <div class="products-header container">
+    <span class="section-label">Nuestras Cervezas</span>
+    <h2 class="section-title">Escoge tu favorita</h2>
+    <p class="section-subtitle">Cuatro estilos únicos para cuatro momentos distintos. Cada una tiene su carácter, su aroma y su historia.</p>
   </div>
-  <div class="features-grid container">
-    <div class="feature">
-      <div class="feature-icon">📖</div>
-      <h4>Lecciones Claras</h4>
-      <p>Explicaciones en español con ejemplos en inglés. Sin tecnicismos innecesarios.</p>
+
+  <div class="products-grid container">
+
+    <!-- CARD 1 -->
+    <div class="product-card featured reveal">
+      <span class="featured-badge">Más vendida</span>
+      <div class="product-visual pv-amber">
+        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(212,160,23,.4));">🍺</div>
+      </div>
+      <div class="product-body">
+        <div class="product-type">Golden Lager</div>
+        <div class="product-name">Kapac Dorada</div>
+        <div class="product-desc">Ligera, refrescante y con un suave amargor. La cerveza perfecta para el calor y los encuentros con amigos. Notas de miel y lúpulo fresco.</div>
+        <div class="product-meta">
+          <span class="meta-tag">🌡 4.8% Alc.</span>
+          <span class="meta-tag">🌾 Malta Pilsen</span>
+          <span class="meta-tag">IBU 18</span>
+        </div>
+        <div class="product-footer">
+          <div class="price">$4.50 <span>/ bot. 330ml</span></div>
+          <button class="add-btn">＋ Agregar</button>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-      <div class="feature-icon">🃏</div>
-      <h4>Flashcards</h4>
-      <p>Memoriza vocabulario con el sistema de repetición espaciada.</p>
+
+    <!-- CARD 2 -->
+    <div class="product-card reveal">
+      <div class="product-visual pv-dark">
+        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5));">🍻</div>
+      </div>
+      <div class="product-body">
+        <div class="product-type">Dark Stout</div>
+        <div class="product-name">Kapac Negra</div>
+        <div class="product-desc">Oscura, densa y con un característico sabor a café y chocolate amargo. Para los que buscan intensidad en cada vaso.</div>
+        <div class="product-meta">
+          <span class="meta-tag">🌡 6.2% Alc.</span>
+          <span class="meta-tag">☕ Malta tostada</span>
+          <span class="meta-tag">IBU 32</span>
+        </div>
+        <div class="product-footer">
+          <div class="price">$5.00 <span>/ bot. 330ml</span></div>
+          <button class="add-btn">＋ Agregar</button>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-      <div class="feature-icon">✍️</div>
-      <h4>Ejercicios</h4>
-      <p>Practica con quizzes, rellena huecos y más. Retroalimentación inmediata.</p>
+
+    <!-- CARD 3 -->
+    <div class="product-card reveal">
+      <div class="product-visual pv-golden">
+        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(212,160,23,.5));">🍋</div>
+      </div>
+      <div class="product-body">
+        <div class="product-type">Wheat Ale</div>
+        <div class="product-name">Kapac Trigo</div>
+        <div class="product-desc">Suave y afrutada, elaborada con trigo de primera calidad. Cítrica, con notas de naranja y coriandro. Ideal para quien prefiere algo diferente.</div>
+        <div class="product-meta">
+          <span class="meta-tag">🌡 5.0% Alc.</span>
+          <span class="meta-tag">🌿 Trigo & Coriandro</span>
+          <span class="meta-tag">IBU 14</span>
+        </div>
+        <div class="product-footer">
+          <div class="price">$4.80 <span>/ bot. 330ml</span></div>
+          <button class="add-btn">＋ Agregar</button>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-      <div class="feature-icon">🔊</div>
-      <h4>Pronunciación</h4>
-      <p>Escucha cómo se pronuncian las palabras y frases directamente en el navegador.</p>
+
+    <!-- CARD 4 -->
+    <div class="product-card reveal">
+      <div class="product-visual pv-red">
+        <div style="font-size:6rem;filter:drop-shadow(0 8px 20px rgba(180,30,0,.4));">🔥</div>
+      </div>
+      <div class="product-body">
+        <div class="product-type">Red IPA</div>
+        <div class="product-name">Kapac Roja</div>
+        <div class="product-desc">Intensa, lupulada y con un bello color caramelo. Para los amantes del amargor pronunciado y los aromas a resina y frutos tropicales.</div>
+        <div class="product-meta">
+          <span class="meta-tag">🌡 6.8% Alc.</span>
+          <span class="meta-tag">🌺 Doble lúpulo</span>
+          <span class="meta-tag">IBU 55</span>
+        </div>
+        <div class="product-footer">
+          <div class="price">$5.50 <span>/ bot. 330ml</span></div>
+          <button class="add-btn">＋ Agregar</button>
+        </div>
+      </div>
     </div>
-    <div class="feature">
-      <div class="feature-icon">💬</div>
-      <h4>Diálogos Reales</h4>
-      <p>Aprende con conversaciones auténticas de la vida cotidiana y profesional.</p>
+
+  </div>
+
+  <!-- PACK PROMO -->
+  <div class="reveal" style="max-width:700px;margin:3rem auto 0;background:linear-gradient(135deg,#241c0e,#3d2d0d);border:1px solid rgba(212,160,23,.3);border-radius:18px;padding:2.5rem;text-align:center;">
+    <div style="font-size:2.5rem;margin-bottom:1rem;">📦</div>
+    <h3 style="font-family:Georgia,serif;font-size:1.6rem;margin-bottom:.5rem;">Pack Degustación Kapac</h3>
+    <p style="color:var(--muted);margin-bottom:1.5rem;">Las 4 variedades × 3 botellas = 12 cervezas. Descubre tu favorita y ahorra.</p>
+    <div style="font-family:Georgia,serif;font-size:2rem;color:var(--gold-lt);margin-bottom:.5rem;">
+      $48.00 <span style="font-size:1rem;color:var(--muted);text-decoration:line-through;">$59.40</span>
     </div>
-    <div class="feature">
-      <div class="feature-icon">📊</div>
-      <h4>Tu Progreso</h4>
-      <p>El sitio recuerda qué lecciones completaste para que siempre sepas dónde continuar.</p>
+    <div style="font-size:.8rem;color:var(--gold);margin-bottom:1.5rem;letter-spacing:.08em;">AHORRAS $11.40 · ENVÍO GRATIS</div>
+    <button class="btn-primary add-btn" style="margin:0 auto;" data-name="Pack Degustación">
+      🎁 Quiero este pack
+    </button>
+  </div>
+</section>
+
+<!-- ======== FEATURES ======== -->
+<section class="features">
+  <div class="container">
+    <span class="section-label">¿Por qué Kapac?</span>
+    <h2 class="section-title">Artesanal en todo<br/>lo que hacemos</h2>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌾</div>
+        <h4>Ingredientes de Origen</h4>
+        <p>Seleccionamos la cebada, el lúpulo y el agua directamente de productores locales de confianza, garantizando frescura y calidad en cada lote.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">⏳</div>
+        <h4>Fermentación Lenta</h4>
+        <p>Nuestras cervezas fermentan entre 21 y 45 días. Sin atajos. La paciencia es el ingrediente secreto que les da ese sabor profundo y equilibrado.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚫</div>
+        <h4>Sin Conservantes</h4>
+        <p>Cero aditivos artificiales. Kapac Beer es cerveza viva — debe mantenerse fría y consumirse fresca para disfrutar su sabor en todo su esplendor.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🏆</div>
+        <h4>Reconocida por Expertos</h4>
+        <p>Cuatro premios en concursos nacionales de cerveza artesanal y una puntuación media de 92/100 en las principales plataformas especializadas.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚚</div>
+        <h4>Entrega a Domicilio</h4>
+        <p>Pedidos mínimos de 6 botellas con entrega en 24–48 horas. Envío gratis en pedidos superiores a $40. Bien refrigeradas hasta tu puerta.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">♻️</div>
+        <h4>Producción Sostenible</h4>
+        <p>Botellas retornables, residuos de malta composteados y uso de energías renovables en nuestra planta. Cerveza que cuida el planeta.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ======== TESTIMONIALS ======== -->
+<section class="testimonials">
+  <div class="testimonials-header container">
+    <span class="section-label">Lo que dicen</span>
+    <h2 class="section-title">Amada por quienes<br/>la prueban</h2>
+  </div>
+
+  <div class="testimonials-grid container">
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"La Kapac Negra es simplemente la mejor stout artesanal que he probado en mi vida. Ese sabor a café tostado al final es adictivo. Ya es mi cerveza de viernes."</p>
+      <div class="testi-author">
+        <div class="author-avatar">CR</div>
+        <div>
+          <div class="author-name">Carlos Ríos</div>
+          <div class="author-loc">📍 Lima, Perú</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Pedí el pack degustación para una reunión y fue un éxito absoluto. Todos preguntaron dónde conseguirla. La Trigo se convirtió en la favorita del grupo."</p>
+      <div class="testi-author">
+        <div class="author-avatar">MA</div>
+        <div>
+          <div class="author-name">María Andrade</div>
+          <div class="author-loc">📍 Bogotá, Colombia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-card reveal">
+      <div class="stars">★★★★☆</div>
+      <p class="testi-text">"Vengo del mundo de las cervezas belgas y la Kapac Roja me sorprendió. Lupulada, equilibrada, con un amargor que no cansa. Llevo 3 pedidos este mes."</p>
+      <div class="testi-author">
+        <div class="author-avatar">JP</div>
+        <div>
+          <div class="author-name">Javier Pacheco</div>
+          <div class="author-loc">📍 Buenos Aires, Argentina</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ORDER CTA ======== -->
+<section class="order-section">
+  <div class="order-inner">
+    <span class="section-label">Pedidos Online</span>
+    <h2>Tu próxima cerveza<br/>favorita está aquí</h2>
+    <p>Deja tu correo y te enviamos el menú completo con precios, packs y disponibilidad de entrega en tu zona.</p>
+
+    <form class="order-form" id="orderForm">
+      <input class="order-input" type="email" placeholder="tucorreo@email.com" required />
+      <button class="btn-primary" type="submit" style="white-space:nowrap;">Quiero mi caja</button>
+    </form>
+
+    <div class="trust-line">
+      <span>✓ Sin spam</span>
+      <span>🚚 Envío en 24–48h</span>
+      <span>🔒 Pago seguro</span>
+      <span>📦 Mínimo 6 botellas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CONTACTO ======== -->
+<section class="contact" id="contacto">
+  <div class="contact-grid container">
+
+    <div>
+      <span class="section-label">Contáctanos</span>
+      <h3>Hablemos de cerveza</h3>
+      <p>¿Tienes una pregunta, quieres hacer un pedido grande o simplemente quieres saber más? Escríbenos y te respondemos en menos de 24 horas.</p>
+
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="c-icon">📱</div>
+          <div>
+            <div class="c-label">WhatsApp</div>
+            <div class="c-value">+51 987 654 321</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📧</div>
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-value">hola@kapacbeer.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">📍</div>
+          <div>
+            <div class="c-label">Cervecería</div>
+            <div class="c-value">Av. La Tradición 420, Lima</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon">🕐</div>
+          <div>
+            <div class="c-label">Horario de atención</div>
+            <div class="c-value">Lun–Vie 9am–6pm · Sáb 10am–3pm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nombre</label>
+          <input class="form-input" type="text" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Teléfono</label>
+          <input class="form-input" type="tel" placeholder="+51 000 000 000" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="tu@email.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">¿Qué buscas?</label>
+        <select class="form-select" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option>Quiero hacer un pedido</option>
+          <option>Pack para evento / empresa</option>
+          <option>Distribución mayorista</option>
+          <option>Visita a la cervecería</option>
+          <option>Otra consulta</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-textarea" placeholder="Cuéntanos qué necesitas..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+        Enviar Pedido 🍺
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
 <footer>
-  <p><strong>EnglishPath</strong> — Aprende inglés gratis, a tu ritmo, desde cualquier dispositivo.</p>
-  <p style="margin-top:.5rem;">De A1 a C2 · Lecciones · Flashcards · Ejercicios · Pronunciación</p>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">🍺 KAPAC BEER</div>
+      <p>Cerveza artesanal elaborada con pasión, ingredientes naturales y el secreto de una fermentación lenta. Sin conservantes, solo sabor.</p>
+      <div class="social-links" style="margin-top:1.25rem;">
+        <a href="#" class="social-link" title="Instagram">📸</a>
+        <a href="#" class="social-link" title="Facebook">👤</a>
+        <a href="#" class="social-link" title="TikTok">🎵</a>
+        <a href="#" class="social-link" title="WhatsApp">💬</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Cervezas</h5>
+      <ul>
+        <li><a href="#productos">Kapac Dorada</a></li>
+        <li><a href="#productos">Kapac Negra</a></li>
+        <li><a href="#productos">Kapac Trigo</a></li>
+        <li><a href="#productos">Kapac Roja</a></li>
+        <li><a href="#productos">Pack Degustación</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#nosotros">Nuestra Historia</a></li>
+        <li><a href="#nosotros">El Proceso</a></li>
+        <li><a href="#contacto">Visita la Cervecería</a></li>
+        <li><a href="#contacto">Mayoristas</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Ayuda</h5>
+      <ul>
+        <li><a href="#contacto">Cómo Pedir</a></li>
+        <li><a href="#contacto">Envíos</a></li>
+        <li><a href="#contacto">Devoluciones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2024 Kapac Beer. Todos los derechos reservados. · <span style="color:var(--gold-dk);">Bebe con responsabilidad. Prohibida la venta a menores de edad.</span></p>
+    <p>Hecho con 🍺 y mucha pasión.</p>
+  </div>
 </footer>
 
-<script>
-  // Render hero progress from localStorage
-  const basicLessons = ['b-alphabet','b-greetings','b-numbers','b-colors','b-family','b-present','b-questions','b-daily'];
-  const interLessons = ['i-past','i-future','i-modals','i-conditionals','i-phrasal','i-reading','i-vocabulary'];
-  const advLessons   = ['a-subjunctive','a-inversion','a-idioms','a-academic','a-writing','a-listening'];
-
-  function calcProgress(lessons) {
-    const p = JSON.parse(localStorage.getItem('eng_progress') || '{}');
-    return lessons.filter(id => p[id]).length / lessons.length;
-  }
-
-  function renderHero() {
-    const sets = [
-      { lessons: basicLessons, fillId: 'pb-basic', pctId: 'pct-basic' },
-      { lessons: interLessons, fillId: 'pb-inter',  pctId: 'pct-inter' },
-      { lessons: advLessons,   fillId: 'pb-adv',    pctId: 'pct-adv' },
-    ];
-    sets.forEach(({ lessons, fillId, pctId }) => {
-      const pct = Math.round(calcProgress(lessons) * 100);
-      document.getElementById(fillId).style.width = pct + '%';
-      document.getElementById(pctId).textContent  = pct + '% completado';
-    });
-  }
-
-  renderHero();
-</script>
+<script src="js/app.js"></script>
 </body>
 </html>
