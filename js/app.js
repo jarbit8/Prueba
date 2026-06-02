@@ -1,193 +1,193 @@
-/* ===== PROGRESS (localStorage) ===== */
-const Progress = {
-  get() { return JSON.parse(localStorage.getItem('eng_progress') || '{}'); },
-  set(data) { localStorage.setItem('eng_progress', JSON.stringify(data)); },
-  markDone(lessonId) {
-    const p = this.get();
-    p[lessonId] = true;
-    this.set(p);
-    this.render();
-  },
-  isDone(lessonId) { return !!this.get()[lessonId]; },
-  render() {
-    document.querySelectorAll('.lesson-link').forEach(el => {
-      const id = el.dataset.lesson;
-      if (id && this.isDone(id)) el.classList.add('done');
-    });
-    this.renderProgressBars();
-  },
-  renderProgressBars() {
-    const p = this.get();
-    document.querySelectorAll('[data-progress-level]').forEach(bar => {
-      const level   = bar.dataset.progressLevel;
-      const lessons = JSON.parse(bar.dataset.lessons || '[]');
-      if (!lessons.length) return;
-      const done = lessons.filter(id => p[id]).length;
-      bar.style.width = Math.round((done / lessons.length) * 100) + '%';
-    });
-  }
-};
-
-/* ===== SIDEBAR NAV ===== */
-function initSidebar() {
-  const links = document.querySelectorAll('.lesson-link');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      links.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-      const target = link.dataset.target;
-      if (target) showLesson(target);
-    });
+/* ===== AGE GATE ===== */
+function initAgeGate() {
+  if (sessionStorage.getItem('age_ok')) return;
+  const gate = document.getElementById('ageGate');
+  if (!gate) return;
+  gate.style.display = 'flex';
+  document.getElementById('ageYes').addEventListener('click', () => {
+    sessionStorage.setItem('age_ok', '1');
+    gate.style.opacity = '0';
+    gate.style.transition = 'opacity .5s';
+    setTimeout(() => gate.remove(), 500);
+  });
+  document.getElementById('ageNo').addEventListener('click', () => {
+    gate.innerHTML = '<div style="text-align:center;padding:2rem;"><h2 style="font-family:Georgia,serif;color:#d4a017;margin-bottom:1rem;">Lo sentimos</h2><p style="color:#9e8a6a;">Este sitio es exclusivo para mayores de edad. Hasta pronto.</p></div>';
   });
 }
 
-/* ===== LESSON SWITCHER ===== */
-function showLesson(id) {
-  document.querySelectorAll('.lesson-panel').forEach(p => p.style.display = 'none');
-  const panel = document.getElementById(id);
-  if (panel) {
-    panel.style.display = 'block';
-    panel.scrollIntoView({ behavior: 'instant', block: 'start' });
-  }
-  Progress.markDone(id);
-}
-
-/* ===== QUIZ ENGINE ===== */
-function initQuizzes() {
-  document.querySelectorAll('.quiz-section').forEach(section => {
-    const questions = section.querySelectorAll('.quiz-question');
-    const submitBtn = section.querySelector('.quiz-submit');
-    const scoreEl   = section.querySelector('.quiz-score');
-
-    questions.forEach(q => {
-      q.querySelectorAll('.quiz-opt').forEach(opt => {
-        opt.addEventListener('click', () => {
-          if (q.dataset.answered) return;
-          q.dataset.answered = '1';
-          const correct = opt.dataset.correct === '1';
-          opt.classList.add(correct ? 'correct' : 'wrong');
-          if (!correct) {
-            q.querySelectorAll('.quiz-opt[data-correct="1"]').forEach(c => c.classList.add('correct'));
-          }
-          const fb = q.querySelector('.quiz-feedback');
-          if (fb) {
-            fb.classList.add('show', correct ? 'ok' : 'bad');
-            fb.textContent = correct
-              ? '✓ ' + (q.dataset.explanation || '¡Correcto!')
-              : '✗ ' + (q.dataset.explanation || 'Incorrecto. La respuesta correcta está marcada.');
-          }
-        });
-      });
-    });
-
-    if (submitBtn) {
-      submitBtn.addEventListener('click', () => {
-        let score = 0;
-        questions.forEach(q => {
-          if (q.querySelector('.quiz-opt.correct')) score++;
-        });
-        if (scoreEl) {
-          scoreEl.querySelector('.score-num').textContent = score + '/' + questions.length;
-          const pct = Math.round((score / questions.length) * 100);
-          scoreEl.querySelector('p').textContent =
-            pct >= 80 ? '¡Excelente trabajo! 🎉' :
-            pct >= 60 ? 'Bien, sigue practicando.' : 'Repasa la lección e intenta de nuevo.';
-          scoreEl.classList.add('show');
-        }
-      });
+/* ===== NAV SCROLL ===== */
+function initNav() {
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(13,10,6,.97)';
+    } else {
+      nav.style.background = 'rgba(13,10,6,.85)';
     }
   });
-}
 
-/* ===== FLASHCARD ENGINE ===== */
-function initFlashcards() {
-  document.querySelectorAll('.flashcard-deck').forEach(deck => {
-    const cards = JSON.parse(deck.dataset.cards || '[]');
-    let index = 0;
-    const wrapper  = deck.querySelector('.flashcard-wrapper');
-    const front    = deck.querySelector('.flashcard-front');
-    const back     = deck.querySelector('.flashcard-back');
-    const progress = deck.querySelector('.fc-progress');
-
-    function renderCard() {
-      if (!cards.length) return;
-      const c = cards[index];
-      wrapper.classList.remove('flipped');
-      front.querySelector('.card-word').textContent = c.en;
-      front.querySelector('.card-ipa').textContent  = c.ipa || '';
-      back.querySelector('.card-trans').textContent  = c.es;
-      back.querySelector('.card-ex').textContent     = c.example || '';
-      if (progress) progress.textContent = (index + 1) + ' / ' + cards.length;
-    }
-
-    wrapper.addEventListener('click', () => wrapper.classList.toggle('flipped'));
-
-    deck.querySelector('.fc-btn.know')?.addEventListener('click', () => {
-      index = (index + 1) % cards.length;
-      renderCard();
+  // burger
+  const burger = document.getElementById('navBurger');
+  const links  = document.getElementById('navLinks');
+  if (burger && links) {
+    burger.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '70px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'rgba(13,10,6,.97)';
+      links.style.padding = '1rem 1.5rem 1.5rem';
+      links.style.gap = '.5rem';
+      links.style.borderBottom = '1px solid rgba(212,160,23,.15)';
     });
-    deck.querySelector('.fc-btn.review')?.addEventListener('click', () => {
-      const card = cards.splice(index, 1)[0];
-      cards.push(card);
-      renderCard();
-    });
-    deck.querySelector('.fc-btn.next')?.addEventListener('click', () => {
-      index = (index + 1) % cards.length;
-      renderCard();
-    });
-    deck.querySelector('.fc-btn.prev')?.addEventListener('click', () => {
-      index = (index - 1 + cards.length) % cards.length;
-      renderCard();
-    });
+  }
 
-    renderCard();
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const el = document.querySelector(a.getAttribute('href'));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (links && window.innerWidth < 900) links.style.display = 'none';
+    });
   });
 }
 
-/* ===== PRONUNCIATION (speech) ===== */
-function initPronunciation() {
-  document.querySelectorAll('[data-speak]').forEach(el => {
-    el.addEventListener('click', () => {
-      const text = el.dataset.speak;
-      if ('speechSynthesis' in window) {
-        const utt = new SpeechSynthesisUtterance(text);
-        utt.lang = 'en-US';
-        utt.rate = 0.85;
-        speechSynthesis.speak(utt);
+/* ===== PARTICLES ===== */
+function initParticles() {
+  const container = document.querySelector('.hero-particles');
+  if (!container) return;
+  for (let i = 0; i < 25; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left  = Math.random() * 100 + '%';
+    p.style.bottom = '-10px';
+    p.style.width  = (Math.random() * 3 + 1) + 'px';
+    p.style.height = (Math.random() * 3 + 1) + 'px';
+    p.style.animationDuration  = (Math.random() * 8 + 5) + 's';
+    p.style.animationDelay     = (Math.random() * 8) + 's';
+    container.appendChild(p);
+  }
+}
+
+/* ===== BUBBLES ===== */
+function initBubbles() {
+  const container = document.querySelector('.bubbles');
+  if (!container) return;
+  for (let i = 0; i < 6; i++) {
+    const b = document.createElement('div');
+    b.className = 'bubble-item';
+    const size = Math.random() * 8 + 4;
+    b.style.width  = size + 'px';
+    b.style.height = size + 'px';
+    b.style.left   = (Math.random() * 60 - 30) + 'px';
+    b.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    b.style.animationDelay    = (Math.random() * 3) + 's';
+    container.appendChild(b);
+  }
+}
+
+/* ===== CART ===== */
+let cartCount = 0;
+function initCart() {
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      cartCount++;
+      const name = btn.closest('.product-card').querySelector('.product-name').textContent;
+      showToast(name);
+    });
+  });
+}
+
+function showToast(productName) {
+  const toast = document.getElementById('cartToast');
+  if (!toast) return;
+  toast.querySelector('.toast-title').textContent = '¡Agregado al pedido!';
+  toast.querySelector('.toast-sub').textContent = productName + ' — ' + cartCount + (cartCount === 1 ? ' producto' : ' productos');
+  toast.classList.add('show');
+  clearTimeout(toast._timer);
+  toast._timer = setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+/* ===== SCROLL REVEAL ===== */
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
       }
     });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+/* ===== FORM ===== */
+function initForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Enviado — ¡Te contactamos pronto!';
+    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Enviar Pedido';
+      btn.style.background = '';
+      btn.disabled = false;
+      form.reset();
+    }, 4000);
+  });
+
+  const orderForm = document.getElementById('orderForm');
+  if (!orderForm) return;
+  orderForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = orderForm.querySelector('button[type="submit"]');
+    btn.textContent = '✓ ¡Listo! Te contactamos';
+    btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+    setTimeout(() => {
+      btn.textContent = 'Quiero mi caja';
+      btn.style.background = '';
+      orderForm.reset();
+    }, 4000);
   });
 }
 
-/* ===== FILL IN THE BLANK ===== */
-function initFillBlanks() {
-  document.querySelectorAll('.fill-blank').forEach(ex => {
-    const input   = ex.querySelector('input');
-    const btn     = ex.querySelector('.check-btn');
-    const fb      = ex.querySelector('.blank-feedback');
-    if (!btn || !input) return;
-    btn.addEventListener('click', () => {
-      const correct = (input.dataset.answer || '').toLowerCase().trim();
-      const answer  = input.value.toLowerCase().trim();
-      input.style.borderColor = answer === correct ? 'var(--basic)' : '#ef4444';
-      fb.textContent  = answer === correct ? '✓ ¡Correcto!' : '✗ Respuesta: ' + input.dataset.answer;
-      fb.style.color  = answer === correct ? 'var(--basic-dark)' : '#b91c1c';
-      fb.style.display = 'block';
+/* ===== COUNTER ANIMATION ===== */
+function initCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.target.dataset.counted) return;
+      entry.target.dataset.counted = '1';
+      const target = parseInt(entry.target.dataset.count);
+      const duration = 1600;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        entry.target.textContent = Math.round(current) + (entry.target.dataset.suffix || '');
+      }, 16);
     });
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') btn.click(); });
-  });
+  }, { threshold: 0.5 });
+  counters.forEach(el => observer.observe(el));
 }
 
 /* ===== INIT ===== */
 document.addEventListener('DOMContentLoaded', () => {
-  initSidebar();
-  initQuizzes();
-  initFlashcards();
-  initPronunciation();
-  initFillBlanks();
-  Progress.render();
-
-  // show first lesson by default
-  const first = document.querySelector('.lesson-link');
-  if (first) first.click();
+  initAgeGate();
+  initNav();
+  initParticles();
+  initBubbles();
+  initCart();
+  initReveal();
+  initForm();
+  initCounters();
 });
