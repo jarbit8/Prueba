@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KapacFans — Valeria Morales</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .img-cover { width:100%;height:100%;object-fit:cover;display:block; }
+    .img-avatar { width:100%;height:100%;object-fit:cover;border-radius:50%; }
+    .post-media-inner img { width:100%;height:auto;display:block;max-height:520px;object-fit:cover; }
+    .mg-item img { width:100%;height:100%;object-fit:cover;display:block; }
+  </style>
 </head>
 <body>
 
@@ -15,7 +21,9 @@
   <div class="nav-right">
     <div class="nav-icon">🔔<span class="nav-badge">3</span></div>
     <div class="nav-icon">💬<span class="nav-badge">1</span></div>
-    <div class="nav-icon">🎨</div>
+    <div class="nav-icon" style="overflow:hidden;padding:0">
+      <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="avatar" />
+    </div>
     <button class="nav-sub-btn" data-sub="Coleccionista">Suscribirse</button>
   </div>
 </nav>
@@ -39,7 +47,9 @@
       <div class="sug-title">Sugeridos</div>
 
       <div class="sug-item">
-        <div class="sug-ava" style="background:linear-gradient(135deg,#1a0030,#a040f0)">🌃</div>
+        <div class="sug-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/dark+noir+photographer+portrait+moody+black+white?width=60&height=60&seed=301&nologo=true" alt="Noir Studio" loading="lazy" />
+        </div>
         <div>
           <div class="sug-name">Noir Studio</div>
           <div class="sug-handle">@noir.studio</div>
@@ -48,7 +58,9 @@
       </div>
 
       <div class="sug-item">
-        <div class="sug-ava" style="background:linear-gradient(135deg,#001a30,#0080c0)">🌊</div>
+        <div class="sug-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/coastal+marine+photography+woman+portrait+blue+tones?width=60&height=60&seed=302&nologo=true" alt="Marina Luz" loading="lazy" />
+        </div>
         <div>
           <div class="sug-name">Marina Luz</div>
           <div class="sug-handle">@marina.luz</div>
@@ -57,7 +69,9 @@
       </div>
 
       <div class="sug-item">
-        <div class="sug-ava" style="background:linear-gradient(135deg,#1a1000,#c08000)">🏜</div>
+        <div class="sug-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/desert+landscape+photographer+portrait+warm+tones?width=60&height=60&seed=303&nologo=true" alt="Desierto Film" loading="lazy" />
+        </div>
         <div>
           <div class="sug-name">Desierto Film</div>
           <div class="sug-handle">@desierto.film</div>
@@ -66,7 +80,9 @@
       </div>
 
       <div class="sug-item">
-        <div class="sug-ava" style="background:linear-gradient(135deg,#0a1a0a,#208040)">🌿</div>
+        <div class="sug-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/botanical+nature+green+photographer+portrait?width=60&height=60&seed=304&nologo=true" alt="Botanika" loading="lazy" />
+        </div>
         <div>
           <div class="sug-name">Botanika</div>
           <div class="sug-handle">@botanika.art</div>
@@ -81,21 +97,17 @@
 
     <!-- COVER -->
     <div class="creator-cover">
-      <div class="cover-photo">
-        <div class="cover-shapes">
-          <div class="cover-shape"></div><div class="cover-shape"></div>
-          <div class="cover-shape"></div><div class="cover-shape"></div>
-          <div class="cover-shape"></div><div class="cover-shape"></div>
-          <div class="cover-shape"></div><div class="cover-shape"></div>
-          <div class="cover-shape"></div><div class="cover-shape"></div>
-        </div>
+      <div class="cover-photo" style="padding:0">
+        <img class="img-cover" src="https://image.pollinations.ai/prompt/Buenos+Aires+city+night+aerial+view+cinematic+dark+moody+blue+lights?width=1200&height=420&seed=100&nologo=true" alt="cover" />
         <div class="cover-overlay"></div>
       </div>
     </div>
 
     <!-- PROFILE ROW -->
     <div class="profile-row">
-      <div class="profile-ava">📷</div>
+      <div class="profile-ava" style="overflow:hidden;padding:0">
+        <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=200&height=200&seed=77&nologo=true" alt="Valeria Morales" />
+      </div>
       <div class="profile-meta">
         <div class="profile-name">Valeria Morales <span class="verified">✦</span></div>
         <div class="profile-handle">@valeria.art · Buenos Aires</div>
@@ -139,7 +151,9 @@
     <!-- POST 1 — public -->
     <article class="post">
       <div class="post-header">
-        <div class="post-ava">📷</div>
+        <div class="post-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
+        </div>
         <div>
           <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 2 horas</div>
@@ -151,20 +165,11 @@
       </p>
       <div class="post-media">
         <div class="post-media-inner">
-          <div class="photo-art pa-2" style="width:100%;min-height:320px">
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(255,180,60,.25),transparent 70%);top:-40px;right:60px;width:250px;height:250px"></div>
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,120,200,.2),transparent 70%);bottom:-30px;left:20px;width:180px;height:180px"></div>
-            <div class="pa-line" style="width:100%;height:1px;top:55%;transform:rotate(-2deg)"></div>
-            <div class="pa-line" style="width:100%;height:1px;top:60%"></div>
-            <div class="pa-text-art">Costanera · Amanecer · 5:47am</div>
-          </div>
+          <img src="https://image.pollinations.ai/prompt/Buenos+Aires+Costanera+sunrise+golden+hour+river+reflections+cinematic+photography?width=900&height=500&seed=101&nologo=true" alt="Amanecer Costanera" loading="lazy" />
         </div>
       </div>
       <div class="post-footer">
-        <button class="post-action like-btn">
-          <span class="icon">🤍</span>
-          <span class="like-count" data-n="312">312</span>
-        </button>
+        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="312">312</span></button>
         <button class="post-action comment-btn">💬 <span>48</span></button>
         <button class="post-action">↗ Compartir</button>
         <button class="post-tip-btn">🎁 Propina</button>
@@ -174,7 +179,9 @@
     <!-- POST 2 — public -->
     <article class="post">
       <div class="post-header">
-        <div class="post-ava">📷</div>
+        <div class="post-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
+        </div>
         <div>
           <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 1 día</div>
@@ -186,20 +193,11 @@
       </p>
       <div class="post-media">
         <div class="post-media-inner">
-          <div class="photo-art pa-1" style="width:100%;min-height:320px">
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,175,240,.18),transparent 70%);top:20px;left:30px;width:220px;height:220px"></div>
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(200,100,255,.12),transparent 70%);bottom:10px;right:40px;width:160px;height:160px"></div>
-            <div class="pa-line" style="width:2px;height:100%;left:30%;top:0"></div>
-            <div class="pa-line" style="width:2px;height:80%;left:65%;top:10%"></div>
-            <div class="pa-text-art">San Telmo · Noche · Analógico</div>
-          </div>
+          <img src="https://image.pollinations.ai/prompt/San+Telmo+Buenos+Aires+night+street+photography+black+white+film+analog+cobblestones?width=900&height=500&seed=102&nologo=true" alt="San Telmo nocturno" loading="lazy" />
         </div>
       </div>
       <div class="post-footer">
-        <button class="post-action like-btn">
-          <span class="icon">🤍</span>
-          <span class="like-count" data-n="587">587</span>
-        </button>
+        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="587">587</span></button>
         <button class="post-action comment-btn">💬 <span>73</span></button>
         <button class="post-action">↗ Compartir</button>
         <button class="post-tip-btn">🎁 Propina</button>
@@ -209,7 +207,9 @@
     <!-- POST 3 — LOCKED -->
     <article class="post">
       <div class="post-header">
-        <div class="post-ava">📷</div>
+        <div class="post-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
+        </div>
         <div>
           <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 2 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
@@ -221,12 +221,7 @@
       </p>
       <div class="post-media locked">
         <div class="post-media-inner">
-          <div class="photo-art pa-5" style="width:100%;min-height:320px">
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(150,100,255,.3),transparent 70%);top:-20px;left:50%;transform:translateX(-50%);width:300px;height:300px"></div>
-            <div class="pa-line" style="width:100%;height:1px;top:40%"></div>
-            <div class="pa-line" style="width:100%;height:1px;top:60%"></div>
-            <div class="pa-text-art">Geometría del Olvido · Serie Exclusiva · 24 fotos</div>
-          </div>
+          <img src="https://image.pollinations.ai/prompt/long+exposure+light+trails+abstract+fine+art+photography+dark+moody+geometric?width=900&height=500&seed=103&nologo=true" alt="Geometría del Olvido" loading="lazy" />
         </div>
         <div class="lock-overlay">
           <div class="lock-box">
@@ -237,20 +232,19 @@
         </div>
       </div>
       <div class="post-footer">
-        <button class="post-action like-btn">
-          <span class="icon">🤍</span>
-          <span class="like-count" data-n="241">241</span>
-        </button>
+        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="241">241</span></button>
         <button class="post-action comment-btn">💬 <span>31</span></button>
         <button class="post-action">↗ Compartir</button>
         <button class="post-tip-btn">🎁 Propina</button>
       </div>
     </article>
 
-    <!-- POST 4 — public, behind the scenes -->
+    <!-- POST 4 — public BTS -->
     <article class="post">
       <div class="post-header">
-        <div class="post-ava">📷</div>
+        <div class="post-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
+        </div>
         <div>
           <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 3 días</div>
@@ -262,18 +256,11 @@
       </p>
       <div class="post-media">
         <div class="post-media-inner">
-          <div class="photo-art pa-3" style="width:100%;min-height:280px">
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(255,80,80,.2),transparent 70%);top:30px;right:30px;width:180px;height:180px"></div>
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,100,200,.15),transparent 70%);bottom:10px;left:20px;width:150px;height:150px"></div>
-            <div class="pa-text-art">BTS · Palermo · 2:13am</div>
-          </div>
+          <img src="https://image.pollinations.ai/prompt/photographer+rooftop+night+tripod+city+lights+behind+the+scenes+Palermo+Buenos+Aires?width=900&height=480&seed=104&nologo=true" alt="BTS Palermo" loading="lazy" />
         </div>
       </div>
       <div class="post-footer">
-        <button class="post-action like-btn">
-          <span class="icon">🤍</span>
-          <span class="like-count" data-n="198">198</span>
-        </button>
+        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="198">198</span></button>
         <button class="post-action comment-btn">💬 <span>55</span></button>
         <button class="post-action">↗ Compartir</button>
         <button class="post-tip-btn">🎁 Propina</button>
@@ -283,7 +270,9 @@
     <!-- POST 5 — LOCKED -->
     <article class="post">
       <div class="post-header">
-        <div class="post-ava">📷</div>
+        <div class="post-ava" style="overflow:hidden;padding:0">
+          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
+        </div>
         <div>
           <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
           <div class="post-time">hace 5 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
@@ -295,11 +284,7 @@
       </p>
       <div class="post-media locked">
         <div class="post-media-inner">
-          <div class="photo-art pa-4" style="width:100%;min-height:320px">
-            <div class="pa-circle" style="background:radial-gradient(circle,rgba(0,200,120,.2),transparent 70%);top:20px;left:60px;width:200px;height:200px"></div>
-            <div class="pa-line" style="width:70%;height:2px;bottom:35%;left:15%"></div>
-            <div class="pa-text-art">Retratos de Ciudad · Serie B/N · 40 fotos</div>
-          </div>
+          <img src="https://image.pollinations.ai/prompt/urban+portrait+black+white+city+street+photography+Buenos+Aires+moody+cinematic?width=900&height=500&seed=105&nologo=true" alt="Retratos de ciudad" loading="lazy" />
         </div>
         <div class="lock-overlay">
           <div class="lock-box">
@@ -310,10 +295,7 @@
         </div>
       </div>
       <div class="post-footer">
-        <button class="post-action like-btn">
-          <span class="icon">🤍</span>
-          <span class="like-count" data-n="163">163</span>
-        </button>
+        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="163">163</span></button>
         <button class="post-action comment-btn">💬 <span>27</span></button>
         <button class="post-action">↗ Compartir</button>
         <button class="post-tip-btn">🎁 Propina</button>
@@ -328,7 +310,6 @@
     <!-- SUBSCRIPTION TIERS -->
     <div class="side-card">
       <div class="side-card-title">Planes de suscripción</div>
-
       <div class="sub-tier">
         <div class="tier-row">
           <span class="tier-name">Visitante</span>
@@ -336,7 +317,6 @@
         </div>
         <div class="tier-desc">Feed público + acceso al chat · Ideal para empezar</div>
       </div>
-
       <div class="sub-tier pop">
         <div class="tier-row">
           <span class="tier-name">Coleccionista</span>
@@ -345,15 +325,13 @@
         </div>
         <div class="tier-desc">Todo lo anterior + series exclusivas + proceso creativo + DMs directos</div>
       </div>
-
       <div class="sub-tier">
         <div class="tier-row">
           <span class="tier-name">Galería</span>
           <span class="tier-price">$19.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
         </div>
-        <div class="tier-desc">Acceso total · Impresiones con descuento · Videoconferencia mensual · Crédito en obras</div>
+        <div class="tier-desc">Acceso total · Impresiones con descuento · Videollamada mensual · Crédito en obras</div>
       </div>
-
       <button class="sub-btn-full" data-sub="Coleccionista">Suscribirse ahora</button>
     </div>
 
@@ -371,26 +349,26 @@
       <button class="tip-send">Enviar propina</button>
     </div>
 
-    <!-- MEDIA GRID PREVIEW -->
+    <!-- MEDIA GRID -->
     <div class="side-card">
       <div class="side-card-title">Galería reciente</div>
       <div class="media-grid">
-        <div class="mg-item" style="background:linear-gradient(135deg,#0d1520,#1a2040)">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌅</div>
+        <div class="mg-item">
+          <img src="https://image.pollinations.ai/prompt/sunrise+waterfront+photography+golden?width=150&height=150&seed=201&nologo=true" alt="" loading="lazy" />
         </div>
-        <div class="mg-item" style="background:linear-gradient(135deg,#0a0a0f,#1a0830)">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌃</div>
+        <div class="mg-item">
+          <img src="https://image.pollinations.ai/prompt/night+city+street+photography+dark?width=150&height=150&seed=202&nologo=true" alt="" loading="lazy" />
         </div>
-        <div class="mg-item" style="background:linear-gradient(135deg,#1a1000,#2a1800)">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🎞</div>
+        <div class="mg-item">
+          <img src="https://image.pollinations.ai/prompt/analog+film+grain+photography+texture?width=150&height=150&seed=203&nologo=true" alt="" loading="lazy" />
         </div>
-        <div class="mg-item" style="background:linear-gradient(135deg,#0a1a0a,#102010)">
-          <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem">🌿</div>
+        <div class="mg-item">
+          <img src="https://image.pollinations.ai/prompt/botanical+nature+macro+photography+green?width=150&height=150&seed=204&nologo=true" alt="" loading="lazy" />
         </div>
-        <div class="mg-item" style="background:linear-gradient(135deg,#1a0a0a,#200a10)">
+        <div class="mg-item">
           <div class="mg-lock">🔒</div>
         </div>
-        <div class="mg-item" style="background:linear-gradient(135deg,#0a0f1a,#0d1030)">
+        <div class="mg-item">
           <div class="mg-lock">🔒</div>
         </div>
       </div>
