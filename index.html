@@ -3,406 +3,358 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KapacFans — Valeria Morales</title>
+  <title>Kapac — Restaurante &amp; Bar</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .img-cover { width:100%;height:100%;object-fit:cover;display:block; }
-    .img-avatar { width:100%;height:100%;object-fit:cover;border-radius:50%; }
-    .post-media-inner img { width:100%;height:auto;display:block;max-height:520px;object-fit:cover; }
-    .mg-item img { width:100%;height:100%;object-fit:cover;display:block; }
-  </style>
 </head>
 <body>
 
 <!-- ===== NAV ===== -->
-<nav>
-  <span class="nav-logo">KapacFans</span>
-  <input class="nav-search" type="search" placeholder="Buscar creadores..." />
-  <div class="nav-right">
-    <div class="nav-icon">🔔<span class="nav-badge">3</span></div>
-    <div class="nav-icon">💬<span class="nav-badge">1</span></div>
-    <div class="nav-icon" style="overflow:hidden;padding:0">
-      <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="avatar" />
-    </div>
-    <button class="nav-sub-btn" data-sub="Coleccionista">Suscribirse</button>
-  </div>
+<nav id="navbar">
+  <div class="nav-logo">Kapac</div>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#reservar">Reservas</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('reservar').scrollIntoView({behavior:'smooth'})">Reservar mesa</button>
+  <button class="nav-hamburger" id="hamburger">☰</button>
 </nav>
 
-<!-- ===== LAYOUT ===== -->
-<div class="layout">
-
-  <!-- LEFT SIDEBAR -->
-  <aside class="left-sidebar">
-    <ul class="sidebar-menu">
-      <li><a href="#" class="active"><span class="s-icon">🏠</span> Inicio</a></li>
-      <li><a href="#"><span class="s-icon">🔍</span> Explorar</a></li>
-      <li><a href="#"><span class="s-icon">🔔</span> Notificaciones</a></li>
-      <li><a href="#"><span class="s-icon">💬</span> Mensajes</a></li>
-      <li><a href="#"><span class="s-icon">🔖</span> Guardados</a></li>
-      <li><a href="#"><span class="s-icon">📂</span> Colecciones</a></li>
-      <li><a href="#"><span class="s-icon">👤</span> Perfil</a></li>
-    </ul>
-    <div class="sidebar-divider"></div>
-    <div class="sidebar-suggested">
-      <div class="sug-title">Sugeridos</div>
-
-      <div class="sug-item">
-        <div class="sug-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/dark+noir+photographer+portrait+moody+black+white?width=60&height=60&seed=301&nologo=true" alt="Noir Studio" loading="lazy" />
-        </div>
-        <div>
-          <div class="sug-name">Noir Studio</div>
-          <div class="sug-handle">@noir.studio</div>
-        </div>
-        <button class="sug-follow">+ Seguir</button>
-      </div>
-
-      <div class="sug-item">
-        <div class="sug-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/coastal+marine+photography+woman+portrait+blue+tones?width=60&height=60&seed=302&nologo=true" alt="Marina Luz" loading="lazy" />
-        </div>
-        <div>
-          <div class="sug-name">Marina Luz</div>
-          <div class="sug-handle">@marina.luz</div>
-        </div>
-        <button class="sug-follow">+ Seguir</button>
-      </div>
-
-      <div class="sug-item">
-        <div class="sug-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/desert+landscape+photographer+portrait+warm+tones?width=60&height=60&seed=303&nologo=true" alt="Desierto Film" loading="lazy" />
-        </div>
-        <div>
-          <div class="sug-name">Desierto Film</div>
-          <div class="sug-handle">@desierto.film</div>
-        </div>
-        <button class="sug-follow">+ Seguir</button>
-      </div>
-
-      <div class="sug-item">
-        <div class="sug-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/botanical+nature+green+photographer+portrait?width=60&height=60&seed=304&nologo=true" alt="Botanika" loading="lazy" />
-        </div>
-        <div>
-          <div class="sug-name">Botanika</div>
-          <div class="sug-handle">@botanika.art</div>
-        </div>
-        <button class="sug-follow">+ Seguir</button>
-      </div>
-    </div>
-  </aside>
-
-  <!-- MAIN FEED -->
-  <main class="main-feed">
-
-    <!-- COVER -->
-    <div class="creator-cover">
-      <div class="cover-photo" style="padding:0">
-        <img class="img-cover" src="https://image.pollinations.ai/prompt/Buenos+Aires+city+night+aerial+view+cinematic+dark+moody+blue+lights?width=1200&height=420&seed=100&nologo=true" alt="cover" />
-        <div class="cover-overlay"></div>
-      </div>
-    </div>
-
-    <!-- PROFILE ROW -->
-    <div class="profile-row">
-      <div class="profile-ava" style="overflow:hidden;padding:0">
-        <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=200&height=200&seed=77&nologo=true" alt="Valeria Morales" />
-      </div>
-      <div class="profile-meta">
-        <div class="profile-name">Valeria Morales <span class="verified">✦</span></div>
-        <div class="profile-handle">@valeria.art · Buenos Aires</div>
-      </div>
-      <div class="profile-actions">
-        <button class="btn-sub-main" data-sub="Coleccionista">Suscribirse</button>
-        <button class="btn-msg">💬 Mensaje</button>
-        <button class="btn-tip">🎁 Propina</button>
-      </div>
-    </div>
-
-    <!-- STATS -->
-    <div class="profile-stats">
-      <div class="ps"><div class="ps-num">1.4K</div><div class="ps-label">Seguidores</div></div>
-      <div class="ps"><div class="ps-num">286</div><div class="ps-label">Siguiendo</div></div>
-      <div class="ps"><div class="ps-num">94</div><div class="ps-label">Posts</div></div>
-      <div class="ps"><div class="ps-num">★ 4.9</div><div class="ps-label">Valoración</div></div>
-    </div>
-
-    <p class="profile-bio">
-      Fotografía de arte, callejera y experimental desde Buenos Aires. 🇦🇷<br>
-      Analógica · Exposiciones largas · Luz natural · Colecciones exclusivas para suscriptores.
-    </p>
-    <div class="profile-tags">
-      <span class="ptag">📸 Fine Art</span>
-      <span class="ptag">🌆 Urbano</span>
-      <span class="ptag">🎞 Analógico</span>
-      <span class="ptag">🌙 Nocturnos</span>
-      <span class="ptag">🖼 Galería</span>
-    </div>
-
-    <!-- TABS -->
-    <div class="feed-tabs">
-      <div class="feed-tab active">Todos</div>
-      <div class="feed-tab">Fotos</div>
-      <div class="feed-tab">Series</div>
-      <div class="feed-tab">Exclusivos 🔒</div>
-      <div class="feed-tab">Analógico</div>
-    </div>
-
-    <!-- POST 1 — public -->
-    <article class="post">
-      <div class="post-header">
-        <div class="post-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
-        </div>
-        <div>
-          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
-          <div class="post-time">hace 2 horas</div>
-        </div>
-        <span class="post-more">···</span>
-      </div>
-      <p class="post-text">
-        Amanecer en la Costanera. Esperé 3 horas por esta luz. La ciudad se despierta diferente cuando nadie te está mirando. 🌅
-      </p>
-      <div class="post-media">
-        <div class="post-media-inner">
-          <img src="https://image.pollinations.ai/prompt/Buenos+Aires+Costanera+sunrise+golden+hour+river+reflections+cinematic+photography?width=900&height=500&seed=101&nologo=true" alt="Amanecer Costanera" loading="lazy" />
-        </div>
-      </div>
-      <div class="post-footer">
-        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="312">312</span></button>
-        <button class="post-action comment-btn">💬 <span>48</span></button>
-        <button class="post-action">↗ Compartir</button>
-        <button class="post-tip-btn">🎁 Propina</button>
-      </div>
-    </article>
-
-    <!-- POST 2 — public -->
-    <article class="post">
-      <div class="post-header">
-        <div class="post-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
-        </div>
-        <div>
-          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
-          <div class="post-time">hace 1 día</div>
-        </div>
-        <span class="post-more">···</span>
-      </div>
-      <p class="post-text">
-        Serie urbana nocturna — San Telmo. Película Kodak Tri-X 400. Revelado artesanal en casa. 🎞🌙
-      </p>
-      <div class="post-media">
-        <div class="post-media-inner">
-          <img src="https://image.pollinations.ai/prompt/San+Telmo+Buenos+Aires+night+street+photography+black+white+film+analog+cobblestones?width=900&height=500&seed=102&nologo=true" alt="San Telmo nocturno" loading="lazy" />
-        </div>
-      </div>
-      <div class="post-footer">
-        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="587">587</span></button>
-        <button class="post-action comment-btn">💬 <span>73</span></button>
-        <button class="post-action">↗ Compartir</button>
-        <button class="post-tip-btn">🎁 Propina</button>
-      </div>
-    </article>
-
-    <!-- POST 3 — LOCKED -->
-    <article class="post">
-      <div class="post-header">
-        <div class="post-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
-        </div>
-        <div>
-          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
-          <div class="post-time">hace 2 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
-        </div>
-        <span class="post-more">···</span>
-      </div>
-      <p class="post-text">
-        Colección completa: "Geometría del Olvido" — 24 fotografías de larga exposición. Mi trabajo más personal hasta ahora. 🖤
-      </p>
-      <div class="post-media locked">
-        <div class="post-media-inner">
-          <img src="https://image.pollinations.ai/prompt/long+exposure+light+trails+abstract+fine+art+photography+dark+moody+geometric?width=900&height=500&seed=103&nologo=true" alt="Geometría del Olvido" loading="lazy" />
-        </div>
-        <div class="lock-overlay">
-          <div class="lock-box">
-            <h4>🔒 Contenido Exclusivo</h4>
-            <p>Suscríbete al plan <strong>Coleccionista</strong> o superior para ver esta serie completa.</p>
-            <button class="unlock-btn">Desbloquear — $9.99/mes</button>
-          </div>
-        </div>
-      </div>
-      <div class="post-footer">
-        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="241">241</span></button>
-        <button class="post-action comment-btn">💬 <span>31</span></button>
-        <button class="post-action">↗ Compartir</button>
-        <button class="post-tip-btn">🎁 Propina</button>
-      </div>
-    </article>
-
-    <!-- POST 4 — public BTS -->
-    <article class="post">
-      <div class="post-header">
-        <div class="post-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
-        </div>
-        <div>
-          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
-          <div class="post-time">hace 3 días</div>
-        </div>
-        <span class="post-more">···</span>
-      </div>
-      <p class="post-text">
-        Detrás de escena: configurando el trípode en el techo de un edificio de Palermo a las 2am 😅 El proceso importa tanto como el resultado. 🔧
-      </p>
-      <div class="post-media">
-        <div class="post-media-inner">
-          <img src="https://image.pollinations.ai/prompt/photographer+rooftop+night+tripod+city+lights+behind+the+scenes+Palermo+Buenos+Aires?width=900&height=480&seed=104&nologo=true" alt="BTS Palermo" loading="lazy" />
-        </div>
-      </div>
-      <div class="post-footer">
-        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="198">198</span></button>
-        <button class="post-action comment-btn">💬 <span>55</span></button>
-        <button class="post-action">↗ Compartir</button>
-        <button class="post-tip-btn">🎁 Propina</button>
-      </div>
-    </article>
-
-    <!-- POST 5 — LOCKED -->
-    <article class="post">
-      <div class="post-header">
-        <div class="post-ava" style="overflow:hidden;padding:0">
-          <img class="img-avatar" src="https://image.pollinations.ai/prompt/professional+female+photographer+dark+background+moody+artistic+portrait+soft+lighting?width=80&height=80&seed=77&nologo=true" alt="Valeria" loading="lazy" />
-        </div>
-        <div>
-          <div class="post-author">Valeria Morales <span class="verified">✦</span></div>
-          <div class="post-time">hace 5 días · <span style="color:var(--blue)">🔒 Exclusivo</span></div>
-        </div>
-        <span class="post-more">···</span>
-      </div>
-      <p class="post-text">
-        "Retratos de ciudad" — serie de 40 fotografías urbanas en blanco y negro. Solo para el plan Galería. 🖤🌆
-      </p>
-      <div class="post-media locked">
-        <div class="post-media-inner">
-          <img src="https://image.pollinations.ai/prompt/urban+portrait+black+white+city+street+photography+Buenos+Aires+moody+cinematic?width=900&height=500&seed=105&nologo=true" alt="Retratos de ciudad" loading="lazy" />
-        </div>
-        <div class="lock-overlay">
-          <div class="lock-box">
-            <h4>🔒 Solo suscriptores</h4>
-            <p>Plan <strong>Galería</strong> — acceso completo a todas las series y colecciones privadas.</p>
-            <button class="unlock-btn">Ver con plan Galería</button>
-          </div>
-        </div>
-      </div>
-      <div class="post-footer">
-        <button class="post-action like-btn"><span class="icon">🤍</span><span class="like-count" data-n="163">163</span></button>
-        <button class="post-action comment-btn">💬 <span>27</span></button>
-        <button class="post-action">↗ Compartir</button>
-        <button class="post-tip-btn">🎁 Propina</button>
-      </div>
-    </article>
-
-  </main>
-
-  <!-- RIGHT SIDEBAR -->
-  <aside class="right-sidebar">
-
-    <!-- SUBSCRIPTION TIERS -->
-    <div class="side-card">
-      <div class="side-card-title">Planes de suscripción</div>
-      <div class="sub-tier">
-        <div class="tier-row">
-          <span class="tier-name">Visitante</span>
-          <span class="tier-price">$4.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
-        </div>
-        <div class="tier-desc">Feed público + acceso al chat · Ideal para empezar</div>
-      </div>
-      <div class="sub-tier pop">
-        <div class="tier-row">
-          <span class="tier-name">Coleccionista</span>
-          <span class="tier-price">$9.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
-          <span class="tier-badge">Popular</span>
-        </div>
-        <div class="tier-desc">Todo lo anterior + series exclusivas + proceso creativo + DMs directos</div>
-      </div>
-      <div class="sub-tier">
-        <div class="tier-row">
-          <span class="tier-name">Galería</span>
-          <span class="tier-price">$19.99<small style="font-size:.65rem;color:var(--muted)">/mes</small></span>
-        </div>
-        <div class="tier-desc">Acceso total · Impresiones con descuento · Videollamada mensual · Crédito en obras</div>
-      </div>
-      <button class="sub-btn-full" data-sub="Coleccionista">Suscribirse ahora</button>
-    </div>
-
-    <!-- TIP CARD -->
-    <div class="side-card tip-card">
-      <div class="side-card-title">💛 Apoyar a Valeria</div>
-      <div class="tip-amounts">
-        <button class="tip-amt">$1</button>
-        <button class="tip-amt">$3</button>
-        <button class="tip-amt">$5</button>
-        <button class="tip-amt">$10</button>
-        <button class="tip-amt">$20</button>
-        <button class="tip-amt">$50</button>
-      </div>
-      <button class="tip-send">Enviar propina</button>
-    </div>
-
-    <!-- MEDIA GRID -->
-    <div class="side-card">
-      <div class="side-card-title">Galería reciente</div>
-      <div class="media-grid">
-        <div class="mg-item">
-          <img src="https://image.pollinations.ai/prompt/sunrise+waterfront+photography+golden?width=150&height=150&seed=201&nologo=true" alt="" loading="lazy" />
-        </div>
-        <div class="mg-item">
-          <img src="https://image.pollinations.ai/prompt/night+city+street+photography+dark?width=150&height=150&seed=202&nologo=true" alt="" loading="lazy" />
-        </div>
-        <div class="mg-item">
-          <img src="https://image.pollinations.ai/prompt/analog+film+grain+photography+texture?width=150&height=150&seed=203&nologo=true" alt="" loading="lazy" />
-        </div>
-        <div class="mg-item">
-          <img src="https://image.pollinations.ai/prompt/botanical+nature+macro+photography+green?width=150&height=150&seed=204&nologo=true" alt="" loading="lazy" />
-        </div>
-        <div class="mg-item">
-          <div class="mg-lock">🔒</div>
-        </div>
-        <div class="mg-item">
-          <div class="mg-lock">🔒</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- INFO CARD -->
-    <div class="side-card">
-      <div class="side-card-title">Sobre la artista</div>
-      <div style="font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.8">
-        📍 Buenos Aires, Argentina<br>
-        🎓 FADU — UBA · Bellas Artes<br>
-        📷 Canon EOS 5D · Pentax K1000<br>
-        🏆 Premio BAphoto 2023<br>
-        🖼 Exposiciones en 6 países
-      </div>
-    </div>
-
-  </aside>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#nosotros" class="mobile-link">Nosotros</a>
+  <a href="#menu" class="mobile-link">Menú</a>
+  <a href="#galeria" class="mobile-link">Galería</a>
+  <a href="#reservar" class="mobile-link">Reservas</a>
 </div>
 
-<!-- ===== MODAL ===== -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close-btn" id="modalClose">✕</button>
-    <h3>🎨 Plan <span id="modalPlan">Coleccionista</span></h3>
-    <p>Accede a contenido exclusivo de Valeria Morales y apoya su trabajo artístico directamente.</p>
-    <form id="subForm">
-      <input type="email" placeholder="tu@email.com" required />
-      <input type="text"  placeholder="Nombre en la tarjeta" required />
-      <input type="text"  placeholder="Número de tarjeta" required maxlength="19" />
-      <button type="submit" class="modal-btn">Activar suscripción 🔓</button>
-    </form>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <img class="hero-img"
+    src="https://image.pollinations.ai/prompt/luxury+restaurant+interior+dark+warm+candlelight+elegant+wooden+tables+fine+dining+Peru?width=1600&height=900&seed=1&nologo=true"
+    alt="Kapac Restaurant" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Lima, Perú · Desde 2018</div>
+    <h1 class="hero-title">El alma del<br/><span>Perú</span> en cada plato</h1>
+    <p class="hero-sub">Gastronomía peruana de autor, fusión nikkei y coctelería artesanal. Una experiencia que celebra nuestras raíces con técnica contemporánea.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Ver Menú</button>
+      <button class="btn-outline" onclick="document.getElementById('reservar').scrollIntoView({behavior:'smooth'})">Reservar mesa</button>
+    </div>
   </div>
-</div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="nosotros">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img class="about-img"
+        src="https://image.pollinations.ai/prompt/Peruvian+chef+cooking+ceviche+restaurant+kitchen+professional+portrait+warm+lighting?width=700&height=900&seed=2&nologo=true"
+        alt="Chef Kapac" loading="lazy" />
+      <div class="about-img-badge">
+        <strong>6+</strong>
+        <span>Años de sabor</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-tag">Nuestra historia</div>
+      <h2 class="section-title">Nacidos en Lima,<br/>criados entre sabores</h2>
+      <div class="section-divider"></div>
+      <p>Kapac nació de la pasión por rescatar recetas de abuela y elevarlas con técnica moderna. El nombre, del quechua "noble y poderoso", refleja nuestra filosofía: ingredientes peruanos de primer nivel, tratados con respeto y creatividad.</p>
+      <p>Nuestro chef, Rodrigo Quispe, se formó en Lima y Tokio, trayendo esa influencia nikkei que hoy define nuestra carta. Cada plato es un viaje: de los Andes a la Costa, del Tiradito al Lomo Saltado.</p>
+      <div class="about-features">
+        <div class="af-item"><div class="af-icon">🐟</div>Producto fresco diario</div>
+        <div class="af-item"><div class="af-icon">🌿</div>Hierbas del huerto propio</div>
+        <div class="af-item"><div class="af-icon">🍶</div>Pisco de bodega propia</div>
+        <div class="af-item"><div class="af-icon">🏆</div>Premio Mistura 2022 · 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MENU ===== -->
+<section class="menu" id="menu">
+  <div class="menu-inner">
+    <div class="menu-header">
+      <div class="section-tag">Lo que preparamos</div>
+      <h2 class="section-title">Nuestra carta</h2>
+      <div class="section-divider center"></div>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-tab="entradas">Entradas</button>
+      <button class="menu-tab" data-tab="fondos">Fondos</button>
+      <button class="menu-tab" data-tab="postres">Postres</button>
+      <button class="menu-tab" data-tab="bebidas">Bebidas</button>
+    </div>
+
+    <!-- ENTRADAS -->
+    <div class="menu-panel active" id="tab-entradas">
+      <div class="menu-grid">
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/Peruvian+ceviche+traditional+lime+aji+amarillo+choclo+garnish+elegant+plate?width=600&height=400&seed=10&nologo=true" alt="Ceviche Kapac" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Ceviche Kapac</div>
+            <div class="dish-desc">Corvina del día, leche de tigre con ají amarillo, cancha, canchita crocante y camote morado.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 42</span><span class="dish-tag">⭐ Firma</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/tiradito+nikkei+sashimi+Peru+Japan+fusion+elegant+restaurant+plate?width=600&height=400&seed=11&nologo=true" alt="Tiradito Nikkei" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Tiradito Nikkei</div>
+            <div class="dish-desc">Lenguado en corte sashimi, salsa ponzu con ají limo, sésamo tostado y aceite de trufa.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 48</span><span class="dish-tag">🔥 Popular</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/causa+rellena+Peruvian+yellow+potato+avocado+shrimp+elegant+plating?width=600&height=400&seed=12&nologo=true" alt="Causa Rellena" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Causa de Langostinos</div>
+            <div class="dish-desc">Papa amarilla con ají amarillo, langostinos a la plancha, palta, mayonesa de huacatay.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 38</span><span class="dish-tag">Vegetal</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/anticuchos+Peruvian+street+food+skewers+heart+grilled+elegant+restaurant?width=600&height=400&seed=13&nologo=true" alt="Anticuchos" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Anticuchos de Corazón</div>
+            <div class="dish-desc">Corazón de res marinado en ají panca, a la brasa. Salsa de maní y choclo tostado.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 32</span><span class="dish-tag">Parrilla</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FONDOS -->
+    <div class="menu-panel" id="tab-fondos">
+      <div class="menu-grid">
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/lomo+saltado+Peruvian+stir+fry+beef+tomato+fries+wok+elegant+plating?width=600&height=400&seed=20&nologo=true" alt="Lomo Saltado" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Lomo Saltado Kapac</div>
+            <div class="dish-desc">Lomo fino, tomate, cebolla roja, soya, vinagre, papas fritas al wok y arroz blanco.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 58</span><span class="dish-tag">⭐ Clásico</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/aji+de+gallina+Peruvian+chicken+walnut+cream+yellow+chili+elegant?width=600&height=400&seed=21&nologo=true" alt="Ají de Gallina" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Ají de Gallina</div>
+            <div class="dish-desc">Pechuga desmechada en crema de ají amarillo, nueces, pan y queso parmesano gratinado.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 46</span><span class="dish-tag">🔥 Popular</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/seafood+rice+arroz+con+mariscos+Peruvian+paella+shrimp+mussels?width=600&height=400&seed=22&nologo=true" alt="Arroz con Mariscos" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Arroz con Mariscos</div>
+            <div class="dish-desc">Arroz al dente, mix de mariscos frescos, culantro, ají amarillo y chicha de jora.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 54</span><span class="dish-tag">Mar</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/Peruvian+duck+confit+arroz+con+pato+cilantro+rice+elegant+plating?width=600&height=400&seed=23&nologo=true" alt="Arroz con Pato" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Arroz con Pato</div>
+            <div class="dish-desc">Pato confitado, arroz verde con culantro y chicha de jora, crema de ají amarillo al lado.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 62</span><span class="dish-tag">Norte</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POSTRES -->
+    <div class="menu-panel" id="tab-postres">
+      <div class="menu-grid">
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/suspiro+limeno+Peruvian+dessert+manjar+meringue+elegant+glass+dessert?width=600&height=400&seed=30&nologo=true" alt="Suspiro Limeño" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Suspiro Limeño</div>
+            <div class="dish-desc">Manjar blanco con oporto y merengue italiano perfumado con canela. Clásico de Lima.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 24</span><span class="dish-tag">⭐ Clásico</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/picarones+Peruvian+donuts+sweet+potato+squash+syrup+chancaca+dessert?width=600&height=400&seed=31&nologo=true" alt="Picarones" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Picarones con Miel</div>
+            <div class="dish-desc">Buñuelos de camote y zapallo fritos, bañados en miel de chancaca con especias andinas.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 20</span><span class="dish-tag">Caliente</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/Peruvian+chocolate+mousse+dark+cacao+Amazonas+elegant+dessert+plating?width=600&height=400&seed=32&nologo=true" alt="Mousse Cacao" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Mousse de Cacao Amazónico</div>
+            <div class="dish-desc">Cacao nativo al 72%, mousse sedosa, gel de maracuyá y crumble de quinoa tostada.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 28</span><span class="dish-tag">Premium</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <div class="menu-panel" id="tab-bebidas">
+      <div class="menu-grid">
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/pisco+sour+cocktail+glass+foam+Peru+classic+bar+elegant?width=600&height=400&seed=40&nologo=true" alt="Pisco Sour" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Pisco Sour Kapac</div>
+            <div class="dish-desc">Pisco quebranta de Ica, limón sutil, jarabe de goma, clara de huevo y amargo de Angostura.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 28</span><span class="dish-tag">⭐ Firma</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/chicha+morada+purple+corn+Peruvian+drink+elegant+glass+restaurant?width=600&height=400&seed=41&nologo=true" alt="Chicha Morada" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Chicha Morada Artesanal</div>
+            <div class="dish-desc">Maíz morado cocido con piña, membrillo, canela y clavo. Sin conservantes.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 14</span><span class="dish-tag">Sin alcohol</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/maracuya+sour+cocktail+passion+fruit+Peru+bar+tropical+drink?width=600&height=400&seed=42&nologo=true" alt="Maracuyá Sour" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Maracuyá Sour</div>
+            <div class="dish-desc">Pisco Italia, maracuyá fresco, almíbar de hierba luisa, espuma de coco.</div>
+            <div class="dish-footer"><span class="dish-price">S/ 32</span><span class="dish-tag">Tropical</span></div>
+          </div>
+        </div>
+        <div class="dish-card">
+          <img class="dish-img" src="https://image.pollinations.ai/prompt/peruvian+craft+beer+cusquena+bottle+glass+dark+bar+restaurant?width=600&height=400&seed=43&nologo=true" alt="Cerveza Artesanal" loading="lazy" />
+          <div class="dish-body">
+            <div class="dish-name">Selección de Cervezas</div>
+            <div class="dish-desc">Cusqueña rubia, negra y trigo · Cerveza artesanal de la casa · Importadas seleccionadas.</div>
+            <div class="dish-footer"><span class="dish-price">desde S/ 18</span><span class="dish-tag">Draft</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery" id="galeria">
+  <div class="gallery-header">
+    <div class="section-tag">Nuestra cocina</div>
+    <h2 class="section-title">Galería</h2>
+    <div class="section-divider center"></div>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item">
+      <img src="https://image.pollinations.ai/prompt/elegant+restaurant+table+candles+Lima+Peru+fine+dining+warm+dark+atmosphere?width=700&height=700&seed=50&nologo=true" alt="Restaurante" loading="lazy" />
+    </div>
+    <div class="g-item">
+      <img src="https://image.pollinations.ai/prompt/Peruvian+ceviche+closeup+food+photography+professional+colorful?width=400&height=300&seed=51&nologo=true" alt="Ceviche" loading="lazy" />
+    </div>
+    <div class="g-item">
+      <img src="https://image.pollinations.ai/prompt/pisco+sour+bar+cocktail+preparation+bartender+Peru?width=400&height=300&seed=52&nologo=true" alt="Bar" loading="lazy" />
+    </div>
+    <div class="g-item">
+      <img src="https://image.pollinations.ai/prompt/lomo+saltado+wok+fire+Peruvian+cooking+chef+kitchen?width=400&height=300&seed=53&nologo=true" alt="Cocina" loading="lazy" />
+    </div>
+    <div class="g-item">
+      <img src="https://image.pollinations.ai/prompt/dessert+Peruvian+suspiro+lime+elegant+plating+closeup?width=400&height=300&seed=54&nologo=true" alt="Postre" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESERVATION ===== -->
+<section class="reservation" id="reservar">
+  <div class="reservation-inner">
+    <div class="reservation-info">
+      <div class="section-tag">¿Listo para visitarnos?</div>
+      <h2 class="section-title">Reserva tu<br/>experiencia</h2>
+      <div class="section-divider"></div>
+      <div class="res-detail">
+        <div class="res-icon">📍</div>
+        <div><div class="res-label">Ubicación</div><div class="res-val">Av. La Mar 770, Miraflores<br/>Lima, Perú</div></div>
+      </div>
+      <div class="res-detail">
+        <div class="res-icon">🕐</div>
+        <div><div class="res-label">Horario</div><div class="res-val">Lunes a Jueves: 12pm – 10pm<br/>Viernes y Sábado: 12pm – 12am<br/>Domingo: 12pm – 9pm</div></div>
+      </div>
+      <div class="res-detail">
+        <div class="res-icon">📞</div>
+        <div><div class="res-label">Contacto</div><div class="res-val">+51 1 234-5678<br/>hola@kapacrestaurante.pe</div></div>
+      </div>
+      <div class="res-detail">
+        <div class="res-icon">🅿</div>
+        <div><div class="res-label">Estacionamiento</div><div class="res-val">Playa gratuita para clientes<br/>Validación en caja</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="res-form">
+        <form id="reservaForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nombre</label>
+              <input class="form-input" type="text" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Teléfono</label>
+              <input class="form-input" type="tel" placeholder="+51 999 999 999" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Fecha</label>
+              <input class="form-input" type="date" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Hora</label>
+              <select class="form-select" required>
+                <option value="">Seleccionar</option>
+                <option>12:00 pm</option>
+                <option>1:00 pm</option>
+                <option>2:00 pm</option>
+                <option>7:00 pm</option>
+                <option>8:00 pm</option>
+                <option>9:00 pm</option>
+                <option>10:00 pm</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Número de personas</label>
+            <select class="form-select" required>
+              <option value="">Seleccionar</option>
+              <option>1 persona</option>
+              <option>2 personas</option>
+              <option>3 personas</option>
+              <option>4 personas</option>
+              <option>5 - 8 personas</option>
+              <option>Grupo especial (9+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ocasión especial (opcional)</label>
+            <textarea class="form-textarea" placeholder="Cumpleaños, aniversario, reunión de negocios..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Confirmar reserva</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-logo">Kapac</div>
+  <div class="footer-tagline">El alma del Perú en cada plato</div>
+  <div class="footer-links">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#galeria">Galería</a>
+    <a href="#reservar">Reservas</a>
+    <a href="#">Instagram</a>
+    <a href="#">TripAdvisor</a>
+  </div>
+  <div class="footer-copy">© 2024 Kapac Restaurante & Bar · Lima, Perú · Todos los derechos reservados</div>
+</footer>
 
 <!-- ===== TOAST ===== -->
 <div class="toast" id="toast"></div>
