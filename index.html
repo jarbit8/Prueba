@@ -3,172 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kapac Gym — Forja tu mejor versión</title>
+  <title>Kapac Esports — We Play To Win</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <!-- ===== NAV ===== -->
 <nav>
-  <div class="nav-logo">KAPAC<span>GYM</span></div>
+  <div class="nav-logo">KAPAC<em>GG</em></div>
   <ul class="nav-links">
-    <li><a href="#programas">Programas</a></li>
-    <li><a href="#entrenadores">Entrenadores</a></li>
-    <li><a href="#membresias">Membresías</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#roster">Roster</a></li>
+    <li><a href="#games">Juegos</a></li>
+    <li><a href="#logros">Logros</a></li>
+    <li><a href="#unirse">Únete</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('membresias').scrollIntoView({behavior:'smooth'})">Únete ahora</button>
+  <button class="nav-cta">Fan Zone</button>
   <button class="nav-hamburger" id="hamburger">☰</button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#programas" class="mobile-link">Programas</a>
-  <a href="#entrenadores" class="mobile-link">Entrenadores</a>
-  <a href="#membresias" class="mobile-link">Membresías</a>
-  <a href="#contacto" class="mobile-link">Contacto</a>
+  <a href="#roster"  class="mobile-link">Roster</a>
+  <a href="#games"   class="mobile-link">Juegos</a>
+  <a href="#logros"  class="mobile-link">Logros</a>
+  <a href="#unirse"  class="mobile-link">Únete</a>
 </div>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
   <img class="hero-img"
-    src="https://image.pollinations.ai/prompt/dark+intense+gym+interior+weights+barbells+dramatic+red+lighting+cinematic?width=1600&height=900&seed=1&nologo=true"
-    alt="Kapac Gym" />
+    src="https://image.pollinations.ai/prompt/esports+gaming+arena+dark+neon+blue+purple+lights+crowd+stage+cinematic?width=1600&height=900&seed=1&nologo=true"
+    alt="Kapac Esports Arena" />
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-tag">Lima, Perú · Desde 2019</div>
+    <div class="hero-eyebrow">// FOUNDED 2021 · LIMA · PERÚ</div>
     <h1 class="hero-title">
-      Forja tu
-      <span class="accent">mejor versión</span>
+      <span class="line1">We Play</span>
+      <span class="line2">To Win.</span>
     </h1>
-    <p class="hero-sub">Entrenamiento de alto rendimiento, equipos de última generación y los mejores coaches del país. Sin excusas, solo resultados.</p>
+    <p class="hero-sub">Organización de esports de élite. Competimos en los torneos más grandes de Latinoamérica. Buscamos los mejores, formamos campeones.</p>
     <div class="hero-btns">
-      <button class="btn-red" onclick="document.getElementById('membresias').scrollIntoView({behavior:'smooth'})">Empezar gratis 7 días</button>
-      <button class="btn-ghost" onclick="document.getElementById('programas').scrollIntoView({behavior:'smooth'})">Ver programas</button>
+      <button class="btn-cyan" onclick="document.getElementById('roster').scrollIntoView({behavior:'smooth'})">Ver el equipo</button>
+      <button class="btn-border" onclick="document.getElementById('unirse').scrollIntoView({behavior:'smooth'})">Hacer tryout</button>
     </div>
   </div>
-  <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num">2,400+</div><div class="stat-label">Miembros activos</div></div>
-    <div class="stat-item"><div class="stat-num">18</div><div class="stat-label">Coaches certificados</div></div>
-    <div class="stat-item"><div class="stat-num">5★</div><div class="stat-label">Valoración Google</div></div>
-    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Acceso libre</div></div>
-  </div>
-</section>
-
-<!-- ===== PROGRAMS ===== -->
-<section class="programs" id="programas">
-  <div class="programs-inner">
-    <div class="programs-head">
-      <div class="section-tag">Entrena como quieres</div>
-      <h2 class="section-title">Nuestros <span>programas</span></h2>
-    </div>
-    <div class="programs-grid">
-
-      <div class="prog-card">
-        <img class="prog-img"
-          src="https://image.pollinations.ai/prompt/bodybuilding+gym+weight+lifting+barbell+dark+dramatic+lighting+muscular?width=600&height=700&seed=10&nologo=true"
-          alt="Musculación" loading="lazy" />
-        <div class="prog-content">
-          <div class="prog-icon">🏋️</div>
-          <div class="prog-name">Musculación</div>
-          <div class="prog-desc">Hipertrofia, fuerza y definición. Planes personalizados con seguimiento mensual.</div>
-        </div>
-        <div class="prog-overlay"></div>
-        <div class="prog-tag">Popular</div>
-      </div>
-
-      <div class="prog-card">
-        <img class="prog-img"
-          src="https://image.pollinations.ai/prompt/HIIT+cardio+training+intense+workout+gym+dark+red+lights+explosive?width=600&height=700&seed=11&nologo=true"
-          alt="HIIT" loading="lazy" />
-        <div class="prog-content">
-          <div class="prog-icon">⚡</div>
-          <div class="prog-name">HIIT</div>
-          <div class="prog-desc">Quema grasa al máximo. Sesiones de 45 min de alta intensidad con intervalos.</div>
-        </div>
-        <div class="prog-overlay"></div>
-      </div>
-
-      <div class="prog-card">
-        <img class="prog-img"
-          src="https://image.pollinations.ai/prompt/crossfit+functional+training+athletes+box+dark+gym+intense?width=600&height=700&seed=12&nologo=true"
-          alt="CrossFit" loading="lazy" />
-        <div class="prog-content">
-          <div class="prog-icon">🔥</div>
-          <div class="prog-name">CrossFit</div>
-          <div class="prog-desc">Entrenamiento funcional. Fuerza, resistencia y agilidad combinadas en un WOD diario.</div>
-        </div>
-        <div class="prog-overlay"></div>
-        <div class="prog-tag">Nuevo</div>
-      </div>
-
-      <div class="prog-card">
-        <img class="prog-img"
-          src="https://image.pollinations.ai/prompt/boxing+muay+thai+martial+arts+gym+dark+dramatic+training?width=600&height=700&seed=13&nologo=true"
-          alt="Boxeo" loading="lazy" />
-        <div class="prog-content">
-          <div class="prog-icon">🥊</div>
-          <div class="prog-name">Boxeo & Muay Thai</div>
-          <div class="prog-desc">Artes marciales para fitness y defensa personal. Para todos los niveles.</div>
-        </div>
-        <div class="prog-overlay"></div>
-      </div>
-
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">⚡ KAPAC GG</span>
+      <span class="ticker-item">🏆 CAMPEONES LATAM 2023</span>
+      <span class="ticker-item">⚡ WE PLAY TO WIN</span>
+      <span class="ticker-item">🎮 KAPAC ESPORTS</span>
+      <span class="ticker-item">💀 NO MERCY IN-GAME</span>
+      <span class="ticker-item">⚡ KAPAC GG</span>
+      <span class="ticker-item">🏆 CAMPEONES LATAM 2023</span>
+      <span class="ticker-item">⚡ WE PLAY TO WIN</span>
+      <span class="ticker-item">🎮 KAPAC ESPORTS</span>
+      <span class="ticker-item">💀 NO MERCY IN-GAME</span>
     </div>
   </div>
 </section>
 
-<!-- ===== TRAINERS ===== -->
-<section class="trainers" id="entrenadores">
-  <div class="trainers-inner">
-    <div class="trainers-head">
+<!-- ===== ROSTER ===== -->
+<section class="roster" id="roster">
+  <div class="roster-inner">
+    <div class="roster-head">
       <div>
-        <div class="section-tag">Nuestro equipo</div>
-        <h2 class="section-title">Los mejores <span>coaches</span></h2>
+        <div class="s-tag">// TEAM ROSTER 2024</div>
+        <h2 class="s-title">Nuestros <span>jugadores</span></h2>
       </div>
     </div>
-    <div class="trainers-grid">
+    <div class="roster-grid">
 
-      <div class="trainer-card">
-        <img class="trainer-img"
-          src="https://image.pollinations.ai/prompt/professional+male+gym+trainer+muscular+athletic+dark+background+portrait?width=500&height=560&seed=20&nologo=true"
-          alt="Coach Rodrigo" loading="lazy" />
-        <div class="trainer-body">
-          <div class="trainer-name">Rodrigo Salcedo</div>
-          <div class="trainer-spec">Musculación · Nutrición deportiva</div>
-          <div class="trainer-bio">Certificado NASM. 8 años formando campeones de fitness y powerlifting nacional.</div>
+      <div class="player-card">
+        <img class="player-img"
+          src="https://image.pollinations.ai/prompt/esports+gamer+young+man+professional+headset+dark+neon+blue+gaming+portrait?width=500&height=600&seed=10&nologo=true"
+          alt="PHANTOM" loading="lazy" />
+        <div class="player-role">IGL · Capitán</div>
+        <div class="player-body">
+          <div class="player-alias">PHANTOM</div>
+          <div class="player-name">Sebastián Ríos · Lima</div>
+          <div class="player-stat">K/D <span>2.4</span> · WR <span>68%</span></div>
         </div>
       </div>
 
-      <div class="trainer-card">
-        <img class="trainer-img"
-          src="https://image.pollinations.ai/prompt/professional+female+fitness+trainer+athletic+strong+gym+dark+background+portrait?width=500&height=560&seed=21&nologo=true"
-          alt="Coach Valeria" loading="lazy" />
-        <div class="trainer-body">
-          <div class="trainer-name">Valeria Torres</div>
-          <div class="trainer-spec">HIIT · Pérdida de peso</div>
-          <div class="trainer-bio">Especialista en transformación corporal. Más de 500 clientes con resultados reales.</div>
+      <div class="player-card">
+        <img class="player-img"
+          src="https://image.pollinations.ai/prompt/esports+gamer+young+man+professional+dark+purple+neon+gaming+room+portrait?width=500&height=600&seed=11&nologo=true"
+          alt="NEXUS" loading="lazy" />
+        <div class="player-role">Sniper</div>
+        <div class="player-body">
+          <div class="player-alias">NEXUS</div>
+          <div class="player-name">Andrés Vega · Bogotá</div>
+          <div class="player-stat">K/D <span>3.1</span> · HS <span>74%</span></div>
         </div>
       </div>
 
-      <div class="trainer-card">
-        <img class="trainer-img"
-          src="https://image.pollinations.ai/prompt/professional+male+crossfit+trainer+athletic+tattooed+dark+gym+portrait?width=500&height=560&seed=22&nologo=true"
-          alt="Coach Carlos" loading="lazy" />
-        <div class="trainer-body">
-          <div class="trainer-name">Carlos Mendoza</div>
-          <div class="trainer-spec">CrossFit · Fuerza funcional</div>
-          <div class="trainer-bio">CrossFit Level 2 Trainer. Ex atleta de levantamiento olímpico, campeón regional 2021.</div>
+      <div class="player-card">
+        <img class="player-img"
+          src="https://image.pollinations.ai/prompt/esports+gamer+young+woman+professional+headset+neon+dark+gaming+portrait?width=500&height=600&seed=12&nologo=true"
+          alt="STORM" loading="lazy" />
+        <div class="player-role">Support</div>
+        <div class="player-body">
+          <div class="player-alias">STORM</div>
+          <div class="player-name">Valentina Cruz · Medellín</div>
+          <div class="player-stat">AVG <span>Plat. S</span> · WR <span>71%</span></div>
         </div>
       </div>
 
-      <div class="trainer-card">
-        <img class="trainer-img"
-          src="https://image.pollinations.ai/prompt/professional+male+boxing+trainer+martial+arts+fighter+dark+gym+portrait?width=500&height=560&seed=23&nologo=true"
-          alt="Coach Diego" loading="lazy" />
-        <div class="trainer-body">
-          <div class="trainer-name">Diego Quispe</div>
-          <div class="trainer-spec">Boxeo · Muay Thai</div>
-          <div class="trainer-bio">Ex peleador profesional con 12 años de experiencia. Entrena para fitness y competición.</div>
+      <div class="player-card">
+        <img class="player-img"
+          src="https://image.pollinations.ai/prompt/esports+gamer+young+man+dark+hair+neon+cyan+gaming+setup+professional?width=500&height=600&seed=13&nologo=true"
+          alt="ZERO" loading="lazy" />
+        <div class="player-role">Fragger</div>
+        <div class="player-body">
+          <div class="player-alias">ZERO</div>
+          <div class="player-name">Miguel Torres · Santiago</div>
+          <div class="player-stat">K/D <span>2.8</span> · WR <span>65%</span></div>
+        </div>
+      </div>
+
+      <div class="player-card">
+        <img class="player-img"
+          src="https://image.pollinations.ai/prompt/esports+gamer+coach+professional+man+dark+background+neon+purple?width=500&height=600&seed=14&nologo=true"
+          alt="COACH RAVEN" loading="lazy" />
+        <div class="player-role">Head Coach</div>
+        <div class="player-body">
+          <div class="player-alias">RAVEN</div>
+          <div class="player-name">Carlos Mamani · Lima</div>
+          <div class="player-stat">Títulos <span>7</span> · Años <span>9</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== GAMES ===== -->
+<section class="games" id="games">
+  <div class="games-inner">
+    <div class="games-head">
+      <div class="s-tag">// COMPETIMOS EN</div>
+      <h2 class="s-title">Nuestros <span>juegos</span></h2>
+    </div>
+    <div class="games-grid">
+
+      <div class="game-card">
+        <img class="game-img"
+          src="https://image.pollinations.ai/prompt/tactical+shooter+game+dark+neon+futuristic+fps+esports+dramatic?width=700&height=450&seed=20&nologo=true"
+          alt="Shooter" loading="lazy" />
+        <div class="game-overlay"></div>
+        <div class="game-glow" style="background:radial-gradient(circle at 50% 100%, rgba(0,229,255,.15), transparent 60%)"></div>
+        <div class="game-border"></div>
+        <div class="game-body">
+          <div class="game-title">VALORANT</div>
+          <div class="game-members">// 5 JUGADORES · División Radiant</div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-img"
+          src="https://image.pollinations.ai/prompt/battle+royale+game+dark+neon+purple+esports+competitive+action?width=700&height=450&seed=21&nologo=true"
+          alt="Battle Royale" loading="lazy" />
+        <div class="game-overlay"></div>
+        <div class="game-glow" style="background:radial-gradient(circle at 50% 100%, rgba(155,48,255,.15), transparent 60%)"></div>
+        <div class="game-border"></div>
+        <div class="game-body">
+          <div class="game-title">FORTNITE</div>
+          <div class="game-members">// 3 JUGADORES · Champions</div>
+        </div>
+      </div>
+
+      <div class="game-card">
+        <img class="game-img"
+          src="https://image.pollinations.ai/prompt/MOBA+strategy+game+dark+fantasy+neon+esports+arena?width=700&height=450&seed=22&nologo=true"
+          alt="MOBA" loading="lazy" />
+        <div class="game-overlay"></div>
+        <div class="game-glow" style="background:radial-gradient(circle at 50% 100%, rgba(255,45,120,.12), transparent 60%)"></div>
+        <div class="game-border"></div>
+        <div class="game-body">
+          <div class="game-title">LEAGUE OF LEGENDS</div>
+          <div class="game-members">// 5 JUGADORES · Challenger</div>
         </div>
       </div>
 
@@ -176,88 +189,106 @@
   </div>
 </section>
 
-<!-- ===== MEMBERSHIP ===== -->
-<section class="membership" id="membresias">
-  <div class="membership-inner">
-    <div class="membership-head">
-      <div class="section-tag" style="justify-content:center">Elige tu plan</div>
-      <h2 class="section-title">Membresías <span>Kapac</span></h2>
+<!-- ===== ACHIEVEMENTS ===== -->
+<section class="achievements" id="logros">
+  <div class="ach-inner">
+    <div class="ach-head">
+      <div class="s-tag">// TRACK RECORD</div>
+      <h2 class="s-title">Nuestros <span>logros</span></h2>
     </div>
-    <div class="plans-grid">
-
-      <div class="plan-card">
-        <div class="plan-name">Básico</div>
-        <div class="plan-price"><sup>S/</sup>89</div>
-        <div class="plan-period">por mes</div>
-        <ul class="plan-features">
-          <li>Acceso sala de pesas</li>
-          <li>Cardio y zona funcional</li>
-          <li>Vestuarios y duchas</li>
-          <li>App de seguimiento</li>
-          <li class="off">Clases grupales</li>
-          <li class="off">Coach asignado</li>
-          <li class="off">Plan nutricional</li>
-        </ul>
-        <button class="plan-btn" data-plan="Básico">Elegir plan</button>
+    <div class="ach-grid">
+      <div class="ach-item">
+        <div class="ach-icon">🏆</div>
+        <div>
+          <div class="ach-title">Campeones Latam — Valorant</div>
+          <div class="ach-detail">Primer equipo peruano en ganar el torneo regional de Latinoamérica Norte.</div>
+          <div class="ach-year">// 2023</div>
+        </div>
       </div>
-
-      <div class="plan-card featured">
-        <div class="plan-badge">Más popular</div>
-        <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>S/</sup>149</div>
-        <div class="plan-period">por mes</div>
-        <ul class="plan-features">
-          <li>Todo del plan Básico</li>
-          <li>Clases grupales ilimitadas</li>
-          <li>Coach asignado personal</li>
-          <li>Evaluación física mensual</li>
-          <li>Acceso 24/7</li>
-          <li>Suplementos con descuento</li>
-          <li class="off">Plan nutricional</li>
-        </ul>
-        <button class="plan-btn" data-plan="Pro">Elegir plan</button>
+      <div class="ach-item">
+        <div class="ach-icon">🥇</div>
+        <div>
+          <div class="ach-title">Lima Open Champions</div>
+          <div class="ach-detail">Campeonato nacional con prize pool de $50,000 USD. Final ante más de 8,000 espectadores.</div>
+          <div class="ach-year">// 2022 · 2023</div>
+        </div>
       </div>
-
-      <div class="plan-card">
-        <div class="plan-name">Elite</div>
-        <div class="plan-price"><sup>S/</sup>249</div>
-        <div class="plan-period">por mes</div>
-        <ul class="plan-features">
-          <li>Todo del plan Pro</li>
-          <li>Plan nutricional personalizado</li>
-          <li>Sesiones 1 a 1 semanales</li>
-          <li>Seguimiento diario por app</li>
-          <li>Recuperación: sauna + crioterapia</li>
-          <li>Acceso a todas las sedes</li>
-          <li>Gear Kapac incluido</li>
-        </ul>
-        <button class="plan-btn" data-plan="Elite">Elegir plan</button>
+      <div class="ach-item">
+        <div class="ach-icon">🌎</div>
+        <div>
+          <div class="ach-title">Top 8 — Masters Madrid</div>
+          <div class="ach-detail">Primera aparición peruana en un Masters internacional de Valorant. Historia del esports nacional.</div>
+          <div class="ach-year">// 2024</div>
+        </div>
       </div>
-
+      <div class="ach-item">
+        <div class="ach-icon">📺</div>
+        <div>
+          <div class="ach-title">2M+ Seguidores</div>
+          <div class="ach-detail">La organización de esports con mayor crecimiento en LATAM. +400K en Instagram, +800K en TikTok.</div>
+          <div class="ach-year">// 2024</div>
+        </div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">💰</div>
+        <div>
+          <div class="ach-title">$280K Prize Money</div>
+          <div class="ach-detail">Acumulado total en torneos en los últimos 3 años de competición profesional.</div>
+          <div class="ach-year">// 2021 – 2024</div>
+        </div>
+      </div>
+      <div class="ach-item">
+        <div class="ach-icon">🤝</div>
+        <div>
+          <div class="ach-title">Partners Globales</div>
+          <div class="ach-detail">Alianzas con Red Bull, Logitech y MSI Gaming. Equipo oficial Secretlab para la sede de Lima.</div>
+          <div class="ach-year">// Sponsors activos</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA BANNER ===== -->
-<div class="cta-banner" id="contacto">
-  <h2>7 días gratis. Sin tarjeta.</h2>
-  <p>Ven, entrena y decide. Si no te enganchas, no pagas nada. Así de simple.</p>
-  <button class="btn-white" id="ctaBtn">Reclamar mi acceso gratis</button>
-</div>
+<!-- ===== JOIN ===== -->
+<section class="join-section" id="unirse">
+  <div class="join-inner">
+    <div class="s-tag">// OPEN TRYOUTS</div>
+    <h2 class="s-title">¿Tienes lo que <span>se necesita?</span></h2>
+    <p class="join-sub">Buscamos los mejores talentos de Latinoamérica. Si crees que tienes el nivel para competir en la élite, deja tu contacto y nuestro staff te evaluará.</p>
+    <div class="join-form">
+      <input class="join-input" type="text" placeholder="Tu nick & juego (ej: GHOST · Valorant)" id="joinInput" />
+      <button class="join-btn" id="joinBtn">Postular</button>
+    </div>
+    <div class="join-stats">
+      <div>
+        <div class="js-num">340+</div>
+        <div class="js-label">Aplicaciones este año</div>
+      </div>
+      <div>
+        <div class="js-num">12</div>
+        <div class="js-label">Jugadores fichados</div>
+      </div>
+      <div>
+        <div class="js-num">96h</div>
+        <div class="js-label">Resp. promedio</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <div class="footer-logo">KAPAC<span>GYM</span></div>
-  <div class="footer-tagline">Forja tu mejor versión · Lima, Perú</div>
+  <div class="footer-logo">KAPAC<em>GG</em></div>
   <div class="footer-links">
-    <a href="#programas">Programas</a>
-    <a href="#entrenadores">Entrenadores</a>
-    <a href="#membresias">Membresías</a>
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">WhatsApp</a>
+    <a href="#roster">Roster</a>
+    <a href="#games">Juegos</a>
+    <a href="#logros">Logros</a>
+    <a href="#">Twitch</a>
+    <a href="#">YouTube</a>
+    <a href="#">Twitter / X</a>
+    <a href="#">Discord</a>
   </div>
-  <div class="footer-copy">© 2024 Kapac Gym · Todos los derechos reservados</div>
+  <div class="footer-copy">© 2024 Kapac Esports · Lima, Perú · GG</div>
 </footer>
 
 <!-- ===== TOAST ===== -->
