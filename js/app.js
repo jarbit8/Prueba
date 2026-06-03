@@ -6,21 +6,17 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 });
 
-/* ===== MEMBERSHIP BUTTONS ===== */
-document.querySelectorAll('.plan-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    showToast('💪 Plan ' + btn.dataset.plan + ' seleccionado — te contactamos hoy');
-  });
-});
-
-/* ===== CTA BUTTON ===== */
-document.getElementById('ctaBtn').addEventListener('click', () => {
-  showToast('🔥 ¡7 días gratis activados! Nos vemos en el gym');
-});
-
 /* ===== NAV CTA ===== */
 document.querySelector('.nav-cta').addEventListener('click', () => {
-  document.getElementById('membresias').scrollIntoView({ behavior: 'smooth' });
+  showToast('// FAN ZONE coming soon · Stay tuned');
+});
+
+/* ===== JOIN FORM ===== */
+document.getElementById('joinBtn').addEventListener('click', () => {
+  const val = document.getElementById('joinInput').value.trim();
+  if (!val) { showToast('// Ingresa tu nick y juego primero'); return; }
+  showToast('// Postulación recibida — te contactamos en 96h. GG');
+  document.getElementById('joinInput').value = '';
 });
 
 /* ===== TOAST ===== */
